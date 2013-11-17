@@ -1,0 +1,32 @@
+	<p>	
+	<%= form_for(@event) do |f| %>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+    </p>
+    
+     <p>
+    	  <%= f.label :content %>
+    	  <%= f.text_field :content %>
+    </p>
+
+    <p>
+	      <%= f.label :location %>
+	      <%= f.text_area :location %>
+      </p>   
+      
+      <p>
+	      <%= f.label :eventdate %>
+	      <%= f.text_field :eventdate %>
+  </p>
+  
+  <p>
+  		<%= f.label :eventtime %>
+  		<%= f.text_field :eventtime %>
+  </p>
+   
+      <%= link_to 'Back', events_path %>
+      
+      <%= link_to 'Verwijderen', event_path, :method => :delete %>
+      <%= f.submit 'Opslaan' %>
+
+<%end %>

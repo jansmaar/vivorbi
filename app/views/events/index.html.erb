@@ -1,0 +1,23 @@
+<%= search_form_for @search do |f| %>
+	<%= f.label :location_cont, "zoek op plaats"%>
+	<%= f.text_field :location_cont %>
+	<%= f.submit "Zoek" %>
+	<% end %>
+
+<%= link_to 'Maak event aan', new_event_path %>
+
+<div id="calendarevent">
+	<h2 id="month"> <%= link_to "<", date: @date.prev_month %>
+		<%= @date.strftime("%B %Y") %>
+		<%= link_to">", date: @date.next_month %> </h2>
+	<%= calendar @date do |date| %>
+		<%= date.day %>
+		<% if @events_by_date[date] %>
+		<ul>
+		<% @events_by_date[date].each do |event| %>
+		<li><%= link_to event.title, event %></li>
+		<% end %>
+		</ul>
+		<% end %>
+		<% end %>
+</div>

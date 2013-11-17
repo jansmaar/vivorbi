@@ -9,6 +9,13 @@ gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+
+#JQuery in rails gebruiken
+gem 'jquery-ui-rails'
+gem 'jquery-turbolinks'
+gem 'ransack'
+
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 

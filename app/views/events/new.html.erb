@@ -1,31 +1,57 @@
-<h1> Events </h1>
-
-<%= form_for :event, url: events_path do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
- 
-  <p>
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </p>
-  	
-  <p>	
-  	<%= f.label :location %>
-  	<%= f.text_field :location %>
-  </p>
-
-  <p>
-  	<%= f.label :eventdate %>
-  	<%= f.text_field :eventdate %>
-  </p>
-  
-  <p>
-  	<%= f.label :eventtime %>
-  	<%= f.text_field :eventtime %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<div class="row">
+  <div class="col-md-5 border">
+  <%= form_for :event, url: events_path do |f| %>
+  <div class="form-group">
+    <%= f.label :title, "Titel van de activiteit" %><br>
+    <%= f.text_field :title, class: "form-control",  placeholder: "bv. bezoek aan het museum" %>
+  </div>
+  <div class="row margin-for-date">
+    <div class="col-xs-7">
+    <%= f.label :eventdate, "Datum" %>
+    <%= f.text_field :eventdate, class: "form-control", placeholder: "Selecteer een datum" %>
+    </div>
+      <div class="col-xs-5">
+        <%= f.label :eventtime, "Tijd" %>
+        <%= f.text_field :eventtime, class: "form-control", placeholder: "Selecteer een tijd"%>
+      </div>
+  </div>
+  <div class="form-group">
+    <label for="type">Type activiteit</label>
+    <select class="form-control">
+        <option>Daguitje</option>
+        <option>...</option>
+        <option>...</option>
+        <option>...</option>
+        <option>...</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <%= f.label :content, "Omschrijving" %><br>
+    <%= f.text_area :content, class: "form-control", placeholder: "Waar gaat de activiteit over?" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :location %>
+    <%= f.text_field :location, class: "form-control", id: "gmaps-input-address", placeholder: "Begin met het typen van een adres..." %>
+    <span class="help-block"><em>Eventueel extra informatie over deze functie</em></span>
+    <div id='gmaps-error'></div>
+  </div>
+  <div class="form-group">
+    <label for="">Genodigden:</label>
+    <div class="input-group">
+          <input type="search" class="form-control" id="tags" name="message" placeholder="Zoeken naar gebruikers">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-success" id="add"><i class="fa fa-plus fa-lg"></i> Uitnodigen</button>
+        </span>
+      </div>
+  </div>
+  <ul id="addperson">
+  </ul>
+  <!-- <button type="button" class="btn btn-primary btn-lg btn-block"> <i class="fa fa-check fa-lg"></i> Activiteit aanmaken</button> -->
+    <%= f.submit 'Activiteit aanmaken', class: 'btn btn-primary btn-lg btn-block'  %>
+  <% end %>
+  </div>
+    <div class="col-md-7 visible-md visible-lg">
+    <div id='gmaps-canvas'></div>
+    <bold>Locatie van de activiteit</bold> - <em>sleep de <abbr title="het pijltje">pin</abbr> op de kaart als u locatie nauwkeurig wilt wijzigen</em> 
+    </div>
+  </div>

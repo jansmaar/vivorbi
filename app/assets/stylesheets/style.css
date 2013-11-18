@@ -1,0 +1,59 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+/* Global*/
+body {
+	/*font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+	color: #393838;
+	background-color: #ecf0f1;
+	padding-bottom: 50px;*/
+}
+.border {
+	 border-right: 2px solid rgba(0,0,0,0.3);
+}
+
+#gmaps-canvas {
+  height: 400px !important; 
+  border: 1px solid #999;
+  -moz-box-shadow:    0px 0px 5px #ccc;
+  -webkit-box-shadow: 0px 0px 5px #ccc;
+  box-shadow:         0px 0px 5px #ccc;
+}
+#gmaps-error {
+  color: #cc0000;
+}
+#input #gmaps-output-latitude, #input #gmaps-output-longitude {
+  color: green;
+}
+.col-md-5 {
+	margin-bottom: 25px;
+}
+
+/*style for adding and removing contacts*/
+.remove {
+	margin:0 0 0 5px;
+	border: 0;
+	background-color:#fff;
+	cursor: pointer;
+}
+
+#addperson {
+	list-style: none;
+	padding: 0 0 0 5px;
+}
+
+.error {
+	color: #cc0000;
+}
+li.invited {
+	padding: 0 0 5px 0;
+}
+/*END style for adding and removing contacts*/
+
+/* space between date & time div and the next ( type activiteit ) input */
+.margin-for-date {
+	margin-bottom: 15px;
+}
+.fa-times-circle-o {
+	vertical-align: middle;
+}

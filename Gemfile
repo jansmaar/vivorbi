@@ -8,7 +8,7 @@ gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
-
+gem "font-awesome-rails"
 
 #JQuery in rails gebruiken
 gem 'jquery-ui-rails'

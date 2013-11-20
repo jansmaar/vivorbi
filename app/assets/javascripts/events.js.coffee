@@ -5,3 +5,5 @@ jQuery ->
 
 	$('#event_eventdate').datepicker
 		dateFormat: 'dd-mm-yy',
+		showWeek: false,
+        firstDay: 1,

@@ -12,31 +12,36 @@ $(document).ready(function(){
         if($.inArray(toAdd, contacts) > -1){
             if($.inArray(toAdd, inInvited)===-1){
                 $('#addperson').append(array);
+                $('#addperson li:even').addClass('grey');
                 inInvited.push(toAdd);
             }
             else { 
-                invitedError = $('<p/>').addClass('error').html('De zelfde persoon kan niet twee keer worden toegevoegd!');
+                invitedError = $('<p/>').addClass('alert alert-danger').html('De zelfde persoon kan niet twee keer worden toegevoegd!');
                 $('#addperson').prepend(invitedError);
-                $('.error').fadeTo(2000, 0.5);
+                $('.alert-danger').fadeOut(5000);
             }
         }
         else if(toAdd ===""){
-            invitedError = $('<p/>').addClass('error').html('Er moet wel iemand uitgenodigd worden met een naam!');
+            invitedError = $('<p/>').addClass('alert alert-danger').html('Er moet wel iemand uitgenodigd worden met een naam!');
             $('#addperson').prepend(invitedError);
-            $('.error').fadeTo(2000, 0.5);
+            $('.alert-danger').fadeOut(5000);
+           
         }
         else {
-            invitedError = $('<p/>').addClass('error').html('Er kan niet iemand worden toegevoegd die niet in de contact lijst staat');
+            invitedError = $('<p/>').addClass('alert alert-danger').html('Er kan niet iemand worden toegevoegd die niet in de contact lijst staat');
             $('#addperson').prepend(invitedError);
-            $('.error').fadeTo(2000, 0.5);
+            $('.alert-danger').fadeOut(5000);
         }
     });
-
-    //Removes the added invite
+    //moet eigenlijk elk element pakken door each loop en dan toevoegen aan een array op het moment van sturen. - anders opgelost, dus niet meer van belang
+    //of manier vinden om een waarde uit de array inInvited te halen op het moment dat het element verwijderd is. - gelukt
+    //eeeh gaat niet helemaal goed verwijderd niet de juiste - gelukt
     $(document).on('click', '.remove', function(evt){
+        //console.log(evt);
         $(this).parent('.invited').remove();
         var deletion = $(this).parent('.invited').text();
-        inInvited.splice($.inArray(deletion.substr(0,deletion.length-1), inInvited),1);
+        console.log(deletion);
+        inInvited.splice($.inArray(deletion, inInvited),1);
     });
 
     //autocomplete the begin search for contacts
@@ -45,11 +50,10 @@ $(document).ready(function(){
     });
 
     //date for picking a date for the event(from plugin jquery)
-    // $( "#datepicker" ).datepicker({
-    //     showWeek: false,
-    //     firstDay: 1
-    // }); 
-    
+    $( "#datepicker" ).datepicker({
+        showWeek: false,
+        firstDay: 1
+    });
 });
 
 

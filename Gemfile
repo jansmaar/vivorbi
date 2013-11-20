@@ -15,6 +15,9 @@ gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
 gem 'ransack'
 
+gem 'sqlite3', :require => 'sqlite3'
+gem "bcrypt-ruby", :require => "bcrypt"
+
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

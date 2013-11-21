@@ -17,14 +17,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<<<<<<< HEAD
+
   <div id="user_nav">
   <% if current_user %>
-    Logged in as <%= current_user.email %>
-    <%= link_to "Log out", log_out_path %>
+    Aangemeld als <%= current_user.email %>
+    <%= link_to "Afmelden", log_out_path %>
   <% else %>
-    <%= link_to "Sign up", sign_up_path %> or 
-    <%= link_to "Log in", log_in_path %>
+    <%= link_to "Registreren", sign_up_path %> or 
+    <%= link_to "Aanmelden", log_in_path %>
   <% end %>
 </div>
   
@@ -32,9 +32,9 @@
     <%= content_tag :div, msg, :id => "flash#{name}" %>
   <% end %>
 
-=======
+
 <div class="container">
-<<<<<<< HEAD
+
   <div class="page-header bg">
     <div class="logo">
       <%= image_tag "logo.png" ,class: "img-responsive logo" ,alt: "logo met elkaar"%>
@@ -91,17 +91,6 @@
 
   </nav>
 <!-- EINDE NAVIGATIE -->
-=======
-<nav class="navbar navbar-default navbar-static-top" role="navigation">
- <%= image_tag "logo.png" ,class: "img-responsive" ,alt: "logo met elkaar"%>
-  <ul class="nav nav-tabs">
-    <li class="active"><a href="#">Home</a></li>
-    <li><a href="#">Profile</a></li>
-    <li><a href="#">Messages</a></li>
-  </ul>
-</nav>
->>>>>>> ccdf7baf53538295c891d74719817d5dbca81d97
->>>>>>> d9cc00ccae3fa27d721d5b192f62fc5bb2674816
 
 <%= yield %>
 </div>

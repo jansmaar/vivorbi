@@ -27,7 +27,9 @@
     <%= link_to "Aanmelden", log_in_path %>
   <% end %>
 </div>
-  
+ 
+ <%= link_to "Profiel bekijken", current_user %>
+ 
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, :id => "flash#{name}" %>
   <% end %>

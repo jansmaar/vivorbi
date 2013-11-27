@@ -9,6 +9,11 @@ body {
 	background-color: #ecf0f1;
 	overflow: hidden !important;
 }
+
+#container {
+	margin: 0;
+	padding: 0;
+}
 /* profielgedeelte */
 .profiel {
 	/*float: right;*/
@@ -80,4 +85,12 @@ li.grey {
 	padding: 5px 20px 0 0;
 	float: right;
 	cursor: pointer;
+}
+
+/* MENU */
+#menu ul ul {
+	display: none;
+}
+#menu li.active ul {
+	display: block;
 }

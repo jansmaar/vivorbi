@@ -2,10 +2,7 @@
 <html>
 <head>
   <title>MetElkaar - stichting Vivorbi</title>
-
-
-
-<link type="text/css" rel="stylesheet" src="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+  <link type="text/css" rel="stylesheet" src="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -17,86 +14,70 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <div id="user_nav">
-  <% if current_user %>
-    Aangemeld als <%= current_user.email %>
-    <%= link_to "Afmelden", log_out_path %>
-  <% else %>
-    <%= link_to "Registreren", sign_up_path %> or 
-    <%= link_to "Aanmelden", log_in_path %>
-  <% end %>
-</div>
- 
- <%= link_to "Profiel bekijken", current_user %>
- 
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, :id => "flash#{name}" %>
-  <% end %>
-
-
 <div class="container">
-
   <div class="page-header bg">
-    <div class="logo">
+    <div class="col-md-2">
+      <div id="user_nav">
+      <% if current_user %>
+        Aangemeld als <%= current_user.email %>
+        <%= link_to "Afmelden", log_out_path %>
+      <% else %>
+        <%= link_to "Registreren", sign_up_path %> or 
+        <%= link_to "Aanmelden", log_in_path %>
+      <% end %>
+      </div>
+      <%= link_to "Profiel bekijken", current_user %>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash#{name}" %>
+      <% end %>
+      <div class="logo">
       <%= image_tag "logo.png" ,class: "img-responsive logo" ,alt: "logo met elkaar"%>
-      <div class="row">
-      <div class="col-md-8">
-      <h3><span class="label label-info"><i class="fa fa-code"></i> versie 0.1 beta</span></h3>
-      </div>
-        
-      <div class="col-md-4">
-      <div class="profiel">
-        <img src="http://placecreature.com/85/85" alt="profile" class="pull-left img-circle profielfoto">
-        Ingelogd als <strong>John Doe</strong>
-        <div class="clearfix">
-          Geplande activiteiten <span class="badge">8</span> <br>
-          <h4><span class="label label-default"><i class="fa fa-sign-out"></i> Uitloggen</span></h4>
-        </div>
-        
-      </div>
-      </div>
-      </div>
-    </div>
-  </div>
-  <!-- NAVIGATIE -->
- 
-    <nav class="navbar navbar-default" role="navigation">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-    </div>
-  <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="#">Home</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Activiteiten <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Activiteiten overzicht</a></li>
-            <li><a href="#">Activiteit aanmaken</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-
-    </div>
-
-  </nav>
-<!-- EINDE NAVIGATIE -->
-
-<%= yield %>
-</div>
-
-
+        <div class="row">
+          <h3><span class="label label-info"><i class="fa fa-code"></i> versie 0.1 beta</span></h3>
+        </div> 
+      </div><!-- end of logo -->
+      <div id="menu">
+        <ul>
+          <li>
+            <h3><span class="icon-dashboard"></span>Dashboard</h3>
+            <ul>
+              <li><a href="#">Reports</a></li>
+              <li><a href="#">Search</a></li>
+              <li><a href="#">Graphs</a></li>
+              <li><a href="#">Settings</a></li>
+            </ul>
+          </li>
+          <!-- we will keep this LI open by default -->
+          <li>
+            <h3><span class="icon-tasks"></span>Tasks</h3>
+            <ul>
+              <li><a href="#">Today's tasks</a></li>
+              <li><a href="#">Urgent</a></li>
+              <li><a href="#">Overdues</a></li>
+            </ul>
+          </li>
+          <li>
+            <h3><span class="icon-calendar"></span>Calendar</h3>
+            <ul>
+              <li><a href="#">Current Month</a></li>
+              <li><a href="#">Current Week</a></li>
+              <li><a href="#">Previous Month</a></li>
+            </ul>
+          </li>
+          <li>
+            <h3><span class="icon-heart"></span>Favourites</h3>
+            <ul>
+              <li><a href="#">Global favs</a></li>
+              <li><a href="#">My favs</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!--end of menu -->
+    </div><!-- end of col-md-2 --> 
+    <div class="col-md-10">
+      <%= yield %>
+    </div> <!--end of col-md-10-->
+  </div> <!-- end page header -->
+</div> <!-- end page container -->
 </body>
 </html>

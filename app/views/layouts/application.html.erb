@@ -15,57 +15,54 @@
 </head>
 <body>
 <div class="container">
-  <div class="page-header bg">
-    <div class="col-md-2">
-      <div id="user_nav">
+    <div class="col-md-2 padding-for-menu-col2">
+      <div class="logo">
+      <%= image_tag "logo.png" ,class: "img-responsive logo" ,alt: "logo met elkaar"%>
+      </div><!-- end of logo -->
+      <!--  <div id="user_nav">
       <% if current_user %>
         Aangemeld als <%= current_user.email %>
         <%= link_to "Afmelden", log_out_path %>
       <% else %>
-        <%= link_to "Registreren", sign_up_path %> or 
-        <%= link_to "Aanmelden", log_in_path %>
+        <%= link_to "Registreren", sign_up_path %> of 
+        <%= link_to "Inloggen", log_in_path %>
       <% end %>
       </div>
       <%= link_to "Profiel bekijken", current_user %>
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash#{name}" %>
-      <% end %>
-      <div class="logo">
-      <%= image_tag "logo.png" ,class: "img-responsive logo" ,alt: "logo met elkaar"%>
-        <div class="row">
-          <h3><span class="label label-info"><i class="fa fa-code"></i> versie 0.1 beta</span></h3>
-        </div> 
-      </div><!-- end of logo -->
+      <% end %> -->
       <div id="menu">
         <ul>
           <li>
-            <h3><span class="icon-dashboard"></span>Dashboard</h3>
-            <ul>
-              <li><a href="#">Reports</a></li>
-              <li><a href="#">Search</a></li>
-              <li><a href="#">Graphs</a></li>
-              <li><a href="#">Settings</a></li>
-            </ul>
+            <h3><i class="fa fa-home"></i> Startpagina</h3>
           </li>
           <!-- we will keep this LI open by default -->
-          <li>
-            <h3><span class="icon-tasks"></span>Tasks</h3>
+          <li class="active">
+            <h3><i class="fa fa-flag"></i> Activiteiten <i class="fa fa-chevron-down"></i></h3>
             <ul>
-              <li><a href="#">Today's tasks</a></li>
-              <li><a href="#">Urgent</a></li>
-              <li><a href="#">Overdues</a></li>
+              <li><a href="#"><i class="fa fa-list"></i> Activiteiten overzicht</a></li>
+              <li><a href="#"><i class="fa fa-plus-square"></i> Activiteiten aanmaken</a></li>
+              <li><a href="#"><i class="fa fa-comments-o"></i> Openbare activiteiten</a></li>
             </ul>
           </li>
           <li>
-            <h3><span class="icon-calendar"></span>Calendar</h3>
+            <h3><i class="fa fa-map-marker"></i> Hotspots</h3>
             <ul>
-              <li><a href="#">Current Month</a></li>
-              <li><a href="#">Current Week</a></li>
-              <li><a href="#">Previous Month</a></li>
+              <li><a href="#"><i class="fa fa-list"></i> Activiteiten overzicht</a></li>
+              <li><a href="#"><i class="fa fa-plus-square"></i> Activiteiten aanmaken</a></li>
+              <li><a href="#"><i class="fa fa-comments-o"></i> Openbare activiteiten bekijken</a></li>
             </ul>
           </li>
           <li>
-            <h3><span class="icon-heart"></span>Favourites</h3>
+            <h3><i class="fa fa-users"></i></span> Contacten</h3>
+            <ul>
+              <li><a href="#">Global favs</a></li>
+              <li><a href="#">My favs</a></li>
+            </ul>
+          </li>
+          <li>
+            <h3><i class="fa fa-question-circle"></i></span> Hulp</h3>
             <ul>
               <li><a href="#">Global favs</a></li>
               <li><a href="#">My favs</a></li>
@@ -77,7 +74,6 @@
     <div class="col-md-10">
       <%= yield %>
     </div> <!--end of col-md-10-->
-  </div> <!-- end page header -->
 </div> <!-- end page container -->
 </body>
 </html>

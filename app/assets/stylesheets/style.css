@@ -1,15 +1,14 @@
-@import url(http://fonts.googleapis.com/css?family=Montserrat);
 /* Global*/
 body {
 	/*rest wordt uit bootstrap body gehaald > nog aanpassen?*/
 	padding-bottom: 50px;
+	height:100%;
 	/*padding-top: 110px; nodig wanneer nav op static wordt gezet!*/
 }
 .bg {
 	background-color: #ecf0f1;
 	overflow: hidden !important;
 }
-
 #container {
 	margin: 0;
 	padding: 0;
@@ -25,13 +24,8 @@ body {
 	margin: 0 15px 0 0;
 }
 .logo {
-	padding: 10px 0 0 0;
+	padding: 5px 0;
 	margin: auto;
-}
-.logo1 {
-	width: 60%;
-	height: auto;
-	float: left;
 }
 .tekstheader {
 	width: 40%;
@@ -46,7 +40,8 @@ body {
 }
 
 #gmaps-canvas {
-  height: 400px !important; 
+  height: 400px !important;
+  margin: 10px 0 0 0;
   border: 1px solid #999;
   -moz-box-shadow:    0px 0px 5px #ccc;
   -webkit-box-shadow: 0px 0px 5px #ccc;
@@ -86,10 +81,57 @@ li.grey {
 	float: right;
 	cursor: pointer;
 }
-
+.full-height {
+	background-color: #15b374;
+	max-height: 100%;
+	position: fixed;
+}
 /* MENU */
+.padding-for-menu-col2{
+	padding: 0;
+	-webkit-box-shadow: 3px 0px 5px -2px #888 ;
+}
+#menu {
+	background: #2d3033;
+	width: 100%;
+	height: 100%;
+}
+#menu ul{
+	padding: 0;
+}
 #menu ul ul {
 	display: none;
+	padding: 0;
+}
+#menu li.active ul {
+	display: block;
+}
+#menu li {
+	list-style-type: none;
+}
+#menu h3 {
+	font-size: 1.3em;
+	line-height: 40px;
+	padding: 0 10px;
+	margin: 0;
+	color: #f6f6f6;
+	cursor: pointer;
+	background-color: #15b374;
+	/*border-bottom:2px solid #25a25a;*/
+}
+/*links*/
+#menu ul ul li a {
+	color: white;
+	text-decoration: none;
+	font-size: 13px;
+	line-height: 35px;
+	display: block;
+	padding: 0 10px;
+}
+/*hover effect on links*/
+#menu ul ul li a:hover {
+	background: #31353c;
+	border-right: 5px solid #7fcaac;
 }
 #menu li.active ul {
 	display: block;

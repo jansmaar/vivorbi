@@ -1,12 +1,57 @@
+<div class="page-header">
+  <h3>Activiteit <%= @event.title %> </h3>
+  </div>
 
-      <%= @event.title %></br>
-      <%= @event.content %></br>
-      <%= @event.location %></br>
-      <%= @event.eventdate %></br>
-      <%= @event.eventtime %></br>
-      
-      
-      <%= link_to 'Back', events_path %>
+  <div class="row">
+      <div class="col-md-5 border">
+        <div class="form-group">
+          
+        </div>
+        <div class="row margin-for-date">
+          <div class="col-xs-7">
+             
+              <i class="fa fa-calendar"></i>
+             <%= @event.eventdate.strftime("%d %B %Y") %>
+          </div>
+            <div class="col-xs-5">
+              <i class="fa fa-clock-o"></i>
+                <%= @event.eventtime.strftime("%H:%M") %>
+            </div>
+        </div>
+        <div class="form-group">
+          <label for="type"><h4>Dag uitje</h4></label>
+          
+        </div>
+        <div class="form-group">
+          <label for="type">Omschrijving</label><br>
+          <%= @event.content %>
+        </div>
+        <div class="form-group">
+               <label for="type">Locatie</label><br>
+          <i class="fa fa-map-marker"></i>
+          <%= @event.location %>
+          <span class="help-block"><em>Eventueel extra informatie over deze functie</em></span>
+              <div id='gmaps-error'></div>
+            </div>
 
+        <div class="form-group">
+          <label for="">Genodigden</label>
+          <i class="fa fa-user"></i>
+          <div class="input-group">
+            <input type="text" class="form-control" id="tags" name="message" placeholder="Zoeken naar gebruikers..">
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-success" id="add"><i class="fa fa-plus fa-lg"></i> Uitnodigen</button>
+              </span>
+            </div>
+          <!-- <button type="button" class="btn btn-success" id="add"> <i class="fa fa-plus fa-lg"></i> Uitnodigen</button> -->
+        </div>
+        <!-- autofill met namen -->
+        <ul id="addperson">
+        </ul>
+      </div>
+        <div class="col-md-7 visible-md visible-lg">
+        <div id='gmaps-canvas'></div>
+        <bold>Locatie van de activiteit</bold> - <em>sleep de <abbr title="het pijltje">pin</abbr> op de kaart als u locatie nauwkeurig wilt wijzigen</em> 
+        </div>
+  </div>  
 
-<%= link_to 'aanpassen' , edit_event_path %>

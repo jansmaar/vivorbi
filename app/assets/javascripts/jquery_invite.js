@@ -58,11 +58,13 @@ $(document).ready(function(){
 
     $("#menu h3").click(function(){
         //slide up all the link lists
+        $(":nth-child(2)", "#menu ul li h3").addClass('fa fa-chevron-down pull-right');
         $("#menu ul ul").slideUp();
         //slide down the link list below the h3 clicked - only if its closed
         if(!$(this).next().is(":visible"))
-        {
+        {      
             $(this).next().slideDown();
+            $(":nth-child(2)", this).removeClass('fa fa-chevron-down pull-right').addClass('fa fa-chevron-up pull-right');
         }
     });
 });

@@ -13,15 +13,17 @@ body {
 	margin: 0;
 	padding: 0;
 }
-/* profielgedeelte */
-.profiel {
-	/*float: right;*/
-	margin: auto;
-	/*padding: 25px 0 0 0;*/
+/* PROFIEL*/
+.profiel h3 {
+	margin-top: 17px;
+	margin-bottom: 1px;
 }
 .profielfoto {
-	border: solid 1px rgba(0,0,0,0.1);
-	margin: 0 15px 0 0;
+	border: solid 3px rgba(0,0,0,0.1);
+	margin: 0 10px 0 0;
+}
+.uitloggen h4 {
+	margin: 19px 0 0 0;
 }
 .logo {
 	padding: 5px 0;
@@ -135,4 +137,47 @@ li.grey {
 }
 #menu li.active ul {
 	display: block;
+}
+
+/* STARTPAGINA */
+.nieuws {
+	background-color: #f7f7f7;
+}
+.activiteit-eigen {
+	background-color: #e6f1f2;
+	padding: 5px 0 1px 5px ;
+	margin-top: 15px;
+}
+.activiteit-eigen h3 {
+	margin-top: 0px;
+}
+.activiteit-algemeen {
+	background-color: #f8f5e7;
+	padding: 5px ;
+	margin-top: 15px;
+}
+.activiteit-algemeen h3 {
+	margin-top: 0px;
+}
+select {
+	margin-right: 4px;
+}
+.activiteit {
+	/*padding-left: 5px;*/
+	margin-top: 0px;
+	border-left: 3px solid #eee;
+}
+.activiteit-prive {
+	border-color: #e6f1f2;
+	padding-left: 5px;
+	padding-bottom: 13px;
+	padding-top: 5px;
+	margin: 10px 0;
+}
+.activiteit-open {
+	border-color: #f8f5e7;
+	padding-left: 5px;
+	padding-bottom: 13px;
+	padding-top: 5px;
+	margin: 10px 0;
 }

@@ -140,6 +140,22 @@ li.grey {
 }
 
 /* STARTPAGINA */
+.sorteren-blok {
+	margin-top: 15px;
+	width: 20%;
+	float: left;
+}
+.zoeken-blok {
+	margin-top: 15px;
+	width: 40%;
+	float: left;
+}
+.lijst-blok{
+	margin-top: 15px;
+	width: 25%;
+	float: right;
+	text-align: right;
+}
 .nieuws {
 	background-color: #f7f7f7;
 }
@@ -165,7 +181,7 @@ select {
 .activiteit {
 	/*padding-left: 5px;*/
 	margin-top: 0px;
-	border-left: 3px solid #eee;
+	border-left: 4px solid #eee;
 }
 .activiteit-prive {
 	border-color: #e6f1f2;
@@ -180,4 +196,18 @@ select {
 	padding-bottom: 13px;
 	padding-top: 5px;
 	margin: 10px 0;
+}
+.tijd-tot {
+	float: right;
+	height: auto;
+	width: auto;
+	margin-top: 8px;
+	padding: 3px;
+}
+.scheiding {
+	border-top: 2px solid rgba(192,192,192,0.1);
+	border-top-width: 90%;
+}
+.nul-padding {
+	padding-left: 0;
 }

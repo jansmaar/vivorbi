@@ -5,7 +5,9 @@ Vivorbi::Application.routes.draw do
   get "sign_up" => "users#new", :as => "sign_up"
 
 
-  	
+  	resources :users do
+  		resources :events
+  		end
   	resources :users
   	resources :sessions 
 	resources :events

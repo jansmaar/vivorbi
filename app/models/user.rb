@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	
+	has_many :events
 	attr_accessor :password
 	before_save :encrypt_password
   

@@ -25,12 +25,6 @@
   </form>
   </div>
 
-  <div class="lijst-blok">
-  Lijst- of blokweergave<br>
-  <i class="fa fa-th-list fa-lg"></i> <i class="fa fa-th fa-lg"></i>  
-
-  </div>
-
   <div class="clearfix"></div>
 
   <div class="activiteit-eigen">
@@ -51,6 +45,7 @@
     <h4><%= start.title %></h4>
     <i class="fa fa-flag"></i> Daguitje <i class="fa fa-calendar"></i> <%= start.eventdate %> <i class="fa fa-map-marker"></i> <%= start.location %>
   </div>
+  <%= link_to 'Verwijderen', start, :method => :delete %>
   <div class="scheiding"></div>
   <% end %>
 
@@ -87,7 +82,7 @@
 
 
 
- <!--  <div id="user_nav">
+<div id="user_nav">
       <% if current_user %>
         Aangemeld als <%= current_user.email %>
         <%= link_to "Afmelden", log_out_path %>
@@ -99,4 +94,4 @@
       <%= link_to "Profiel bekijken", current_user %>
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash#{name}" %>
-      <% end %> -->
+      <% end %>

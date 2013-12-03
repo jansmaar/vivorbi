@@ -100,16 +100,20 @@ li.grey {
 }
 #menu ul{
 	padding: 0;
+	white-space: no-wrap;
 }
 #menu ul ul {
 	display: none;
 	padding: 0;
+	white-space: no-wrap;
 }
 #menu li.active ul {
 	display: block;
+	white-space: no-wrap;
 }
 #menu li {
 	list-style-type: none;
+	white-space: no-wrap;
 }
 #menu h3 {
 	font-size: 1.3em;
@@ -149,12 +153,6 @@ li.grey {
 	margin-top: 15px;
 	width: 40%;
 	float: left;
-}
-.lijst-blok{
-	margin-top: 15px;
-	width: 25%;
-	float: right;
-	text-align: right;
 }
 .nieuws {
 	background-color: #f7f7f7;

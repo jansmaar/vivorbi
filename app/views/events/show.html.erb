@@ -43,6 +43,12 @@
                   <button type="button" class="btn btn-success" id="add"><i class="fa fa-plus fa-lg"></i> Uitnodigen</button>
               </span>
             </div>
+      <div class="edit_event">  
+      <% if current_user.id == @event.user_id %>
+      <%= link_to 'Eigen activiteit aanpassen of verwijderen', edit_event_path %> 
+      <% end %>
+      </div>
+
           <!-- <button type="button" class="btn btn-success" id="add"> <i class="fa fa-plus fa-lg"></i> Uitnodigen</button> -->
         </div>
         <!-- autofill met namen -->

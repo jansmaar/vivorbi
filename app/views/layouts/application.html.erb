@@ -19,19 +19,20 @@
       <div class="logo">
       <%= image_tag "logo.png" ,class: "img-responsive logo" ,alt: "logo met elkaar"%>
       </div><!-- end of logo -->
-      <!--  <div id="user_nav">
+      <div id="user_nav">
       <% if current_user %>
         Aangemeld als <%= current_user.email %>
-        <%= link_to "Afmelden", log_out_path %>
+        <%= link_to "Afmelden", log_out_path %> |
+        <%= link_to "Profiel bekijken", current_user %>
       <% else %>
         <%= link_to "Registreren", sign_up_path %> of 
         <%= link_to "Inloggen", log_in_path %>
       <% end %>
       </div>
-      <%= link_to "Profiel bekijken", current_user %>
+      
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash#{name}" %>
-      <% end %> -->
+      <% end %>
       <div id="menu">
         <ul>
           <li>

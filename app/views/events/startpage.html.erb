@@ -82,16 +82,3 @@
 
 
 
-<div id="user_nav">
-  <% if current_user %>
-    Aangemeld als <%= current_user.email %>
-    <%= link_to "Afmelden", log_out_path %>
-  <% else %>
-  <%= link_to "Registreren", sign_up_path %> of 
-  <%= link_to "Inloggen", log_in_path %>
-  <% end %>
-</div>
-  <%= link_to "Profiel bekijken", current_user %>
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, :id => "flash#{name}" %>
-<% end %>

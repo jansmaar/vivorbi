@@ -31,6 +31,7 @@ def create
 end
 
 def edit
+	if current_user
 	@event = Event.find(params[:id])
 	unless current_user[:id] == @event.user.id
 	flash[:error] = "Sorry geen rechten!"
@@ -38,7 +39,11 @@ def edit
 	return
 	
 	end
-	
+	else
+	flash[:error] = "Sorry geen rechten!"
+	redirect_to root_path
+	end
+	end
 	
 	
 	#@event == current_user.id?
@@ -78,7 +83,6 @@ end
 def validates_user
 	redirect_to root_url unless current_user.id.to_s == params[:id]
 	end
-end
 
 	#unless current_user[:id] == @event.user.id
 	#flash[:notice] = "hallo martin!"

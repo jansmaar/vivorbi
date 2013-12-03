@@ -16,6 +16,10 @@ def index
   
 end
 
+def startpage
+	@events = Event.all
+end
+
 def create
 	@event = Event.new(event_params)
 	@event.save

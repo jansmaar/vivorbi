@@ -205,9 +205,44 @@ select {
 	padding: 3px;
 }
 .scheiding {
-	border-top: 2px solid rgba(192,192,192,0.1);
+	border-top: 2px solid rgba(192,192,192,0.3);
 	border-top-width: 90%;
 }
 .nul-padding {
 	padding-left: 0;
 }
+.fa-chevron-up, .fa-chevron-down {
+	padding-top: 9px;
+} 
+/*.bttnn {
+  display: inline-block;
+  vertical-align: top;
+  height: 45px;
+  line-height: 1;
+  padding: 0 16px;
+  font-size: 16px;
+  color: #243140;
+  text-align: center;
+  text-shadow: 0 1px rgba(255,255,255,0.2);
+  background: #e5e7ed;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.bttnn-green {
+  color: white;
+  text-shadow: 0 1px rgba(0,0,0,0.08);
+  background: #27ae60;
+}
+.bttnn-large {
+	width: 100%;
+}
+.bttnn-green:hover {
+  color: white;
+  text-shadow: 0 1px rgba(0,0,0,0.08);
+  background: #2e9d5d;
+}*/

@@ -35,7 +35,7 @@
 
   <div class="activiteit-eigen">
     <h3>Activiteiten</h3>
-    <p>U heeft <span class="badge">2</span> activiteiten waar u binnen 
+    <p>U heeft <span class="badge"><%= @events.length %></span> activiteiten waar u binnen 
     <select>
       <option value="5">5</option> 
       <option value="10">10</option>
@@ -45,18 +45,14 @@
     dagen aan deelneemt.
     </p>
   </div>
-
+  <% @events.each do |start| %>
   <div class="activiteit activiteit-prive">
     <div class="tijd-tot"><i class="fa fa-calendar-o"></i> over <em>3</em> dagen </div>
-    <h4>Bezoek aan het rijksmuseum</h4>
-    <i class="fa fa-flag"></i> Daguitje <i class="fa fa-calendar"></i> 26 november 2013 <i class="fa fa-map-marker"></i> Rijksmuseum Amsterdam
+    <h4><%= start.title %></h4>
+    <i class="fa fa-flag"></i> Daguitje <i class="fa fa-calendar"></i> <%= start.eventdate %> <i class="fa fa-map-marker"></i> <%= start.location %>
   </div>
   <div class="scheiding"></div>
-  <div class="activiteit activiteit-prive">
-  <div class="tijd-tot"><i class="fa fa-calendar-o"></i> over <em>6</em> dagen </div>
-    <h4>Bezoek aan het rijksmuseum</h4>
-    <i class="fa fa-flag"></i> Daguitje <i class="fa fa-calendar"></i> 26 november 2013 <i class="fa fa-map-marker"></i> Rijksmuseum Amsterdam 
-  </div>
+  <% end %>
 
   <div class="activiteit-algemeen">
     <h3>Interessante activiteiten binnen uw gemeente(s)</h3>

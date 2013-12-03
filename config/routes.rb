@@ -3,7 +3,7 @@ Vivorbi::Application.routes.draw do
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "sign_up" => "users#new", :as => "sign_up"
-  get "startpage" => "events#view", :as => "startpage"
+  get "startpage" => "events#startpage", :as => "startpage"
 
 
   	
@@ -12,7 +12,7 @@ Vivorbi::Application.routes.draw do
 	resources :events
 	
 
-root "events#view"
+root "events#startpage"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

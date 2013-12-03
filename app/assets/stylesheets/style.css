@@ -1,37 +1,33 @@
-@import url(http://fonts.googleapis.com/css?family=Montserrat);
 /* Global*/
 body {
 	/*rest wordt uit bootstrap body gehaald > nog aanpassen?*/
 	padding-bottom: 50px;
+	height:100%;
 	/*padding-top: 110px; nodig wanneer nav op static wordt gezet!*/
 }
 .bg {
 	background-color: #ecf0f1;
 	overflow: hidden !important;
 }
-
 #container {
 	margin: 0;
 	padding: 0;
 }
-/* profielgedeelte */
-.profiel {
-	/*float: right;*/
-	margin: auto;
-	/*padding: 25px 0 0 0;*/
+/* PROFIEL*/
+.profiel h3 {
+	margin-top: 17px;
+	margin-bottom: 1px;
 }
 .profielfoto {
-	border: solid 1px rgba(0,0,0,0.1);
-	margin: 0 15px 0 0;
+	border: solid 3px rgba(0,0,0,0.1);
+	margin: 0 10px 0 0;
+}
+.uitloggen h4 {
+	margin: 19px 0 0 0;
 }
 .logo {
-	padding: 10px 0 0 0;
+	padding: 5px 0;
 	margin: auto;
-}
-.logo1 {
-	width: 60%;
-	height: auto;
-	float: left;
 }
 .tekstheader {
 	width: 40%;
@@ -46,7 +42,8 @@ body {
 }
 
 #gmaps-canvas {
-  height: 400px !important; 
+  height: 400px !important;
+  margin: 10px 0 0 0;
   border: 1px solid #999;
   -moz-box-shadow:    0px 0px 5px #ccc;
   -webkit-box-shadow: 0px 0px 5px #ccc;
@@ -86,11 +83,166 @@ li.grey {
 	float: right;
 	cursor: pointer;
 }
-
+.full-height {
+	background-color: #15b374;
+	max-height: 100%;
+	position: fixed;
+}
 /* MENU */
+.padding-for-menu-col2{
+	padding: 0;
+	-webkit-box-shadow: 3px 0px 5px -2px #888 ;
+}
+#menu {
+	background: #2d3033;
+	width: 100%;
+	height: 100%;
+}
+#menu ul{
+	padding: 0;
+}
 #menu ul ul {
 	display: none;
+	padding: 0;
 }
 #menu li.active ul {
 	display: block;
 }
+#menu li {
+	list-style-type: none;
+}
+#menu h3 {
+	font-size: 1.3em;
+	line-height: 40px;
+	padding: 0 10px;
+	margin: 0;
+	color: #f6f6f6;
+	cursor: pointer;
+	background-color: #15b374;
+	/*border-bottom:2px solid #25a25a;*/
+}
+/*links*/
+#menu ul ul li a {
+	color: white;
+	text-decoration: none;
+	font-size: 13px;
+	line-height: 35px;
+	display: block;
+	padding: 0 10px;
+}
+/*hover effect on links*/
+#menu ul ul li a:hover {
+	background: #31353c;
+	border-right: 5px solid #7fcaac;
+}
+#menu li.active ul {
+	display: block;
+}
+
+/* STARTPAGINA */
+.sorteren-blok {
+	margin-top: 15px;
+	width: 20%;
+	float: left;
+}
+.zoeken-blok {
+	margin-top: 15px;
+	width: 40%;
+	float: left;
+}
+.lijst-blok{
+	margin-top: 15px;
+	width: 25%;
+	float: right;
+	text-align: right;
+}
+.nieuws {
+	background-color: #f7f7f7;
+}
+.activiteit-eigen {
+	background-color: #e6f1f2;
+	padding: 5px 0 1px 5px ;
+	margin-top: 15px;
+}
+.activiteit-eigen h3 {
+	margin-top: 0px;
+}
+.activiteit-algemeen {
+	background-color: #f8f5e7;
+	padding: 5px ;
+	margin-top: 15px;
+}
+.activiteit-algemeen h3 {
+	margin-top: 0px;
+}
+select {
+	margin-right: 4px;
+}
+.activiteit {
+	/*padding-left: 5px;*/
+	margin-top: 0px;
+	border-left: 4px solid #eee;
+}
+.activiteit-prive {
+	border-color: #e6f1f2;
+	padding-left: 5px;
+	padding-bottom: 13px;
+	padding-top: 5px;
+	margin: 10px 0;
+}
+.activiteit-open {
+	border-color: #f8f5e7;
+	padding-left: 5px;
+	padding-bottom: 13px;
+	padding-top: 5px;
+	margin: 10px 0;
+}
+.tijd-tot {
+	float: right;
+	height: auto;
+	width: auto;
+	margin-top: 8px;
+	padding: 3px;
+}
+.scheiding {
+	border-top: 2px solid rgba(192,192,192,0.3);
+	border-top-width: 90%;
+}
+.nul-padding {
+	padding-left: 0;
+}
+.fa-chevron-up, .fa-chevron-down {
+	padding-top: 9px;
+} 
+/*.bttnn {
+  display: inline-block;
+  vertical-align: top;
+  height: 45px;
+  line-height: 1;
+  padding: 0 16px;
+  font-size: 16px;
+  color: #243140;
+  text-align: center;
+  text-shadow: 0 1px rgba(255,255,255,0.2);
+  background: #e5e7ed;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.bttnn-green {
+  color: white;
+  text-shadow: 0 1px rgba(0,0,0,0.08);
+  background: #27ae60;
+}
+.bttnn-large {
+	width: 100%;
+}
+.bttnn-green:hover {
+  color: white;
+  text-shadow: 0 1px rgba(0,0,0,0.08);
+  background: #2e9d5d;
+}*/

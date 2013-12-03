@@ -1,0 +1,102 @@
+<div class="page-header">
+  <h2>Startpagina</h2>
+</div>
+
+<div class="col-md-9 nul-padding">
+  <div class="clearfix profiel">
+    <img src="http://placecreature.com/kitten/85/85" alt="profile" class="pull-left img-circle profielfoto">
+      <h3>Welkom Meneer <strong>John Doe</strong></h3>
+      Uw laatste bezoek was op vrijdag 29 november 2013 om 14:38
+  </div>
+
+  <div class="sorteren-blok">
+  Sorteer op: <br>
+  <select>
+      <option value="Aflopend">Aflopend</option> 
+      <option value="Oplopend">Oplopend</option>
+    </select>
+  </div>
+
+  <div class="zoeken-blok">
+  Zoek op plaats: <br>
+  <form>
+  <input name="search" type="search" placeholder="Zoek op woonplaats">
+  <input type="submit" value="search">
+  </form>
+  </div>
+
+  <div class="lijst-blok">
+  Lijst- of blokweergave<br>
+  <i class="fa fa-th-list fa-lg"></i> <i class="fa fa-th fa-lg"></i>  
+
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="activiteit-eigen">
+    <h3>Activiteiten</h3>
+    <p>U heeft <span class="badge"><%= @events.length %></span> activiteiten waar u binnen 
+    <select>
+      <option value="5">5</option> 
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="20">20</option>
+    </select>
+    dagen aan deelneemt.
+    </p>
+  </div>
+  <% @events.each do |start| %>
+  <div class="activiteit activiteit-prive">
+    <div class="tijd-tot"><i class="fa fa-calendar-o"></i> over <em>3</em> dagen </div>
+    <h4><%= start.title %></h4>
+    <i class="fa fa-flag"></i> Daguitje <i class="fa fa-calendar"></i> <%= start.eventdate %> <i class="fa fa-map-marker"></i> <%= start.location %>
+  </div>
+  <div class="scheiding"></div>
+  <% end %>
+
+  <div class="activiteit-algemeen">
+    <h3>Interessante activiteiten binnen uw gemeente(s)</h3>
+    <p>
+    Binnen de gemeente <strong>Smallingerland</strong> zijn <span class="badge">3</span> interessante activiteiten binnen uw <a href="#">interesseprofiel</a>.
+    Grootste plaatsen binnen deze gemeente: 1. Drachten 2. Boornbergum 3. Opeinde 4. Oudega
+    </p>
+  </div>
+
+  <div class="activiteit activiteit-open">
+  <div class="tijd-tot"><i class="fa fa-calendar-o"></i> over <em>7</em> dagen </div>
+    <h4>Schaken in het buurthuis</h4>
+    <i class="fa fa-flag"> Avondactiviteit</i> <i class="fa fa-calendar"> 5 december 2013</i> <i class="fa fa-map-marker"> Drachten</i>
+  </div>
+
+  <p>Geen interessante activiteit gevonden? Heeft u zelf een leuke activiteit?</p>
+  <button type="button" class="btn btn-primary btn-lg btn-block">Activiteit aanmaken</button>
+
+</div>
+
+  
+<div class="col-md-3 nieuws">
+<h3>Nieuws</h3>
+    <h5>Systeemonderhoud</h5>
+    <p>
+      <i class="fa fa-calendar"> 26 november 2013</i> <i class="fa fa-clock-o"> 18:43</i>
+    </p>
+    <p>Dragée sweet roll pie powder wafer jelly powder. Chocolate cake macaroon unerdwear.com tootsie roll fruitcake biscuit chocolate candy canes. Muffin cake liquorice topping halvah bonbon. Ice cream apple pie apple pie marzipan biscuit jelly-o sugar plum.<br>
+    Apple pie fruitcake jelly jelly bear claw danish. Cupcake icing sweet biscuit tart brownie gingerbread. Tootsie roll soufflé marzipan tiramisu gummies.</p>
+</div>
+
+
+
+
+ <!--  <div id="user_nav">
+      <% if current_user %>
+        Aangemeld als <%= current_user.email %>
+        <%= link_to "Afmelden", log_out_path %>
+      <% else %>
+        <%= link_to "Registreren", sign_up_path %> of 
+        <%= link_to "Inloggen", log_in_path %>
+      <% end %>
+      </div>
+      <%= link_to "Profiel bekijken", current_user %>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash#{name}" %>
+      <% end %> -->

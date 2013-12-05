@@ -1,0 +1,17 @@
+<%= form_for(@user) do |f| %>
+
+
+ <%= f.label :email, "E-mail" %>
+ <%= f.text_field :email %><br/>
+ 
+ <%= f.label :firstname, "Voornaam" %>
+ <%= f.text_field :firstname %><br/>
+ 
+  <%= f.label :lastname, "Achternaam" %>
+ <%= f.text_field :lastname %><br/>
+ 
+   <%= f.submit 'aanpassen'%>
+
+ 
+ <% end %>
+ 

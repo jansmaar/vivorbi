@@ -1,6 +1,6 @@
 /* Global*/
 body {
-	/*rest wordt uit bootstrap body gehaald > nog aanpassen?*/
+	background-color: #c6d1d3;
 	padding-bottom: 50px;
 	height:100%;
 	/*padding-top: 110px; nodig wanneer nav op static wordt gezet!*/
@@ -13,14 +13,26 @@ body {
 	margin: 0;
 	padding: 0;
 }
+.col-sm-9, .col-md-9 {
+	background-color: #eef2f5;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
 /* PROFIEL*/
 .profiel h3 {
 	margin-top: 17px;
 	margin-bottom: 1px;
 }
+.profielbox {
+	margin-bottom: 15px;
+}
+.profielbox p {
+	margin-top: 18px;
+}
 .profielfoto {
+	margin-right: 5px;
 	border: solid 3px rgba(0,0,0,0.1);
-	margin: 0 10px 0 0;
 }
 .uitloggen h4 {
 	margin: 19px 0 0 0;
@@ -94,7 +106,7 @@ li.grey {
 	-webkit-box-shadow: 3px 0px 5px -2px #888 ;
 }
 #menu {
-	background: #2d3033;
+	background: #30485f;
 	width: 100%;
 	height: 100%;
 }
@@ -125,6 +137,16 @@ li.grey {
 	background-color: #15b374;
 	/*border-bottom:2px solid #25a25a;*/
 }
+#menu h3:hover {
+	font-size: 1.3em;
+	line-height: 40px;
+	padding: 0 10px;
+	margin: 0;
+	color: #f6f6f6;
+	cursor: pointer;
+	background-color: #7fcaac;
+	/*border-bottom:2px solid #25a25a;*/
+}
 /*links*/
 #menu ul ul li a {
 	color: white;
@@ -136,8 +158,8 @@ li.grey {
 }
 /*hover effect on links*/
 #menu ul ul li a:hover {
-	background: #31353c;
-	border-right: 5px solid #7fcaac;
+	background: #3f5c79;
+	border-right: 5px solid #15b374;
 }
 #menu li.active ul {
 	display: block;
@@ -154,13 +176,13 @@ li.grey {
 	width: 40%;
 	float: left;
 }
-.nieuws {
-	background-color: #f7f7f7;
-}
 .activiteit-eigen {
-	background-color: #e6f1f2;
+	background-color: rgba(0, 188, 119, 0.4);
 	padding: 5px 0 1px 5px ;
 	margin-top: 15px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
 }
 .activiteit-eigen h3 {
 	margin-top: 0px;
@@ -176,17 +198,22 @@ li.grey {
 select {
 	margin-right: 4px;
 }
+/* ACTIVITEITEN */
 .activiteit {
 	/*padding-left: 5px;*/
 	margin-top: 0px;
 	border-left: 4px solid #eee;
 }
 .activiteit-prive {
-	border-color: #e6f1f2;
+	border-color: rgba(0, 188, 119, 0.4);
 	padding-left: 5px;
 	padding-bottom: 13px;
-	padding-top: 5px;
+	padding-top: 3px;
 	margin: 10px 0;
+	background-color: #ffffff;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
 }
 .activiteit-open {
 	border-color: #f8f5e7;
@@ -199,7 +226,7 @@ select {
 	float: right;
 	height: auto;
 	width: auto;
-	margin-top: 8px;
+	margin: 10px 3px 0 0;
 	padding: 3px;
 }
 .scheiding {
@@ -212,6 +239,30 @@ select {
 .fa-chevron-up, .fa-chevron-down {
 	padding-top: 9px;
 } 
+
+
+
+
+
+
+/*UNCOMMITED by JORIK 9 dec 2013 */
+
+/*img{
+	position: relative;
+	width: 150px;
+	height: 150px;
+	border-radius: 75px;
+	-webkit-border-radius: 75px;
+	-moz-border-radius: 75px;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+#userinfo{
+	border: 1px solid gray;
+	padding: 10px;
+}*/
+
 /*.bttnn {
   display: inline-block;
   vertical-align: top;

@@ -1,8 +1,13 @@
 class User < ActiveRecord::Base
 	has_many :events
 	attr_accessor :password
-	before_save :encrypt_password
-  
+  has_attached_file :avatar,
+  :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
+      :url => "/system/:attachment/:id/:style/:filename"
+ 	before_save :encrypt_password
+	
+	
+ 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
   validates_presence_of :email

@@ -14,6 +14,7 @@ gem "font-awesome-rails"
 gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
 gem 'ransack'
+gem "paperclip", "~> 3.5.0"
 
 gem 'sqlite3', :require => 'sqlite3'
 gem "bcrypt-ruby", :require => "bcrypt"

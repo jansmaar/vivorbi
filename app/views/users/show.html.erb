@@ -1,7 +1,13 @@
-<%= @user.email %> <br/>
 
-<%= @user.firstname %> <br/>
- 
+<div id="userinfo">
+<div id="avatar"><%= image_tag @user.avatar.url %></div>
+<p>uw gegevens:</p>
+
+<p> De heer of mevrouw</p><%= @user.firstname %> 
 <%= @user.lastname %> <br/>
 
-      <%= link_to 'Uw gegevens aanpassen', edit_user_path %> 
+<p> E-mail adres: <%= @user.email %> </p><br/></div>
+ 
+
+<%= link_to 'Uw gegevens aanpassen', edit_user_path %> 
+

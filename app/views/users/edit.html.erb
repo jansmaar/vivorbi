@@ -1,5 +1,4 @@
-<%= form_for(@user) do |f| %>
-
+<%= form_for @user, :html => { :multipart => true }  do |f| %>
 
  <%= f.label :email, "E-mail" %>
  <%= f.text_field :email %><br/>
@@ -9,9 +8,10 @@
  
   <%= f.label :lastname, "Achternaam" %>
  <%= f.text_field :lastname %><br/>
+
+
+ <%= f.file_field :avatar %><br/>
  
    <%= f.submit 'aanpassen'%>
 
- 
  <% end %>
- 

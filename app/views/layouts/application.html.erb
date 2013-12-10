@@ -21,7 +21,7 @@
       </div><!-- end of logo -->
       <div class="clearfix profielbox">
       
-      <img src="http://placecreature.com/kitten/85/85" alt="profile" class="pull-left img-circle profielfoto">  
+      <%= image_tag current_user.avatar.url, :class => "pull-left img-circle profielfoto profielfoto-user" %>
 
         <p class="profielbox">
         <% if current_user %>

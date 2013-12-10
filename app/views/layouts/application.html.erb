@@ -20,8 +20,9 @@
       <%= image_tag "logo.png" ,class: "img-responsive logo" ,alt: "logo met elkaar"%>
       </div><!-- end of logo -->
       <div class="clearfix profielbox">
-      
+      <% if current_user %>
       <%= image_tag current_user.avatar.url, :class => "pull-left img-circle profielfoto profielfoto-user" %>
+      <% end %>
 
         <p class="profielbox">
         <% if current_user %>

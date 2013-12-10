@@ -21,13 +21,16 @@
       </div><!-- end of logo -->
       <div class="clearfix profielbox">
       <% if current_user %>
-      <%= image_tag current_user.avatar.url, :class => "pull-left img-circle profielfoto profielfoto-user" %>
+      <%= image_tag current_user.avatar.url, :class => "pull-left img-circle profielfoto profielfoto-menu" %>
       <% end %>
 
         <p class="profielbox">
-        <% if current_user %>
-        Aangemeld als <%= current_user.firstname %> <%= current_user.lastname %>
-        <%= link_to "Profiel bekijken", current_user %> <i class="fa fa-spinner fa-spin"></i>
+        <% if current_user %> 
+        Aangemeld als:
+        <br>
+        <strong><%= current_user.firstname %> <%= current_user.lastname %></strong>
+        <br>
+        <%= link_to "Profiel bekijken", current_user %> |
         <%= link_to "Afmelden", log_out_path %> 
       <% else %>
         <%= link_to "Registreren", sign_up_path %> of 

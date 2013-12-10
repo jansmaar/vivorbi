@@ -1,13 +1,45 @@
+<%= image_tag @user.avatar.url, :class => "pull-left img-circle profielfoto profielfoto-user" %>
+<h2><%= @user.firstname %> <%= @user.lastname %></h2>
 
-<div id="userinfo">
-<div id="avatar"><%= image_tag @user.avatar.url %></div>
-<p>uw gegevens:</p>
+<%= link_to 'Profiel aanpassen', edit_user_path, :class => "pull-right btn btn-default" %>
+<%= link_to 'Wachtwoord wijzigen', edit_user_path, :class => "pull-right btn btn-default" %>
 
-<p> De heer of mevrouw</p><%= @user.firstname %> 
-<%= @user.lastname %> <br/>
+<p>
+	Gebruikersnaam: <%= @user.firstname %> <%= @user.lastname %><br>
+	Aangemeld sinds <%= @user.created_at.strftime("%-d %B %Y").downcase%>
+</p>
 
-<p> E-mail adres: <%= @user.email %> </p><br/></div>
- 
+<div class="achtergrond-h3">
+	<h3>Algemene informatie</h3>	
+</div>
 
-<%= link_to 'Uw gegevens aanpassen', edit_user_path %> 
+<div class="row">
+  <div class="col-md-4">
+  	<strong>Adres:</strong><br>
+	Grote Kerkstraat 84A<br>
+	1234 AB, Leeuwarden
+	<br><br>
+	<strong>Gemeente:</strong><br>
+	Leeuwarden
+	<br><br>
+	<strong>E-mailadres:</strong><br>
+	<%= @user.email %>
+	<br><br>
+	<strong>Leeftijd:</strong><br>
+	68 jaar
+  </div>
+  <div class="col-md-8">
+  	<strong><span class="badge">2</span> aankomende activiteiten</strong>
+  	<br>
+  	<i class="fa fa-check"></i> Schaken op 19 december 2013<br>
+  	<i class="fa fa-check"></i>  Rijksmuseum bezoeken op 26 februari 2014
+  </div>
+</div>
 
+<div class="achtergrond-h3">
+	<h3>Privacy instellingen</h3>	
+</div>
+
+<div class="achtergrond-h3">
+	<h3>Instellingen activiteiten</h3>	
+</div>

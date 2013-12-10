@@ -61,11 +61,10 @@ def edit
 	#if current_user.id == @event.user.id
 	#@user = Event.user_id.find(params[:id])
 	#render new_escaped
-end
 
 def update
 	@event = Event.find(params[:id])
-	@event.update_attributes!(event_params)
+	@event.update_attributes(event_params)
 	redirect_to events_path
 end
 
@@ -82,6 +81,7 @@ end
 
 def validates_user
 	redirect_to root_url unless current_user.id.to_s == params[:id]
+	end
 	end
 
 	#unless current_user[:id] == @event.user.id

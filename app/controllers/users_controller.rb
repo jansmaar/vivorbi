@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    respond_to :html, :json
   def new
     @user = User.new
   end
@@ -17,26 +18,13 @@ class UsersController < ApplicationController
    end
     
    def index
-   
+    @users = User.all
+   respond_with @users
    end
-   
-    def edit
-	@user = User.find(params[:id])
-	end
-	
-	def update
-		@user = User.find(params[:id])
-		@user.update_attributes(user_params)
-		redirect_to user_path
-	end
    
    private
 
   def user_params
-    params.require(:user).permit(:email, :password, :salt, :encrypted_password, :firstname, :lastname, :avatar)
+    params.require(:user).permit(:email, :password, :salt, :encrypted_password)
   end
   end
-  
- 
-
-

@@ -1,0 +1,3 @@
+class ParticitpantsController < ApplicationController
+
+end

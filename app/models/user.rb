@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	has_many :events
+	#has many :participants through :events
 	attr_accessor :password
   has_attached_file :avatar,
   :path => ":rails_root/public/system/:attachment/:id/:style/:filename",

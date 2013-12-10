@@ -12,6 +12,7 @@ Vivorbi::Application.routes.draw do
   	resources :users
   	resources :sessions 
 	resources :events
+	resources :participants
 	
 
 root "events#startpage"

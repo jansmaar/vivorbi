@@ -1,0 +1,2 @@
+module ParticitpantsHelper
+end

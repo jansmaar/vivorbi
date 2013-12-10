@@ -34,6 +34,10 @@ body {
 	margin-right: 5px;
 	border: solid 3px rgba(0,0,0,0.1);
 }
+.profielfoto-user {
+	height: 115px;
+	width: 115px;
+}
 .uitloggen h4 {
 	margin: 19px 0 0 0;
 }
@@ -53,6 +57,8 @@ body {
 	background-color: #2ecc71;
 }
 
+/* GOOGLE MAPS */
+
 #gmaps-canvas {
   height: 400px !important;
   margin: 10px 0 0 0;
@@ -70,6 +76,7 @@ body {
 .col-md-5 {
 	margin-bottom: 25px;
 }
+
 /*style for adding and removing contacts*/
 #addperson {
 	list-style: none;
@@ -109,6 +116,9 @@ li.grey {
 	background: #30485f;
 	width: 100%;
 	height: 100%;
+}
+#menu a {
+	text-decoration: none;
 }
 #menu ul{
 	padding: 0;
@@ -176,6 +186,10 @@ li.grey {
 	width: 40%;
 	float: left;
 }
+select {
+	margin-right: 4px;
+}
+/* ACTIVITEITEN */
 .activiteit-eigen {
 	background-color: rgba(0, 188, 119, 0.4);
 	padding: 5px 0 1px 5px ;
@@ -195,10 +209,6 @@ li.grey {
 .activiteit-algemeen h3 {
 	margin-top: 0px;
 }
-select {
-	margin-right: 4px;
-}
-/* ACTIVITEITEN */
 .activiteit {
 	/*padding-left: 5px;*/
 	margin-top: 0px;
@@ -206,14 +216,15 @@ select {
 }
 .activiteit-prive {
 	border-color: rgba(0, 188, 119, 0.4);
-	padding-left: 5px;
-	padding-bottom: 13px;
-	padding-top: 3px;
+	padding: 3px 0 13px 5px;
 	margin: 10px 0;
 	background-color: #ffffff;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
+}
+.activiteit-prive:hover {
+	background-color: #c3d2d4;
 }
 .activiteit-open {
 	border-color: #f8f5e7;
@@ -240,9 +251,15 @@ select {
 	padding-top: 9px;
 } 
 
-
-
-
+/* PROFIELPAGINA */
+.achtergrond-h3 {
+	background-color: #d5d5d5;
+	margin: 35px 0 10px 0;
+	padding: 8px 0 8px 3px;
+}
+.achtergrond-h3 h3 {
+	margin: 0;
+}
 
 
 /*UNCOMMITED by JORIK 9 dec 2013 */

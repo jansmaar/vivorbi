@@ -22,11 +22,11 @@
       <div class="clearfix profielbox">
       
       <img src="http://placecreature.com/kitten/85/85" alt="profile" class="pull-left img-circle profielfoto">  
-        
+
         <p class="profielbox">
         <% if current_user %>
-        Aangemeld als <%= current_user.email %>
-        <%= link_to "Profiel bekijken", current_user %> |
+        Aangemeld als <%= current_user.firstname %> <%= current_user.lastname %>
+        <%= link_to "Profiel bekijken", current_user %> <i class="fa fa-spinner fa-spin"></i>
         <%= link_to "Afmelden", log_out_path %> 
       <% else %>
         <%= link_to "Registreren", sign_up_path %> of 

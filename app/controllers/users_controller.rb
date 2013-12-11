@@ -22,7 +22,7 @@ class UsersController < ApplicationController
    respond_with @users
    end
    
-       def edit
+    def edit
 	@user = User.find(params[:id])
 	end
 	

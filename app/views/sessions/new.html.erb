@@ -1,14 +1,18 @@
-<h1>Aanmelden</h1>
+<div class="page-header">
+<h1>Inloggen</h1>
+</div>
 
 
 <%= form_tag sessions_path do %>
   <p>
-    <%= label_tag :email %><br />
+    <%= label_tag :email, "E-mailadres of gebruikersnaam" %><br />
     <%= text_field_tag :email, params[:email] %>
   </p>
   <p>
-    <%= label_tag :password %><br />
+    <%= label_tag :password, "Wachtwoord" %><br />
     <%= password_field_tag :password %>
   </p>
-  <p class="button"><%= submit_tag %></p>
+  
+
+  <%= submit_tag  "Inloggen", :class => "button button-green" %>
 <% end %>

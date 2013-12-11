@@ -1,9 +1,7 @@
 <div class="page-header">
   <h2>Startpagina</h2>
 </div>
-<% unless(current_user) %> 
-<%= "Geen directe toegang" %>
-<% else %>
+
 
 <div class="nul-padding">
   <p class="lead">Welkom <%= current_user.firstname %> <%= current_user.lastname %></p>
@@ -55,5 +53,5 @@
 
   <p>Spontaan een leuke activiteit bedacht?</p>
   <button type="button" class="button button-green button-large"><i class="fa fa-plus-circle fa-lg"></i> Activiteit aanmaken</button>
-<% end %>
+
 </div>

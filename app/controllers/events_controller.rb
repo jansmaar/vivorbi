@@ -18,7 +18,11 @@ def index
 end
 
 def startpage
+	unless(current_user)
+	redirect_to('/log_in')
+	else
 	@events = Event.all
+	end
 end
 
 def create

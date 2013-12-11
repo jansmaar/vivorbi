@@ -3,8 +3,8 @@
 </div>
 
 <div class="nul-padding">
-  <p class="lead">Welkom <%= current_user.firstname %> <%= current_user.lastname %></p>
-  <p>Hieronder bekijkt u uw aankomende activiteiten waaraan u gaat deelnemen.</p>
+  <p class="lead">Welkom <%= current_user.firstname %> <%= current_user.lastname %>.</p>
+  <p>Op deze pagina vindt u uw persoonlijke activiteiten waaraan u gaat deelnemen.</p>
 
   <div class="sorteren-blok">
   Sorteer op: <br>
@@ -16,10 +16,15 @@
 
   <div class="zoeken-blok">
   Zoek op plaats: <br>
-  <form>
-  <input name="search" type="search" placeholder="Zoek op woonplaats">
-  <input type="submit" value="search">
-  </form>
+    <div class="col-lg-10">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Vul plaatsnaam in">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button"><i class="fa fa-search"></i> Zoeken</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+
   </div>
 
   <div class="clearfix"></div>

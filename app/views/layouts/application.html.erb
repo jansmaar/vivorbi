@@ -19,10 +19,11 @@
       <div class="logo">
       <%= image_tag "logo.png" ,class: "img-responsive logo" ,alt: "logo met elkaar"%>
       </div><!-- end of logo -->
-      <div class="clearfix profielbox">
       <% if current_user %>
+      <div class="clearfix profielbox">
+  
       <%= image_tag current_user.avatar.url, :class => "pull-left img-circle profielfoto profielfoto-menu" %>
-      <% end %>
+      
 
         <p class="profielbox">
         <% if current_user %> 
@@ -32,15 +33,10 @@
         <br>
         <%= link_to "Profiel bekijken", current_user %> |
         <%= link_to "Afmelden", log_out_path %> 
-      <% else %>
-        <%= link_to "Registreren", sign_up_path %> of 
-        <%= link_to "Inloggen", log_in_path %>
       <% end %>
     
       
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash#{name}" %>
-      <% end %>
+      
       </p>
 
       </div>
@@ -80,6 +76,11 @@
       </div><!--end of menu -->
     </div><!-- end of col-md-2 --> 
     <div class="col-sm-9 col-md-9">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash#{name}" %>
+      <% end %>
+  <% end %>
+
       <%= yield %>
     </div> <!--end of col-md-10-->
 </div> <!-- end page container -->

@@ -2,27 +2,30 @@ class EventsController < ApplicationController
 # before_filter :authenticate_user!
 #before_filter :validates_user, :only => :edit	
 def new
-	@event = Event.new
+	check(@event = Event.new)
 end
 
 def show
-	@event = Event.find(params[:id])
+	check(@event = Event.find(params[:id]))
 end
 
 def index
+	unless(current_user)
+	flash[:error] = "Geen toegang tot de pagina die u probeerde te bereiken"
+	redirect_to('/log_in')
+	else
 	@search = Event.search(params[:q])
 	@events = @search.result
 	@events_by_date = @events.group_by(&:eventdate)
 	@date = params[:date] ? Date.parse(params[:date]) : Date.today  
+	
+	end
+	
   
 end
 
 def startpage
-	unless(current_user)
-	redirect_to('/log_in')
-	else
-	@events = Event.all
-	end
+	check(@events = Event.all)
 end
 
 def create
@@ -81,6 +84,15 @@ end
 private
   def event_params
     params.require(:event).permit(:title, :text, :content, :eventdate, :eventtime, :location,)
+end
+
+def check(input)
+unless current_user
+	flash[:error] = "Geen toegang tot de pagina die u probeerde te bereiken"
+	redirect_to('/log_in')
+	else
+		input
+	end
 end
 
 def validates_user

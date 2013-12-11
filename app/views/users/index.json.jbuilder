@@ -1,4 +1,4 @@
-json.invites(@users) do |json, user|
+json.array!(@users) do |user|
+  json.value user.email
   json.id user.id
-  json.email user.email 
 end

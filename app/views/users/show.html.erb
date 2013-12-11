@@ -20,7 +20,10 @@
 	1234 AB, Leeuwarden
 	<br><br>
 	<strong>Geboortedatum:</strong><br>
-	<%= @user.date_of_birth %>
+	<%= @user.date_of_birth.strftime("%d %B %y").downcase %>
+	<br><br>
+	<strong>Telefoonnummer:</strong><br>
+	<%= @user.phone_number %>
 	<br><br>
 	<strong>Gemeente:</strong><br>
 	Leeuwarden

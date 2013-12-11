@@ -25,6 +25,11 @@
     <%= f.label :date_of_birth, "Geboortedatum" %> </br>
     <%= f.date_select(:date_of_birth, order: [:day, :month, :year], :start_year => 1900, :end_year => Time.now.year) %>
   </p>
+
+  <p>
+    <%= f.label :phone_number, "Telefoonnummer" %> </br>
+    <%= f.text_field :phone_number, {:maxlength => 10, :size => 10} %>
+  </p>
   
   <p>
     <%= f.label :email, "email" %><br />

@@ -105,6 +105,14 @@ li.grey {
 	background-color: #ecf0f1;
 }
 
+.number {
+	display: none;
+}
+
+#hidden {
+
+}
+
 /*END style for adding and removing contacts*/
 
 /* space between date & time div and the next ( type activiteit ) input */

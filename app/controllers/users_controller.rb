@@ -19,7 +19,8 @@ class UsersController < ApplicationController
     
    def index
     @users = User.all
-   respond_with @users
+    @users = @users.where('email like ?', "#{params[:term].upcase}%") if params[:term]
+    respond_with @users
    end
    
     def edit

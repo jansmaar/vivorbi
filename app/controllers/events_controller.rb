@@ -22,6 +22,7 @@ def startpage
 	redirect_to('/log_in')
 	else
 	@events = Event.all
+	@events = Event.find( :all, :order => "eventdate" , :limit => 11)
 	end
 end
 

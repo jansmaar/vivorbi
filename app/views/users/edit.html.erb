@@ -9,6 +9,8 @@
   <%= f.label :lastname, "Achternaam" %>
  <%= f.text_field :lastname %><br/>
 
+  <%= f.label :date_of_birth, "Geboortedatum" %>
+ <%= f.date_select(:date_of_birth, order: [:day, :month, :year], :start_year => 1900, :end_year => Time.now.year) %><br/>
 
  <%= f.file_field :avatar %><br/>
  

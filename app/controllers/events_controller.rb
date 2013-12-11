@@ -25,16 +25,12 @@ def index
 end
 
 def startpage
-<<<<<<< HEAD
 	unless(current_user)
 	redirect_to('/log_in')
 	else
 	@events = Event.all
 	@events = Event.find( :all, :order => "eventdate" , :limit => 11)
 	end
-=======
-	check(@events = Event.all)
->>>>>>> 9d2c2c544009555a83692343bf0cee723d171b83
 end
 
 def create

@@ -9,6 +9,9 @@
   <%= f.label :lastname, "Achternaam" %>
  <%= f.text_field :lastname %><br/>
 
+ <%= f.label :phone_number, "Telefoonnummer" %>
+ <%= f.text_field :phone_number, {:maxlength => 10, :size => 10} %><br/>
+
   <%= f.label :date_of_birth, "Geboortedatum" %>
  <%= f.date_select(:date_of_birth, order: [:day, :month, :year], :start_year => 1900, :end_year => Time.now.year) %><br/>
 

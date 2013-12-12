@@ -41,7 +41,7 @@
   </div>
   <% @events.each do |start| %>
   <div class="activiteit activiteit-prive">
-    <div class="tijd-tot"><i class="fa fa-calendar-o"></i> over <em> 3</em> dagen </div>
+    <div class="tijd-tot"><i class="fa fa-calendar-o"></i> over <em> <%= (start.eventdate - Date.current).to_i %> </em> dag(en) </div>
     <h4 class="uitgelicht-h4"><%= start.title %></h4>
     <ul class="list-unstyled">
       <li><i class="fa fa-flag"></i> Daguitje</li>

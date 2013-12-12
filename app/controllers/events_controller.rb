@@ -17,11 +17,8 @@ def index
 	@search = Event.search(params[:q])
 	@events = @search.result
 	@events_by_date = @events.group_by(&:eventdate)
-	@date = params[:date] ? Date.parse(params[:date]) : Date.today  
-	
+	@date = params[:date] ? Date.parse(params[:date]) : Date.today
 	end
-	
-  
 end
 
 def startpage

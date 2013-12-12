@@ -19,13 +19,14 @@
       <div class="logo">
       <%= image_tag "logo.png" ,class: "img-responsive logo" ,alt: "logo met elkaar"%>
       </div><!-- end of logo -->
+
       <% if current_user %>
       <div class="clearfix profielbox">
   
       <%= image_tag current_user.avatar.url, :class => "pull-left img-circle profielfoto profielfoto-menu" %>
       
 
-        <p class="profielbox">
+      <p class="profielbox">
         <% if current_user %> 
         Aangemeld als:
         <br>
@@ -35,8 +36,6 @@
         <%= link_to "Afmelden", log_out_path %> 
       <% end %>
     
-      
-      
       </p>
 
       </div>

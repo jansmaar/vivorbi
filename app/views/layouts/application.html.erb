@@ -77,7 +77,7 @@
     </div><!-- end of col-md-2 --> 
     <div class="col-sm-9 col-md-9">
       <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash#{name}" %>
+        <%= content_tag :div, msg, :id => "flash#{name}", :class => "alert alert-success"%>
       <% end %>
   <% end %>
 

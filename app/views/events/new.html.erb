@@ -7,7 +7,7 @@
       <%= form_for :event, url: events_path do |f| %>
         <div class="form-group">
             <%= f.label :title, "Titel van de activiteit" %><br>
-            <%= f.text_field :title, class: "form-control",  placeholder: "bv. bezoek aan het museum" %>
+            <%= f.text_field :title, class: "form-control",  placeholder: "bv. bezoek aan het museum", :autofocus=>true %>
         </div>
         <div class="row margin-for-date">
           <div class="col-xs-7">

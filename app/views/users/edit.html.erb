@@ -9,6 +9,9 @@
   <%= f.label :lastname, "Achternaam" %>
  <%= f.text_field :lastname %><br/>
 
+  <%= f.label :address, "Adres" %> 
+  <%= f.text_field :address %></br>
+
  <%= f.label :phone_number, "Telefoonnummer" %>
  <%= f.telephone_field :phone_number, {:maxlength => 10, :size => 10} %><br/>
 
@@ -17,6 +20,6 @@
 
  <%= f.file_field :avatar %><br/>
  
-   <%= f.submit 'aanpassen'%>
+   <%= f.submit 'Aanpassen'%>
 
  <% end %>

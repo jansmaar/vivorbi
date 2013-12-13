@@ -16,14 +16,14 @@
 <div class="row">
   <div class="col-md-4">
   	<strong>Adres:</strong><br>
-	Grote Kerkstraat 84A<br>
-	1234 AB, Leeuwarden
+	<%= @user.address %>
 	<br><br>
 	<strong>Geboortedatum:</strong><br>
-	<%= @user.date_of_birth.strftime("%d %B %y").downcase %>
+	<%= @user.date_of_birth.strftime("%d %B %Y").downcase %>
 	<br><br>
 	<strong>Telefoonnummer:</strong><br>
-	<%= @user.phone_number %>
+	
+	<%= number_to_phone(@user.phone_number, country_code: 31,  delimiter: " ") %>
 	<br><br>
 	<strong>Gemeente:</strong><br>
 	Leeuwarden
@@ -38,7 +38,7 @@
   	<strong><span class="badge">2</span> aankomende activiteiten</strong>
   	<br>
   	<i class="fa fa-check"></i> Schaken op 19 december 2013<br>
-  	<i class="fa fa-check"></i>  Rijksmuseum bezoeken op 26 februari 2014
+  	<i class="fa fa-check"></i> Rijksmuseum bezoeken op 26 februari 2014
   </div>
 </div>
 

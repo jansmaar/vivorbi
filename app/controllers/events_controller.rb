@@ -85,7 +85,7 @@ end
 
 private
   def event_params
-    params.require(:event).permit(:title, :text, :content, :eventdate, :eventtime, :location,)
+    params.require(:event).permit!#(:title, :text, :content, :eventdate, :eventtime, :location, :user_ids)
 end
 
 def check(input)

@@ -38,10 +38,12 @@
           <label for="">Genodigden</label>
           <i class="fa fa-user"></i>
           <div class="input-group">
-            <input type="text" class="form-control" id="tags" name="message" placeholder="Zoeken naar gebruikers..">
-                <span class="input-group-btn">
-                  <button type="button" class="btn btn-success" id="add"><i class="fa fa-plus fa-lg"></i> Uitnodigen</button>
-              </span>
+             <% @event.users.each do |user|%>
+        <ul><li>
+        <%= user.email %>
+      </li>
+    </ul>
+        <% end %>
             </div>
       <div class="edit_event">  
       <% if current_user.id == @event.user_id %>
@@ -50,11 +52,14 @@
       </div>
       
 
-          <!-- <button type="button" class="btn btn-success" id="add"> <i class="fa fa-plus fa-lg"></i> Uitnodigen</button> -->
         </div>
-        <!-- autofill met namen -->
-        <ul id="addperson">
-        </ul>
+        
+     
+    
+
+       
+
+        
       </div>
         <div class="col-md-7 visible-md visible-lg">
         <div id='gmaps-canvas'></div>

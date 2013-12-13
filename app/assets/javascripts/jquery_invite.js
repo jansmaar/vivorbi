@@ -13,9 +13,13 @@ $(document).ready(function(){
             $('#addperson li:even').addClass('grey');
             inInvited.push(toAdd);  
             idForDatabase.push(id);
-            $('#hidden').val(idForDatabase);
-            console.log(inInvited);
-            console.log(idForDatabase);
+            //$('#hidden').val(idForDatabase);
+            $('.rem').remove();
+            $.each(idForDatabase, function(key, id){
+                $('<input>').attr({type: 'text', class: 'rem', name: 'event[user_ids][]', value: id}).appendTo('#addperson');
+            });
+            //console.log(inInvited);
+            //console.log(idForDatabase);
         }
         else {
             invitedError = $('<p/>').addClass('alert alert-danger').html('De zelfde persoon kan niet twee keer worden toegevoegd!');
@@ -44,9 +48,13 @@ $(document).ready(function(){
         inInvited.splice($.inArray(delVal, inInvited),1);
         idForDatabase.splice($.inArray(delId, idForDatabase),1);
         $(this).parent('.invited').remove();
-        console.log(delId);
-        console.log(delVal);  
-        $('#hidden').val(idForDatabase);
+         $('.rem').remove();
+            $.each(idForDatabase, function(key, id){
+                $('<input>').attr({type: 'text', class: 'rem', name: 'events[participant_ids][]', value: id}).appendTo('#addperson');
+            });
+        //console.log(delId);
+        //console.log(delVal);  
+        //$('#hidden').val(idForDatabase);
     });
 //END inviting participents
 

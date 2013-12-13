@@ -22,7 +22,8 @@
 	<%= @user.date_of_birth.strftime("%d %B %Y").downcase %>
 	<br><br>
 	<strong>Telefoonnummer:</strong><br>
-	<%= @user.phone_number %>
+	
+	<%= number_to_phone(@user.phone_number, country_code: 31,  delimiter: " ") %>
 	<br><br>
 	<strong>Gemeente:</strong><br>
 	Leeuwarden

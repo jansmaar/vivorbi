@@ -1,3 +1,0 @@
-class ParticitpantsController < ApplicationController
-
-end

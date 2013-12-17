@@ -327,10 +327,19 @@ select {
   	-moz-box-shadow: 0px 2px 0px #00918a;
   	box-shadow: 0px 2px 0px #00918a;
 }
-
-.button:hover {
-  	background: #03ac6e;
+.button-green:hover {
+	background: #03ac6e;
   	text-decoration: none;
+}
+.button-blue {
+	background-color: #3868b5;
+	-webkit-box-shadow: 0px 2px 0px #305099;
+  	-moz-box-shadow: 0px 2px 0px #305099;
+  	box-shadow: 0px 2px 0px #305099;
+}
+.button-blue:hover {
+	background-color: #365fa1;
+	text-decoration: none;
 }
 .button-large {
 	width: 100%;

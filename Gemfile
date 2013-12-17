@@ -19,6 +19,8 @@ gem "paperclip", "~> 3.5.0"
 gem 'sqlite3', :require => 'sqlite3'
 gem "bcrypt-ruby", :require => "bcrypt"
 
+# i18n vertaling
+gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

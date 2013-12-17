@@ -16,7 +16,7 @@ $(document).ready(function(){
             //$('#hidden').val(idForDatabase);
             $('.rem').remove();
             $.each(idForDatabase, function(key, id){
-                $('<input>').attr({type: 'text', class: 'rem', name: 'event[user_ids][]', value: id}).appendTo('#addperson');
+                $('<input>').attr({type: 'hidden', class: 'rem', name: 'event[user_ids][]', value: id}).appendTo('#addperson');
             });
             //console.log(inInvited);
             //console.log(idForDatabase);
@@ -35,9 +35,23 @@ $(document).ready(function(){
         addingParticipants( ui.item ? 
             ui.item.value : 
             "De gebruiker moet wel in de lijst staan",
-             ui.item.id);        
+            ui.item.id), 
+            this.value = ("");
+            return false;       
         }
     });
+
+    $( "input" ).blur(function() {
+     if($( this ).val().length === 0){
+        
+        $('.fout').append("fout");
+        console.log("fout");
+        $(this).addClass('error');
+     } else {
+        $(this).removeClass('error');
+     }
+      
+});
 
     //removes an invite
     $(document).on('click', '.remove', function(evt){

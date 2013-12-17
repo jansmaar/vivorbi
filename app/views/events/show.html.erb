@@ -1,70 +1,50 @@
 <div class="page-header">
   <h3>Activiteit <%= @event.title %> </h3>
-  </div>
-
-  <div class="row">
-      <div class="col-md-5 border">
-        <div class="form-group">
-          
-        </div>
-        <div class="row margin-for-date">
-          <div class="col-xs-7">
-             
-              <i class="fa fa-calendar"></i>
-             <%= @event.eventdate.strftime("%d %B %Y").downcase %>
-          </div>
-            <div class="col-xs-5">
-              <i class="fa fa-clock-o"></i>
-                <%= @event.eventtime.strftime("%H : %M") %>
-            </div>
-        </div>
-        <div class="form-group">
-          <label for="type"><h4>Dag uitje</h4></label>
-          
-        </div>
-        <div class="form-group">
-          <label for="type">Omschrijving</label><br>
-          <%= @event.content %>
-        </div>
-        <div class="form-group">
-               <label for="type">Locatie</label><br>
-          <i class="fa fa-map-marker"></i>
-          <%= @event.location %>
-          <span class="help-block"><em>Eventueel extra informatie over deze functie</em></span>
-              <div id='gmaps-error'></div>
-            </div>
-
-        <div class="form-group">
-          <label for="">Genodigden</label>
-          <i class="fa fa-user"></i>
-          <div class="input-group">
-             <% @event.users.each do |user|%>
-        <ul><li>
-        <%= user.email %>
-      </li>
-    </ul>
+</div>
+<div class="row">
+  <div class="col-md-5 border">
+    <div class="row margin-for-date">
+      <div class="col-xs-7">
+        <i class="fa fa-calendar"></i>
+          <%= @event.days_from_now() %>
+          <%= @event.eventdate.strftime("%d %B %Y").downcase %>
+      </div>
+      <div class="col-xs-5">
+        <i class="fa fa-clock-o"></i>
+            <%= @event.eventtime.strftime("%H : %M") %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="type"><h4>Dag uitje</h4></label>  
+    </div>
+    <div class="form-group">
+      <label for="type">Omschrijving</label><br>
+      <%= @event.content %>
+    </div>
+    <div class="form-group">
+      <label for="type">Locatie</label><br>
+      <i class="fa fa-map-marker"></i>
+      <%= @event.location %>
+      <div id='gmaps-error'></div>
+    </div>
+    <div class="form-group">
+      <label for="">Genodigden</label>
+      <i class="fa fa-user"></i>
+      <div class="input-group">
+        <% @event.users.each do |user|%>
+        <ul id="addperson"><li class="invited"><%= user.email %></li></ul>
         <% end %>
-            </div>
+      </div>
       <div class="edit_event">  
-      <% if current_user.id == @event.user_id %>
-      <%= link_to 'Eigen activiteit aanpassen of verwijderen', edit_event_path %> 
-      <% end %>
+        <% if current_user.id == @event.user_id %>
+        <%= link_to 'Eigen activiteit aanpassen of verwijderen', edit_event_path %> 
+        <% end %>
       </div>
-      
-
-        </div>
-        
-        <%= @event.days_from_now() %>
-     
-    
-
-       
-
-        
-      </div>
-        <div class="col-md-7 visible-md visible-lg">
-        <div id='gmaps-canvas'></div>
-        <bold>Locatie van de activiteit</bold> - <em>sleep de <abbr title="het pijltje">pin</abbr> op de kaart als u locatie nauwkeurig wilt wijzigen</em> 
-        </div>
-  </div>  
+    </div>  
+  </div>
+  <div class="col-md-7 visible-md visible-lg">
+  <div id='gmaps-canvas'></div>
+  <bold>Locatie van de activiteit</bold> - <em>sleep de <abbr title="het pijltje">pin</abbr> op de kaart als u locatie nauwkeurig wilt wijzigen</em> 
+  </div>
+</div>  
 

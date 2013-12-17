@@ -4,7 +4,9 @@
 
 <div class="nul-padding">
   <p class="lead">Welkom <%= current_user.firstname %> <%= current_user.lastname %>.</p>
-  <p>Op deze pagina vindt u uw persoonlijke activiteiten waaraan u gaat deelnemen.</p>
+  <p>
+  Het is vandaag <%= Time.now.strftime("%d %B %Y").downcase %> en de tijd is <%= Time.now.strftime("%H:%M") %>.<br>
+  Op deze pagina vindt u uw persoonlijke activiteiten waaraan u gaat deelnemen.</p>
 
   <div class="sorteren-blok">
   Sorteer op: <br>
@@ -15,9 +17,9 @@
   </div>
 
   <div class="zoeken-blok">
-  Zoek op plaats: <br>
+  Zoek op activiteit: <br>
   <div class="input-group">
-     <input type="text" class="form-control" placeholder="Vul plaatsnaam in">
+     <input type="text" class="form-control" placeholder="Vul titel van activiteit in">
       <span class="input-group-btn">
         <button class="btn btn-default" type="button"><i class="fa fa-search"></i> Zoeken</button>
       </span>

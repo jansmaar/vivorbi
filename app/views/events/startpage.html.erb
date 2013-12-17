@@ -40,8 +40,10 @@
     </p>
   </div>
   <% @events.each do |start| %>
+  <% unless start.days_from_now == nil %>
+
   <div class="activiteit activiteit-prive">
-    <div class="tijd-tot"><i class="fa fa-calendar-o"></i> over <em> <%= start.eventdate ?  (start.eventdate - Date.current).to_i : "" %> </em> dag(en) </div>
+    <div class="tijd-tot"><i class="fa fa-calendar-o"></i> <em> <%= start.days_from_now() %> </em> </div>
     <h4 class="uitgelicht-h4"><%= start.title %></h4>
     <ul class="list-unstyled">
       <li><i class="fa fa-flag"></i> Daguitje</li>
@@ -51,6 +53,7 @@
     <%= link_to 'Verwijderen', start, :method => :delete %>
   </div>
   <div class="scheiding"></div>
+  <% end %>
   <% end %>
 
   <h4>Spontaan een leuke activiteit bedacht?</h4>

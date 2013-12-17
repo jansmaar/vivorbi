@@ -32,7 +32,7 @@
 	<%= @user.email %>
 	<br><br>
 	<strong>Leeftijd:</strong><br>
-	<%= debug (Date.current - @user.date_of_birth) %>
+	<%= @user.age() %>
   </div>
   <div class="col-md-8">
   	<strong><span class="badge">2</span> aankomende activiteiten</strong>

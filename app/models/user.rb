@@ -26,6 +26,12 @@ def self.authenticate(email, password)
   end
  end
 
+def age
+  ((Time.now - date_of_birth.to_time)/(60*60*24*365)).floor
+end
+
+
+
 def encrypt_password
   	if password.present?
   	  self.password_salt = BCrypt::Engine.generate_salt

@@ -603,6 +603,9 @@ ol ol {
   padding-left: 0;
   list-style: none;
 }
+.list-unstyled li {
+  margin-bottom: 5px;
+}
 
 .list-inline {
   padding-left: 0;

@@ -1,10 +1,8 @@
 <div class="page-header">
-  <h3>Activiteit bewerken</h3>
-  <%= link_to 'Back', events_path %>
-  <div class="fout"></div>
-  </div>
+  <h3>Activiteit bewerken <small><i class="fa fa-reply fa-color"></i> <%= link_to 'Terug naar huidige activiteit', event_path%></small> </h3>
+</div>
 
-  <div class="row">
+<div class="row">
       <div class="col-md-5 border">
       <%= form_for(@event) do |f| %>
         <div class="form-group">
@@ -38,7 +36,7 @@
           <%= f.text_area :content, class: "form-control", placeholder: "Waar gaat de activiteit over?" %>
         </div>
         <div class="form-group">
-          <%= f.label :location %>
+          <%= f.label :location, "Locatie" %>
           <i class="fa fa-map-marker"></i>
           <%= f.text_field :location, class: "form-control", id: "gmaps-input-address", placeholder: "Begin met het typen van een adres..." %>
           <span class="help-block"><em>Eventueel extra informatie over deze functie</em></span>
@@ -46,26 +44,20 @@
             </div>
       <!-- einde form deel/1 - #addperson werkt niet binnen een form || nu wel vreemd genoeg!!!(form verwijderd)-->
         <div class="form-group">
-          <label for="">Genodigden</label>
-          <i class="fa fa-user"></i>
-          <!-- <input type="search" class="form-control" id="tags" name="message" placeholder="Zoeken naar gebruikers"> -->
-          <div class="input-group">
-                <input type="text" class="form-control" id="tags" name="message" placeholder="Zoeken naar gebruikers...">
-                <span class="input-group-btn">
-                  <button type="button" class="btn btn-success" id="add"><i class="fa fa-plus fa-lg"></i> Uitnodigen</button>
-              </span>
-            </div>
-          <!-- <button type="button" class="btn btn-success" id="add"> <i class="fa fa-plus fa-lg"></i> Uitnodigen</button> -->
-        </div>
+      <label for="">Genodigden</label>
+      <i class="fa fa-users"></i>
+      <input type="text" class="form-control" id="tags" name="message" placeholder="Zoeken naar gebruikers...">
+      <!-- autofill met namen -->
+      <ul id="addperson"></ul>
+    </div>
         <!-- autofill met namen -->
         <ul id="addperson">
         </ul>
-        <%= f.submit 'Activiteit aanpassen', class: 'btn btn-primary btn-lg btn-block'  %>
+        <%= f.submit 'Activiteit aanpassen', class: 'button button-blue button-large'  %>
         <% end %>
       </div>
         <div class="col-md-7 visible-md visible-lg">
         <div id='gmaps-canvas'></div>
         <bold>Locatie van de activiteit</bold> - <em>sleep de <abbr title="het pijltje">pin</abbr> op de kaart als u locatie nauwkeurig wilt wijzigen</em> 
         </div>
-  </div>	
-
+</div>	

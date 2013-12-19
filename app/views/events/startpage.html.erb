@@ -9,7 +9,7 @@
   Op deze pagina vindt u uw persoonlijke activiteiten waaraan u gaat deelnemen.</p>
 
   <div class="sorteren-blok">
-  Sorteer op: <br>
+  Sorteer op:<br>
   <select>
       <option value="Aflopend">Aflopend</option> 
       <option value="Oplopend">Oplopend</option>
@@ -46,15 +46,14 @@
 
   <div class="activiteit activiteit-prive">
     <div class="tijd-tot"><i class="fa fa-calendar-o"></i> <em> <%= start.days_from_now() %> </em> </div>
-    <h4 class="uitgelicht-h4"><%= start.title %></h4>
+    <h3 class="uitgelicht-h4"><%= start.title %></h3>
     <ul class="list-unstyled">
-      <li><i class="fa fa-flag"></i> Daguitje</li>
-      <li><i class="fa fa-calendar"></i> <%= start.eventdate ? start.eventdate.strftime("%-d %B %Y").downcase : ""%> </li>
-      <li><i class="fa fa-map-marker"></i> <%= start.location %></li>
+      <li><i class="fa fa-flag fa-lg"></i> Daguitje</li>
+      <li><i class="fa fa-calendar-o fa-lg"></i> <%= start.eventdate ? start.eventdate.strftime("%-d %B %Y").downcase : ""%> </li>
+      <li><i class="fa fa-map-marker fa-lg"></i> <%= start.location %></li>
     </ul>
-    <%= link_to 'Verwijderen', start, :method => :delete %>
+    <i class="fa fa-trash-o"></i> <%= link_to 'Activiteit verwijderen', start, :method => :delete %>
   </div>
-  <div class="scheiding"></div>
   <% end %>
   <% end %>
 

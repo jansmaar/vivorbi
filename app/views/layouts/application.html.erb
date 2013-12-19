@@ -15,73 +15,59 @@
 </head>
 <body>
 <div class="container">
-   <div class="col-sm-3 col-md-3 padding-for-menu-col2">
-      <div class="logo">
+  <% if current_user %>
+  <div class="col-sm-3 col-md-3 padding-for-menu-col2">
+    <div class="logo">
       <%= image_tag "logo.png" ,class: "img-responsive logo" ,alt: "logo met elkaar"%>
-      </div><!-- end of logo -->
-
-      <% if current_user %>
-      <div class="clearfix profielbox">
-  
-      <%= image_tag current_user.avatar.url, :class => "pull-left img-circle profielfoto profielfoto-menu" %>
-      
-
-      <p class="profielbox">
-        <% if current_user %> 
-        Aangemeld als:
-        <br>
-        <strong><%= current_user.firstname %> <%= current_user.lastname %></strong>
-        <br>
-        <%= link_to "Profiel bekijken", current_user %> |
-        <%= link_to "Afmelden", log_out_path %> 
-      <% end %>
-    
-      </p>
-
-      </div>
-      
-
-      <div id="menu">
-        <ul>
-          <li>
-            <%= link_to startpage_path do %><h3><i class="fa fa-home"></i> Startpagina</h3><% end %>
-          </li>
-          <!-- we will keep this LI open by default -->
-          <li class="active">
-            <h3><i class="fa fa-flag"></i> Activiteiten <i class="fa fa-chevron-up pull-right"></i></h3>
-            <ul>
-              <li><%= link_to events_path do %><i class="fa fa-list"></i> Activiteiten overzicht<% end %></li>
-          <li><%= link_to new_event_path do %><i class="fa fa-plus-square"></i> Activiteiten aanmaken<% end %></li>
-              <li><a href="#"><i class="fa fa-comments-o"></i> Openbare activiteiten</a></li>
-            </ul>
-          </li>
-          <li>
-            <h3><i class="fa fa-map-marker"></i> Hotspots<i class="fa fa-chevron-down pull-right"></i></h3>
-            <ul>
-              <li><a href="#"><i class="fa fa-list"></i> hotspots</a></li>
-              <li><a href="#"><i class="fa fa-plus-square"></i> hotspots</a></li>
-              <li><a href="#"><i class="fa fa-comments-o"></i> hotspots</a></li>
-            </ul>
-          </li>
-          <li>
-            <h3><i class="fa fa-users"></i> Contacten</h3>
-           
-          </li>
-          <li>
-            <h3><i class="fa fa-question-circle"></i> Hulp</h3>
-          
-          </li>
-        </ul>
-      </div><!--end of menu -->
-    </div><!-- end of col-md-2 --> 
-    <div class="col-sm-9 col-md-9">
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash#{name}", :class => "alert alert-success"%>
-      <% end %>
+    </div><!-- end of logo -->
+    <div class="clearfix profielbox">
+    <%= image_tag current_user.avatar.url, :class => "pull-left img-circle profielfoto profielfoto-menu" %>
+    <p class="profielbox">
+      Aangemeld als:<br />
+      <strong><%= current_user.firstname %> <%= current_user.lastname %></strong><br />
+      <%= link_to "Profiel bekijken", current_user %> |
+      <%= link_to "Afmelden", log_out_path %> 
+    </p>
+    </div>
+    <div id="menu">
+      <ul>
+        <li>
+          <%= link_to startpage_path do %><h3><i class="fa fa-home"></i> Startpagina</h3><% end %>
+        </li>
+        <!-- we will keep this LI open by default -->
+        <li class="active">
+          <h3><i class="fa fa-flag"></i> Activiteiten <i class="fa fa-chevron-up pull-right"></i></h3>
+          <ul>
+            <li><%= link_to events_path do %><i class="fa fa-list"></i> Activiteiten overzicht<% end %></li>
+        <li><%= link_to new_event_path do %><i class="fa fa-plus-square"></i> Activiteiten aanmaken<% end %></li>
+            <li><a href="#"><i class="fa fa-comments-o"></i> Openbare activiteiten</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3><i class="fa fa-map-marker"></i> Hotspots<i class="fa fa-chevron-down pull-right"></i></h3>
+          <ul>
+            <li><a href="#"><i class="fa fa-list"></i> hotspots</a></li>
+            <li><a href="#"><i class="fa fa-plus-square"></i> hotspots</a></li>
+            <li><a href="#"><i class="fa fa-comments-o"></i> hotspots</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3><i class="fa fa-users"></i> Contacten</h3>
+        </li>
+        <li>
+          <h3><i class="fa fa-question-circle"></i> Hulp</h3>
+        </li>
+      </ul>
+    </div><!--end of menu -->
+  </div><!-- end of col-md-2 --> 
+  <div class="col-sm-9 col-md-9">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash#{name}", :class => "alert alert-success"%>
+    <% end %>
   <% end %>
-
-      <%= yield %>
-    </div> <!--end of col-md-10-->
+  <%= yield %>
+  </div> <!--end of col-md-9-->
+  <%= yield :landingpage %>
 </div> <!-- end page container -->
 </body>
 </html>

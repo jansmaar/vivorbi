@@ -113,6 +113,21 @@ li.grey {
 
 }
 
+.error {
+	border-color: red;
+	box-shadow: 0 0 5px red;
+}
+
+.errortekstinput {
+	color: red;
+	font-weight: 12px;
+}
+
+.valid {
+	border-color: green;
+}
+
+
 /*END style for adding and removing contacts*/
 
 /* space between date & time div and the next ( type activiteit ) input */

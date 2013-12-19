@@ -41,18 +41,6 @@ $(document).ready(function(){
         }
     });
 
-    $( "input" ).blur(function() {
-     if($( this ).val().length === 0){
-        
-        $('.fout').append("fout");
-        console.log("fout");
-        $(this).addClass('error');
-     } else {
-        $(this).removeClass('error');
-     }
-      
-});
-
     //removes an invite
     $(document).on('click', '.remove', function(evt){
         //console.log(evt);

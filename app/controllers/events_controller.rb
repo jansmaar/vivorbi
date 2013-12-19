@@ -72,7 +72,7 @@ def edit
 	#render new_escaped
 
 def update
-	@event = Event.find(params[:id])
+	@event = current_user.events.find(params[:id])
 	@event.update_attributes(event_params)
 	redirect_to events_path
 end

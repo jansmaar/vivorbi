@@ -24,7 +24,7 @@ body {
 	padding-left: 4px;
 	border-left: 3px solid rgba(0, 188, 119, 0.5);
 	/*border-right: 3px solid rgba(0, 188, 119, 0.5);*/
-	line-height: 18px;
+	line-height: 30px;
 	border-radius: 3px;
 }
 /* EINDE CONTAINERS STYLING*/
@@ -95,6 +95,7 @@ body {
 #addperson {
 	list-style: none;
 	padding: 0;
+	margin: 0;
 }
 li.invited {
 	padding: 0 0 0 20px;
@@ -102,7 +103,11 @@ li.invited {
 	font-weight: bold;
 }
 li.grey {
-	background-color: #ecf0f1;
+	background-color: #d9d9de;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	margin-top: 3px;
 }
 
 .number {
@@ -159,20 +164,16 @@ li.grey {
 }
 #menu ul{
 	padding: 0;
-	white-space: no-wrap;
 }
 #menu ul ul {
 	display: none;
 	padding: 0;
-	white-space: no-wrap;
 }
 #menu li.active ul {
 	display: block;
-	white-space: no-wrap;
 }
 #menu li {
 	list-style-type: none;
-	white-space: no-wrap;
 }
 #menu h3 {
 	font-size: 1.3em;
@@ -198,8 +199,8 @@ li.grey {
 #menu ul ul li a {
 	color: white;
 	text-decoration: none;
-	font-size: 13px;
-	line-height: 35px;
+	font-size: 14px;
+	line-height: 45px;
 	display: block;
 	padding: 0 10px;
 }
@@ -226,12 +227,19 @@ li.grey {
 select {
 	margin-right: 4px;
 }
-.fa-flag, .fa-calendar {
+/* ICONS FONT AWESOME */
+.fa-flag{
 	margin-right: 5px;
 }
-.fa-map-marker {
+.fa-calendar-o {
 	margin-right: 8px;
-	padding-left: 2px;
+}
+.fa-map-marker {
+	margin-right: 13px;
+	padding-left: 3px;
+}
+.fa-color {
+	color: rgb(51, 51, 51);
 }
 /* ACTIVITEITEN */
 .activiteit-eigen {
@@ -245,18 +253,22 @@ select {
 .activiteit-eigen h3 {
 	margin-top: 0px;
 }
-.activiteit-algemeen {
+
+/* WORDT NU NIET MEER GEBRUIKT?!*/
+/*.activiteit-algemeen {
 	background-color: #f8f5e7;
 	padding: 5px ;
 	margin-top: 15px;
 }
 .activiteit-algemeen h3 {
-	margin-top: 0px;
-}
+	margin-top: 5px;
+}*/
 .activiteit {
-	/*padding-left: 5px;*/
 	margin-top: 0px;
 	border-left: 4px solid #eee;
+}
+.activiteit h3 {
+	margin-top: 10px;
 }
 .activiteit-prive {
 	border-color: rgba(0, 188, 119, 0.4);

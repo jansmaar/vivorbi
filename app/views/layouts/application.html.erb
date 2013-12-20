@@ -64,9 +64,10 @@
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, :id => "flash#{name}", :class => "alert alert-success"%>
     <% end %>
-  <% end %>
+ 
   <%= yield %>
   </div> <!--end of col-md-9-->
+  <% end %>
   <%= yield :landingpage %>
 </div> <!-- end page container -->
 </body>

@@ -7,18 +7,18 @@
       <%= form_for(@event) do |f| %>
         <div class="form-group">
             <%= f.label :title, "Titel van de activiteit" %><br>
-            <%= f.text_field :title, class: "form-control",  placeholder: "bv. bezoek aan het museum" %>
+            <%= f.text_field :title, class: "form-control  error", kindoferror: "titel", placeholder: "bv. bezoek aan het museum" %>
         </div>
         <div class="row margin-for-date">
           <div class="col-xs-7">
               <%= f.label :eventdate, "Datum" %>
               <i class="fa fa-calendar"></i>
-              <%= f.text_field :eventdate, class: "form-control", placeholder: "Selecteer een datum", id: "datepicker"%>
+              <%= f.text_field :eventdate, class: "form-control  error", placeholder: "Selecteer een datum", id: "datepicker"%>
           </div>
             <div class="col-xs-5">
               <%= f.label :eventtime, "Tijd" %>
               <i class="fa fa-clock-o"></i>
-              <%= f.text_field :eventtime, class: "form-control", placeholder: "Selecteer een tijd"%>
+              <%= f.text_field :eventtime, class: "form-control  error", kindoferror: "tijd", placeholder: "Selecteer een tijd"%>
             </div>
         </div>
         <div class="form-group">
@@ -33,7 +33,7 @@
         </div>
         <div class="form-group">
           <%= f.label :content, "Omschrijving" %><br>
-          <%= f.text_area :content, class: "form-control", placeholder: "Waar gaat de activiteit over?" %>
+          <%= f.text_area :content, class: "form-control  error", placeholder: "Waar gaat de activiteit over?" %>
         </div>
         <div class="form-group">
           <%= f.label :location, "Locatie" %>
@@ -48,14 +48,19 @@
       <i class="fa fa-users"></i>
       <input type="text" class="form-control" id="tags" name="message" placeholder="Zoeken naar gebruikers...">
       <!-- autofill met namen -->
-      <ul id="addperson"></ul>
     </div>
         <!-- autofill met namen -->
         <ul id="addperson">
+           <% @event.users.each do |user|%>
+          <li class="invited"><%= user.email %><i class="remove fa fa-times-circle-o fa-2x"></i><span class="number"><%= user.id %></span></li>
+          <input class="rem" type="hidden" name="event[user_ids][]" value= <%= user.id %> ></input>
+        <% end %>
         </ul>
         <%= f.submit 'Activiteit aanpassen', class: 'button button-blue button-large'  %>
         <% end %>
       </div>
+
+
         <div class="col-md-7 visible-md visible-lg">
         <div id='gmaps-canvas'></div>
         <bold>Locatie van de activiteit</bold> - <em>sleep de <abbr title="het pijltje">pin</abbr> op de kaart als u locatie nauwkeurig wilt wijzigen</em> 

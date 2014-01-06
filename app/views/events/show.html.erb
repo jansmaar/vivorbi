@@ -37,8 +37,18 @@
       <i class="fa fa-users"></i>
       <label for="">Genodigden</label>
       <div class="input-group">
-        <% @event.users.each do |user|%>
-        <ul id="addperson"><li class="invited"><%= user.email %></li></ul>
+  
+        <% @event.participants.each do |p|%>
+        
+          <% unless(p.user_id == current_user.id) %>
+        
+            <%= "Toevoegen" %>
+        
+          <% end %>
+
+        <% end %>
+          <% @event.users.each do |user|%>
+          <ul id="addperson"><li class="invited"><%= user.id %> <%= user.email %></li></ul>
         <% end %>
       </div>
     </div>  

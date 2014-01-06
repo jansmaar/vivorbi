@@ -1,8 +1,39 @@
 $(document).ready(function(){
+var items = [];
+// $.getJSON( '/users', function( data ) {
+    
+//     $.each( data, function( key, val ) {
+//     items.push( val.id );
+    
+//     });
+//     });
+var id = 28 //$(this).attr('id');
+$.ajax({
+    url: '/events/'+ id + '/edit',
+    type: 'GET',
+    //data: {id: id},
+    dataType: 'json',
+    success: function(data){
+        $.each(data, function( key, val ) {
+            items.push(val.id );
+        });
+    }
+});
 
-//BEGIN inviting participents    
+//console.log(items);
+//BEGIN inviting participents   
     var inInvited = [];
     var idForDatabase = [];
+
+    //get participents for editing
+    $(".invited").each(function() {
+        var edit = ($(this).text());
+        var editVal = edit.substr(0, edit.length-1);
+        var editId= Number(edit.substr(edit.length-1));
+        inInvited.push(editVal);
+        idForDatabase.push(editId);
+    });
+ 
     function addingParticipants (participant, id) {
         var adding = '<i class="remove fa fa-times-circle-o fa-2x"></i>'; 
         var number = '<span class="number">'+id+'</span>';
@@ -41,6 +72,9 @@ $(document).ready(function(){
         }
     });
 
+
+   
+
     //removes an invite
     $(document).on('click', '.remove', function(evt){
         //console.log(evt);
@@ -52,7 +86,7 @@ $(document).ready(function(){
         $(this).parent('.invited').remove();
          $('.rem').remove();
             $.each(idForDatabase, function(key, id){
-                $('<input>').attr({type: 'text', class: 'rem', name: 'events[participant_ids][]', value: id}).appendTo('#addperson');
+                 $('<input>').attr({type: 'hidden', class: 'rem', name: 'event[user_ids][]', value: id}).appendTo('#addperson');
             });
         //console.log(delId);
         //console.log(delVal);  

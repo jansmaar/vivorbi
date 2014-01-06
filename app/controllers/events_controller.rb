@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
 # before_filter :authenticate_user!
 #before_filter :validates_user, :only => :edit	
+respond_to :html, :json
 def new
 	check(@event = Event.new)
 end
@@ -19,6 +20,8 @@ def index
 	@events_by_date = @events.group_by(&:eventdate)
 	@date = params[:date] ? Date.parse(params[:date]) : Date.today
 	end
+	@events = Event.all
+	
 end
 
 def startpage
@@ -42,6 +45,8 @@ end
 def edit
 	if current_user
 	@event = Event.find(params[:id])
+	@eventusers = @event.users
+	respond_with(@eventusers)
 	unless current_user[:id] == @event.user.id
 	flash[:error] = "Sorry geen rechten!"
 	redirect_to root_path
@@ -72,6 +77,7 @@ def edit
 	#render new_escaped
 
 def update
+	#@event = Event.find(params[:id])
 	@event = current_user.events.find(params[:id])
 	@event.update_attributes(event_params)
 	redirect_to events_path

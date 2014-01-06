@@ -29,6 +29,14 @@ body {
 }
 /* EINDE CONTAINERS STYLING*/
 
+/* INLOGPAGINA */
+.hulp-nodig {
+	margin-top: 10px;
+}
+.account-aanmaken{
+	margin-top: ;	
+}
+
 /* PROFIEL*/
 .profiel h3 {
 	margin-top: 17px;
@@ -336,11 +344,6 @@ select {
 	padding: 10px;
 }*/
 
-/* INLOGPAGINA */
-.hulp-nodig {
-	margin-top: 10px;
-}
-
 .button {
   	-webkit-border-radius: 4;
   	-moz-border-radius: 4;
@@ -384,6 +387,10 @@ select {
 }
 .button-large {
 	width: 100%;
+}
+
+.no-margin {
+	margin-right: 0;
 }
 
 /*

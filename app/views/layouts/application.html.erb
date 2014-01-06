@@ -20,42 +20,26 @@
     <div class="logo">
       <%= image_tag "logo.png" ,class: "img-responsive logo" ,alt: "logo met elkaar"%>
     </div><!-- end of logo -->
-    <div class="clearfix profielbox">
-    <%= image_tag current_user.avatar.url, :class => "pull-left img-circle profielfoto profielfoto-menu" %>
-    <p class="profielbox">
-      Aangemeld als:<br />
-      <strong><%= current_user.firstname %> <%= current_user.lastname %></strong><br />
-      <%= link_to "Profiel bekijken", current_user %> |
-      <%= link_to "Afmelden", log_out_path %> 
-    </p>
-    </div>
+  
     <div id="menu">
       <ul>
+        <%= link_to  current_user do %>
+          <li><%= image_tag current_user.avatar.url, :class => "img-circle profielfoto profielfoto-menu" %><h3><%= current_user.firstname %> <%= current_user.lastname %></h3></li><br />
+        <% end %>
+        <%= link_to startpage_path do %>
+          <li><i class="fa fa-home fa-2x"></i><h3>Startpagina</h3></li>
+        <% end %>
+          <%= link_to events_path do %> 
+            <li><i class="fa fa-flag fa-2x"></i><h3> Activiteiten </h3></li>
+          <% end %> 
         <li>
-          <%= link_to startpage_path do %><h3><i class="fa fa-home"></i> Startpagina</h3><% end %>
-        </li>
-        <!-- we will keep this LI open by default -->
-        <li class="active">
-          <h3><i class="fa fa-flag"></i> Activiteiten <i class="fa fa-chevron-up pull-right"></i></h3>
-          <ul>
-            <li><%= link_to events_path do %><i class="fa fa-list"></i> Activiteiten overzicht<% end %></li>
-        <li><%= link_to new_event_path do %><i class="fa fa-plus-square"></i> Activiteiten aanmaken<% end %></li>
-            <li><a href="#"><i class="fa fa-comments-o"></i> Openbare activiteiten</a></li>
-          </ul>
-        </li>
-        <li>
-          <h3><i class="fa fa-map-marker"></i> Hotspots<i class="fa fa-chevron-down pull-right"></i></h3>
-          <ul>
-            <li><a href="#"><i class="fa fa-list"></i> hotspots</a></li>
-            <li><a href="#"><i class="fa fa-plus-square"></i> hotspots</a></li>
-            <li><a href="#"><i class="fa fa-comments-o"></i> hotspots</a></li>
-          </ul>
+         <i class="fa fa-map-marker fa-2x"></i> <h3>Hotspots</h3>
         </li>
         <li>
-          <h3><i class="fa fa-users"></i> Contacten</h3>
+         <i class="fa fa-users fa-2x"></i> <h3>Contacten</h3>
         </li>
         <li>
-          <h3><i class="fa fa-question-circle"></i> Hulp</h3>
+          <i class="fa fa-question-circle fa-2x"></i><h3>Hulp</h3>
         </li>
       </ul>
     </div><!--end of menu -->

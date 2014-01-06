@@ -1,12 +1,12 @@
 <%= image_tag @user.avatar.url, :class => "pull-left img-circle profielfoto profielfoto-user" %>
 <h2><%= @user.firstname %> <%= @user.lastname %></h2>
 
-<%= link_to 'Profiel aanpassen', edit_user_path, :class => "pull-right btn btn-default" %>
+<%= link_to 'Profiel aanpassen', edit_user_path, :class => "pull-right btn btn-default" %> 
 <%= link_to 'Wachtwoord wijzigen', edit_user_path, :class => "pull-right btn btn-default" %>
 
 <p>
 	Gebruikersnaam: <%= @user.firstname %> <%= @user.lastname %><br>
-	Aangemeld sinds <%= @user.created_at.strftime("%-d %B %Y").downcase%>
+	Aangemeld sinds <%= l(@user.created_at, :format => '%e %B %Y').downcase %>
 </p>
 
 <div class="achtergrond-h3">
@@ -19,7 +19,7 @@
 	<%= @user.address %>
 	<br><br>
 	<strong>Geboortedatum:</strong><br>
-	<%= @user.date_of_birth.strftime("%d %B %Y").downcase %>
+	<%= l(@user.date_of_birth, :format => '%e %B %Y').downcase %>
 	<br><br>
 	<strong>Telefoonnummer:</strong><br>
 	

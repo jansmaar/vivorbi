@@ -5,7 +5,7 @@
 <div class="nul-padding">
   <p class="lead">Welkom <%= current_user.firstname %> <%= current_user.lastname %>.</p>
   <p>
-  Het is vandaag <%= Time.now.strftime("%d %B %Y").downcase %> en de tijd is <%= Time.now.strftime("%H:%M") %>.<br>
+  Het is vandaag <%= l(Time.now, :format => '%e %B %Y').downcase %> en de tijd is <%= Time.now.strftime("%H:%M") %>.<br>
   Op deze pagina vindt u uw persoonlijke activiteiten waaraan u gaat deelnemen.</p>
 
   <div class="sorteren-blok">

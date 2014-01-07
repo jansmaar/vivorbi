@@ -12,7 +12,7 @@
       </div>
     <div class="col-xs-7">
         <i class="fa fa-calendar"></i>
-          <%= @event.eventdate.strftime("%d %B %Y").downcase %>
+          <%= l(@event.eventdate, :format => "%d %B %Y").downcase %>
       </div>
       <div class="col-xs-5">
         <i class="fa fa-clock-o"></i>
@@ -21,7 +21,7 @@
     <br>
     </div>
     <div class="form-group">
-      <label for="type"><i class="fa fa-bookmark-o"></i> Type activiteit</label><br>
+      <label for="type"><i class="fa fa-bookmark"></i> Type activiteit</label><br>
       Daguitje
     </div>
     <div class="form-group">
@@ -33,40 +33,46 @@
       <%= @event.location %>
       <div id='gmaps-error'></div>
     </div>
+
     <div class="form-group">
       <i class="fa fa-users"></i>
       <label for="">Genodigden</label>
-      <div class="input-group">
-      
-          <p> Aantal deelnemers: <%= @event.participants.count %> </p>
-    
-     <% if @participant = @event.participants.where(user_id: current_user.id).first  %>
-       <%= link_to "event niet meer volgen", unfollow_event_path, :method => :delete %>
-        <% end %>
-    <% unless @participant = @event.participants.where(user_id: current_user.id).first %>   
- <%= link_to "event volgen", follow_event_path %>
-  <% end %>
-  
         
-          <% @event.users.each do |user|%>
-          <ul id="addperson">
-          <li class="invited"><%= user.id %> <%= user.email %>
-          </li>
-          </ul>
-          
-          <%= image_tag user.avatar.url %>
+        <div class="input-group">
+
+        <p> Aantal deelnemers: <%= @event.participants.count %> </p>
+
+
+<% @event.users.each do |user|%>
+<ul id="addperson">
+<li class="invited">
+<%= image_tag user.avatar.url, :class => "img-circle profielfoto profielfoto-invite" %> <%= user.email %>
+</li>
+</ul>
+
+<% end %>
+</div>
+
+
+
+</div>
+<div class="deelnemen">
+<p>Hieronder kunt u aangeven of u ook wilt deelnemen of zich juist wilt uitschrijven.<br><br></p>
+  <% if @participant = @event.participants.where(user_id: current_user.id).first  %>
+        <%= link_to "Helaas, ik doe niet meer mee! ", unfollow_event_path, :method => :delete, :class => "button button-orange button-large"%>
         <% end %>
-      </div>
-    </div>  
+        <% unless @participant = @event.participants.where(user_id: current_user.id).first %>   
+        <%= link_to "Ik doe mee!", follow_event_path, :class => "button button-green button-large" %>
+        <% end %>
+</div>
+
   </div>
-  <div class="col-md-7 visible-md visible-lg">
+
+<div class="col-md-7 visible-md visible-lg">
   <div id='gmaps-canvas'></div>
-  <bold>Locatie van de activiteit</bold> - <em>sleep de <abbr title="het pijltje">pin</abbr> op de kaart als u locatie nauwkeurig wilt wijzigen</em> 
+      <bold>Locatie van de activiteit</bold> - <em>sleep de <abbr title="het pijltje">pin</abbr> op de kaart als u locatie nauwkeurig wilt wijzigen</em> 
   </div>
 </div>  
-
-
-
 
 <%= render 'comments/new' %> 
 
@@ -74,13 +80,12 @@
 
 
 <div class="media">
-  <a class="pull-left" href="#">
-    <%= image_tag c.user.avatar.url, :class => "media-object img-circle profielfoto profielfoto-menu"%>
-  </a>
+  <div class="pull-left">
+    <%= image_tag c.user.avatar.url, :class => "media-object img-circle profielfoto profielfoto-comment"%>
+  </div>
   <div class="media-body">
-  <h5 class="media-heading">Geplaatst door: <%= c.user.firstname %></h5>
-    <%= c.content %><br/><br/>
-    <p>Geplaatst op: <%= l(c.created_at, :format => "%d %B %Y %H:%M").downcase %> </p>
+  <h5 class="media-heading">Geplaatst door <%= c.user.firstname %> op <%= l(c.created_at, :format => "%e %B %Y %H:%M").downcase %></h5>
+    <%= c.content %><br/>
   </div>
 </div>
 

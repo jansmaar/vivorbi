@@ -62,8 +62,16 @@ textarea {
 	width: 115px;
 }
 .profielfoto-menu {
-	height:70px;
+	height: 90px;
+	width: 90px;
+}
+.profielfoto-comment {
+	height: 70px;
 	width: 70px;
+}
+.profielfoto-invite {
+	height: 60px;
+	width: 60px;
 }
 .uitloggen h4 {
 	margin: 19px 0 0 0;
@@ -111,8 +119,7 @@ textarea {
 	margin: 0;
 }
 li.invited {
-	padding: 0 0 0 20px;
-	line-height: 38px;
+	padding: 0 0 4px 0;
 	font-weight: bold;
 }
 li.grey {
@@ -310,11 +317,16 @@ select {
 	padding-top: 5px;
 	margin: 10px 0;
 }
-
 .activiteit a {
 	color: rgb(51, 51, 51);
 	display: block;
 	text-decoration: none;
+}
+/* aan activiteit deelnemen knop*/
+.deelnemen {
+	margin: 15px 0 0 0;
+	width: auto;
+	height: auto;
 }
 
 .tijd-tot {
@@ -367,6 +379,8 @@ select {
 	padding: 10px;
 }*/
 
+/* KNOPPEN */
+
 .button {
   	-webkit-border-radius: 4;
   	-moz-border-radius: 4;
@@ -387,6 +401,7 @@ select {
 .button-default:hover {
 	background-color: #808080;
 	text-decoration: none;
+	color: #fff;
 }
 .button-green {
 	background-color: #00bc77;
@@ -397,6 +412,7 @@ select {
 .button-green:hover {
 	background: #03ac6e;
   	text-decoration: none;
+  	color: #fff;
 }
 .button-blue {
 	background-color: #3868b5;
@@ -407,6 +423,18 @@ select {
 .button-blue:hover {
 	background-color: #365fa1;
 	text-decoration: none;
+	color: #fff;
+}
+.button-orange {
+	background-color: #ff9a00;
+	-webkit-box-shadow: 0px 2px 0px #f57a00;
+  	-moz-box-shadow: 0px 2px 0px #f57a00;
+  	box-shadow: 0px 2px 0px #f57a00;
+}
+.button-orange:hover {
+	background-color: #de8300;
+	text-decoration: none;
+	color: #fff;
 }
 .button-large {
 	width: 100%;

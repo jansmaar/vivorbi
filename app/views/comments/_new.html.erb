@@ -1,12 +1,12 @@
-<div class="mededeling-titel">
-<h4>Hier kunt u op- of aanmerkingen plaatsen betreft het aangaande evenement</h4>
-</div>
-<%= form_for [@event, Comment.new] do |f| %>
-  <p>
-    <%= f.text_area :content, :cols => "100", :rows => "5" %>
-  </p>
-  <p>
-    <%= f.submit "Commentaar toevoegen", class: "button button-green button-large"%>
-  </p>
+<h4><i class="fa fa-comments-o"></i> Hier kunt u op- of aanmerkingen plaatsen betreft het aangaande evenement</h4>
+	<%= form_for [@event, Comment.new] do |f| %>
+		<p>
+			<%= f.text_area :content, :class => "form-control", :rows => "5" %>
+		</p>
 
-<% end %>
+		<p>
+			<%= f.submit "Commentaar toevoegen", class: "button button-green button-large"%>
+		</p>
+	
+	<% end %>
+<h4>Geplaatst commentaar</h4>

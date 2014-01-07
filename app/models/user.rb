@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   
   has_attached_file :avatar,
   :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
-      :url => "/system/:attachment/:id/:style/:filename"
+      :url => "/system/:attachment/:id/:style/:filename",
+      :default_url => 'nieuwegebruiker.png'
  	before_save :encrypt_password
 	
 	

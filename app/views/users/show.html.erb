@@ -1,11 +1,11 @@
 <%= image_tag @user.avatar.url, :class => "pull-left img-circle profielfoto profielfoto-user" %>
-<h2><%= @user.firstname %> <%= @user.lastname %></h2>
+<h2><%= @user.firstname %> <%= @user.lastname %> (<%= @user.age() %> jaar)</h2>
 
 <%= link_to 'Profiel aanpassen', edit_user_path, :class => "pull-right btn btn-default" %> 
 <%= link_to 'Wachtwoord wijzigen', edit_user_path, :class => "pull-right btn btn-default" %>
 
 <p>
-	Gebruikersnaam: <%= @user.firstname %> <%= @user.lastname %><br>
+	Gebruikersnaam: <%= @user.firstname %> <%= @user.lastname %> <br>
 	Aangemeld sinds <%= l(@user.created_at, :format => '%e %B %Y').downcase %>
 </p>
 
@@ -16,7 +16,8 @@
 <div class="row">
   <div class="col-md-4">
   	<strong>Adres:</strong><br>
-	<%= @user.address %>
+	<%= @user.address %> <%= @user.housenumber %></br>
+	<%= @user.zip_code %> <%= @user.city %>
 	<br><br>
 	<strong>Geboortedatum:</strong><br>
 	<%= l(@user.date_of_birth, :format => '%e %B %Y').downcase %>
@@ -28,14 +29,8 @@
 	<strong>Gemeente:</strong><br>
 	<%= @user.commune() %>
 	<br><br>
-	<strong>Postcode:</strong><br>
-	<%= @user.zip_code %>
-	<br><br>
 	<strong>E-mailadres:</strong><br>
 	<%= @user.email %>
-	<br><br>
-	<strong>Leeftijd:</strong><br>
-	<%= @user.age() %>
   </div>
   <div class="col-md-8">
   	<strong><span class="badge">2</span> aankomende activiteiten</strong>

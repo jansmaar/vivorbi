@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140107142351) do
+ActiveRecord::Schema.define(version: 20140107203918) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 20140107142351) do
     t.boolean  "active",              default: false
     t.string   "zip_code"
     t.string   "commune"
+    t.string   "city"
+    t.string   "housenumber"
   end
 
 end

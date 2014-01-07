@@ -27,6 +27,17 @@
   </p>
 
   <p>
+  <%= f.label :zip_code, "Postcode" %> </br>
+  <%= f.text_field :zip_code {:maxlength => 6, :size => 6} %>
+  </p>
+
+   <p>
+  <%= f.label :commune, "Gemeente" %> </br>
+  <%= f.label :commune, "Gemeente" %> </br>
+<%= f.select :commune, options_for_select(["Achtkarspelen", "Ameland","het Bildt", "Dantumadiel", "Dongeradeel", "Ferwerderadiel", "Frankeradeel", "De Friese Meren","Harlingen", "Heerenveen", "Kollumerland en Nieuwkruisland", "Leeuwarden", "Leeuwarderadeel", "Littenseradiel", "Menemeradiel", "Ooststellingwerf", "Opsterland", "Schiermonnikoog", "Smallingerland", "Súdwest-Fryslân", "Terschelling", "Tytsjerksteradiel", "Vlieland", "Westellingwerf"]) %>  
+</p>
+
+  <p>
     <%= f.label :date_of_birth, "Geboortedatum" %> </br>
     <%= f.date_select(:date_of_birth, order: [:day, :month, :year], :start_year => 1900, :end_year => Time.now.year) %>
   </p>

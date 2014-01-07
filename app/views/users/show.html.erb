@@ -26,7 +26,10 @@
 	<%= number_to_phone(@user.phone_number, country_code: 31,  delimiter: " ") %>
 	<br><br>
 	<strong>Gemeente:</strong><br>
-	Leeuwarden
+	<%= @user.commune() %>
+	<br><br>
+	<strong>Postcode:</strong><br>
+	<%= @user.zip_code %>
 	<br><br>
 	<strong>E-mailadres:</strong><br>
 	<%= @user.email %>

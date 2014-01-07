@@ -12,6 +12,12 @@
   <%= f.label :address, "Adres" %> 
   <%= f.text_field :address %></br>
 
+   <%= f.label :commune, "Gemeente" %> </br>
+<%= f.select :commune, options_for_select(["Achtkarspelen", "Ameland","het Bildt", "Dantumadiel", "Dongeradeel", "Ferwerderadiel", "Frankeradeel", "De Friese Meren","Harlingen", "Heerenveen", "Kollumerland en Nieuwkruisland", "Leeuwarden", "Leeuwarderadeel", "Littenseradiel", "Menemeradiel", "Ooststellingwerf", "Opsterland", "Schiermonnikoog", "Smallingerland", "Súdwest-Fryslân", "Terschelling", "Tytsjerksteradiel", "Vlieland", "Westellingwerf"]) %>
+
+    <%= f.label :zip_code, "Postcode" %> 
+  <%= f.text_field :zip_code, {:maxlength => 6, :size => 6} %></br>
+
  <%= f.label :phone_number, "Telefoonnummer" %>
  <%= f.telephone_field :phone_number, {:maxlength => 10, :size => 10} %><br/>
 

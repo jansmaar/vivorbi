@@ -61,13 +61,14 @@
   </div>
 </div>  
 
-<%= render 'comments/new' %>
+<%= render 'comments/new' %> 
 
 <% @event.comments.each do |c| %>
 
 <%= image_tag c.user.avatar.url %>
 
 <%= c.user.firstname %>
+
 
 <small><%= c.content %></small>
 

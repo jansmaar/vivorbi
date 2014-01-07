@@ -228,7 +228,7 @@ li.grey {
 select {
 	margin-right: 4px;
 }
-.mededeling {
+.mededeling-titel {
 	background-color: rgba(191, 211, 213, 0.8);
 	padding: 5px 0 1px 5px;
 	margin-top: 15px;
@@ -236,8 +236,12 @@ select {
 	-moz-border-radius: 2px;
 	border-radius: 2px;
 }
-.mededeling h3 {
+.mededeling-titel h3 {
 	margin-top: 6px;
+}
+.mededeling {
+	width: 100%;
+	height: 100%;
 }
 /* ICONS FONT AWESOME MARGIN&PADDING */
 .fa-flag{

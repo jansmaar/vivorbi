@@ -61,15 +61,23 @@
   </div>
 </div>  
 
+
+
+
 <%= render 'comments/new' %> 
 
 <% @event.comments.each do |c| %>
 
-<%= image_tag c.user.avatar.url %>
 
-<%= c.user.firstname %>
-
-
-<small><%= c.content %></small>
+<div class="media">
+  <a class="pull-left" href="#">
+    <%= image_tag c.user.avatar.url, :class => "media-object img-circle profielfoto profielfoto-menu"%>
+  </a>
+  <div class="media-body">
+  <h5 class="media-heading">Geplaatst door: <%= c.user.firstname %></h5>
+    <%= c.content %><br/><br/>
+    <p>Geplaatst op: <%= l(c.created_at, :format => "%d %B %Y %H:%M").downcase %> </p>
+  </div>
+</div>
 
 <% end %>

@@ -8,9 +8,14 @@
   Het is vandaag <%= l(Time.now, :format => '%e %B %Y').downcase %> en de tijd is <%= Time.now.strftime("%H:%M") %>.<br>
   Op deze pagina vindt u uw persoonlijke activiteiten waaraan u gaat deelnemen.</p>
 
-  <div class="mededeling">
+  <div class="mededeling-titel">
     <h3>Mededelingen</h3>
   </div>
+
+  <div class="mededeling">
+    Aangemaakt op: <i class="fa fa-calendar"></i> 2 januari 2013 om <i class="fa fa-clock-o"></i> <%= Time.now.strftime("%H:%M") %>
+  </div>
+
   
 
   <div class="zoeken-blok">

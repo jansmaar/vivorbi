@@ -4,6 +4,7 @@ Vivorbi::Application.routes.draw do
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "sign_up" => "users#new", :as => "sign_up"
   get "startpage" => "events#startpage", :as => "startpage"
+  get "management" => "dashboards#management", :as => "management"
 
 
   	resources :users do
@@ -11,8 +12,20 @@ Vivorbi::Application.routes.draw do
   		end
   	resources :users
   	resources :sessions 
-	resources :events
+	resources :events do
+			member do
+				get 'follow'
+				delete 'unfollow' 
+			end
+		end
+
 	resources :participants
+	resources :dashboards do
+		resources :events
+		end
+		
+  get 'dashboards/active/:id', to: "dashboards#active"
+  get 'dashboards/inactive/:id', to: "dashboards#inactive"
 	
 
 root "events#startpage"

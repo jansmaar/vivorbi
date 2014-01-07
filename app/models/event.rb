@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
 	belongs_to :user 
 	has_many :participants
+	belongs_to :dashboards
 	has_many :users, through: :participants
 	validates :user_id, :presence => true
 

@@ -89,6 +89,27 @@ def destroy
 	redirect_to startpage_path
 end
 
+def follow
+	@event = Event.find(params[:id])
+	@participant = Participant.new(participant_params)
+	@participant.user_id = current_user.id
+	@participant.event_id = @event.id
+	if @participant.save
+	redirect_to event_path
+end
+end
+
+def unfollow
+	@event = Event.find(params[:id])
+	@participant = @event.participants.where(user_id: current_user.id).first
+	#@current_user == @participant..find(params[:id])
+	#@participant == current_user.find(params[:event_id])
+	#@event = Event.find(params[:id])
+	#@participant = Participant.all.where(participant_params == @event)
+	@participant.destroy
+	redirect_to event_path
+end
+
 private
   def event_params
     params.require(:event).permit!#(:title, :text, :content, :eventdate, :eventtime, :location, :user_ids)
@@ -102,6 +123,10 @@ unless current_user
 		input
 	end
 end
+
+ def participant_params
+	  params.require(:participant).permit(:user_id, :event_id, :participant) if params[:participant]
+  end
 
 def validates_user
 	redirect_to root_url unless current_user.id.to_s == params[:id]

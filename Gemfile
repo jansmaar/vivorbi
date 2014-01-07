@@ -16,6 +16,8 @@ gem 'jquery-turbolinks'
 gem 'ransack'
 gem "paperclip", "~> 3.5.0"
 
+gem 'will_paginate', '~> 3.0.5'
+
 gem 'sqlite3', :require => 'sqlite3'
 gem "bcrypt-ruby", :require => "bcrypt"
 

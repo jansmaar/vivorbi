@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131212113532) do
+ActiveRecord::Schema.define(version: 20140107110227) do
+
+  create_table "dashboards", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "events", force: true do |t|
     t.string   "title"
@@ -47,6 +54,7 @@ ActiveRecord::Schema.define(version: 20131212113532) do
     t.date     "date_of_birth"
     t.string   "phone_number"
     t.string   "address"
+    t.boolean  "active",              default: false
   end
 
 end

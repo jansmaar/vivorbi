@@ -40,10 +40,7 @@
   </div>
   <% @events.each do |start| %>
   <% unless start.days_from_now == nil %>
-<<<<<<< HEAD
-=======
   <%= link_to start do %>
->>>>>>> ef3b21cc2dcc2c9f55786759b0efdd19eb40fed8
   <div class="activiteit activiteit-prive">
     <div class="tijd-tot"><i class="fa fa-calendar-o no-margin"></i> <em> <%= start.days_from_now() %> </em> </div>
     <h3 class="uitgelicht-h4"><%= start.title %></h3>

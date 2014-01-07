@@ -43,7 +43,6 @@
   </div>
   <% @events.each do |start| %>
   <% unless start.days_from_now == nil %>
-
   <div class="activiteit activiteit-prive">
     <div class="tijd-tot"><i class="fa fa-calendar-o no-margin"></i> <em> <%= start.days_from_now() %> </em> </div>
     <h3 class="uitgelicht-h4"><%= start.title %></h3>

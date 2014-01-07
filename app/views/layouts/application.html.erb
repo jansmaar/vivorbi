@@ -20,10 +20,9 @@
     <div class="logo">
       <%= image_tag "logo.png" ,class: "img-responsive logo" ,alt: "logo met elkaar"%>
     </div><!-- end of logo -->
-  
-    <div id="menu">
+      <div id="menu">
       <ul>
-        <%= link_to  current_user do %>
+        <%= link_to current_user do %>
           <li><%= image_tag current_user.avatar.url, :class => "img-circle profielfoto profielfoto-menu" %><h3><%= current_user.firstname %> <%= current_user.lastname %></h3></li><br />
         <% end %>
         <%= link_to startpage_path do %>

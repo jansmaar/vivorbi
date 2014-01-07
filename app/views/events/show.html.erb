@@ -49,7 +49,11 @@
   
         
           <% @event.users.each do |user|%>
-          <ul id="addperson"><li class="invited"><%= user.id %> <%= user.email %></li></ul>
+          <ul id="addperson">
+          <li class="invited"><%= user.id %> <%= user.email %>
+          </li>
+          </ul>
+          
           <%= image_tag user.avatar.url %>
         <% end %>
       </div>

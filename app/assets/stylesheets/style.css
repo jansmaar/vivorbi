@@ -27,7 +27,12 @@ body {
 	line-height: 30px;
 	border-radius: 3px;
 }
-/* EINDE CONTAINERS STYLING*/
+
+textarea {
+  resize: none;
+}
+
+/* EINDE ALGEMENE STYLING*/
 
 /* INLOGPAGINA */
 .hulp-nodig {

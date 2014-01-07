@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, on: :create }
 
 
-def self.authenticate(email, password)
+def self.authenticate(email, password, active)
   user = find_by_email(email)
   if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
     user

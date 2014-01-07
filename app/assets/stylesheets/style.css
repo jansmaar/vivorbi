@@ -160,7 +160,6 @@ li.grey {
 /* MENU */
 .padding-for-menu-col2{
 	padding: 0;
-	-webkit-box-shadow: 3px 0px 5px -2px #888 ;
 }
 #menu {
 	background-color: #C6D1D3;
@@ -188,8 +187,7 @@ li.grey {
 	background-color: #C6D1D3;
 	line-height: 35px;
 	padding: 10px 10px 10px 0;
-	color: #f6f6f6;
-	
+	color: #f6f6f6;	
 	background-color: #15b374;
 	text-align: center;
 }
@@ -199,18 +197,10 @@ li.grey {
 	margin: 0;
 }
 
-
-
-
 #menu li:hover {
-
-	
-
-	
-	
-	background-color: #7fcaac;
-	/*border-bottom:2px solid #25a25a;*/
+	background-color: #7fcaac;3
 }
+
 /*links*/
 #menu ul ul li a {
 	color: white;
@@ -259,12 +249,13 @@ select {
 }
 /* ACTIVITEITEN */
 .activiteit-eigen {
-	background-color: rgba(0, 188, 119, 0.4);
+	background-color: #dbdfe1;
 	padding: 5px 0 1px 5px ;
 	margin-top: 15px;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
+	border-left: 4px solid rgba(0, 188, 119, 0.4);
 }
 .activiteit-eigen h3 {
 	margin-top: 0px;
@@ -305,6 +296,13 @@ select {
 	padding-top: 5px;
 	margin: 10px 0;
 }
+
+.activiteit a {
+	color: black;
+	display: block;
+	text-decoration: none;
+}
+
 .tijd-tot {
 	float: right;
 	height: auto;
@@ -328,6 +326,9 @@ select {
 	background-color: #d5d5d5;
 	margin: 35px 0 10px 0;
 	padding: 8px 0 8px 3px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
 }
 .achtergrond-h3 h3 {
 	margin: 0;

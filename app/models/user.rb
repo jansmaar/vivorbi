@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :events
 	belongs_to :dashboards
+  has_many :comments
 	#has many :participants through :events
 	#has_many :participants, through: => :events
 	

@@ -68,3 +68,12 @@
   </div>
 </div>  
 
+<%= render 'comments/new' %>
+
+<% @event.comments.each do |c| %>
+
+<%= c.user_id %>
+
+<small><%= c.content %></small>
+
+<% end %>

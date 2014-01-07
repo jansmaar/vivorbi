@@ -4,6 +4,7 @@ class Event < ActiveRecord::Base
 	belongs_to :dashboards
 	has_many :users, through: :participants
 	validates :user_id, :presence => true
+	has_many :comments
 
 def days_from_now
 	if eventdate != nil

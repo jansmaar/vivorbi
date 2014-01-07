@@ -23,6 +23,10 @@ Vivorbi::Application.routes.draw do
 	resources :dashboards do
 		resources :events
 		end
+    
+    resources :events do
+        resources :comments
+      end
 		
   get 'dashboards/active/:id', to: "dashboards#active"
   get 'dashboards/inactive/:id', to: "dashboards#inactive"

@@ -47,6 +47,7 @@
   <div class="activiteit activiteit-prive">
     <div class="tijd-tot"><i class="fa fa-calendar-o no-margin"></i> <em> <%= start.days_from_now() %> </em> </div>
     <h3 class="uitgelicht-h4"><%= start.title %></h3>
+     <h3 class="uitgelicht-h4"><%= start.user.email %></h3>
     <ul class="list-unstyled">
       <li><i class="fa fa-flag fa-lg"></i> Daguitje</li>
       <li><i class="fa fa-calendar-o fa-lg"></i> <%= start.eventdate ? start.eventdate.strftime("%-d %B %Y").downcase : ""%> </li>

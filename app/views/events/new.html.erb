@@ -48,6 +48,10 @@
       <!-- autofill met namen -->
       <ul id="addperson"></ul>
     </div>
+    <div class="form-group">
+     <%= f.label :public, "Openbaar" %><br>
+      <%= f.text_field :public, class: "form-control errorcheck",  placeholder: " Yess or Noo"  %>
+    </div>
     <%= f.submit 'Activiteit aanmaken', class: 'button button-blue button-large'  %>
   <% end %>
   </div>

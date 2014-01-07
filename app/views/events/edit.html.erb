@@ -56,6 +56,10 @@
           <input class="rem" type="hidden" name="event[user_ids][]" value= <%= user.id %> ></input>
         <% end %>
         </ul>
+        <div class="form-group">
+     <%= f.label :public, "Openbaar" %><br>
+      <%= f.text_field :public, class: "form-control errorcheck",  placeholder: " Yess or Noo"  %>
+    </div>
         <%= f.submit 'Activiteit aanpassen', class: 'button button-blue button-large'  %>
         <% end %>
       </div>

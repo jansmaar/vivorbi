@@ -7,7 +7,13 @@ def new
 end
 
 def show
-	check(@event = Event.find(params[:id]))
+	@event = Event.find(params[:id])
+	@participant = Participant.new(participant_params)
+	if @event.public == "noo" 
+		unless @participant.user_id == current_user.id || @event.user_id == current_user.id
+			redirect_to events_path
+		end
+	end
 end
 
 def index
@@ -21,6 +27,7 @@ def index
 	@date = params[:date] ? Date.parse(params[:date]) : Date.today
 	end
 	@events = Event.all
+
 	
 end
 
@@ -112,7 +119,7 @@ end
 
 private
   def event_params
-    params.require(:event).permit!#(:title, :text, :content, :eventdate, :eventtime, :location, :user_ids)
+    params.require(:event).permit!#(:title, :text, :content, :eventdate, :eventtime, :location, :user_ids, :public)
 end
 
 def check(input)

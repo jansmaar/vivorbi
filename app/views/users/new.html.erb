@@ -1,3 +1,4 @@
+<% content_for :landingpage do %>
 <h1>Registreren</h1>
 
 <%= form_for @user do |f| %>
@@ -51,4 +52,5 @@
     <%= f.password_field :password_confirmation %>
   </p>
   <p class="button"><%= f.submit %></p>
+<% end %>
 <% end %>

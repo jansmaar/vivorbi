@@ -1,5 +1,7 @@
 <% content_for :landingpage do %>
-<h1>Registreren</h1>
+<div class="page-header">
+  <h3>Aanmelden</h3>
+</div>
 
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
@@ -12,62 +14,77 @@
       </ul>
     </div>
   <% end %>
-  <p>
-  <%= f.label :firstname, "voornaam" %> </br>
-  <%= f.text_field :firstname %>
-  </p>
+  <div class="row">
+      <div class="col-xs-4 form-group">
+          <%= f.label :firstname, "Voornaam" %>
+          <%= f.text_field :firstname, class: "form-control errorcheck" %>
+      </div>
+      <div class="col-xs-4 form-group">
+          <%= f.label :lastname, "Achternaam" %>
+          <%= f.text_field :lastname, class: "form-control errorcheck" %>
+      </div>
+</div>
+<div class="row">
+      <div class="col-xs-4 form-group">
+          <%= f.label :address, "Adres" %>
+          <%= f.text_field :address, class: "form-control errorcheck" %>
+      </div>
+      <div class="col-xs-4 form-group">
+          <%= f.label :housenumber, "Huisnummer" %>
+          <%= f.text_field :housenumber, class: "form-control errorcheck" %>
+      </div>
+</div>
+<div class="row">
+      <div class="col-xs-4 form-group">
+          <%= f.label :zip_code, "Postcode" %>
+          <%= f.text_field :zip_code, class: "form-control errorcheck" %>
+      </div>
+      <div class="col-xs-4 form-group">
+          <%= f.label :city, "Woonplaats" %>
+          <%= f.text_field :city, class: "form-control errorcheck" %>
+      </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-4 form-group">
+        <%= f.label :date_of_birth, "Geboortedatum" %> </br>
+        <%= f.date_select(:date_of_birth, order: [:day, :month, :year], :start_year => 1900, :end_year => Time.now.year) %>
+      </div>
+      <div class="col-xs-4 form-group">
+        <%= f.label :commune, "Gemeente" %><br/> 
+        <%= f.select :commune, ["Achtkarspelen", "Ameland","het Bildt", "Dantumadiel", "Dongeradeel", "Ferwerderadiel", "Frankeradeel", "De Friese Meren","Harlingen", "Heerenveen", "Kollumerland en Nieuwkruisland", "Leeuwarden", "Leeuwarderadeel", "Littenseradiel", "Menemeradiel", "Ooststellingwerf", "Opsterland", "Schiermonnikoog", "Smallingerland", "Súdwest-Fryslân", "Terschelling", "Tytsjerksteradiel", "Vlieland", "Westellingwerf"] %>
+      </div>
+</div>
+
+<div class="row">
+      <div class="col-xs-4 form-group">
+          <%= f.label :email, "Email" %>
+          <%= f.text_field :email, class: "form-control errorcheck" %>
+      </div>
+      <div class="col-xs-4 form-group">
+          <%= f.label :phone_number, "Telefoon" %>
+          <%= f.text_field :phone_number, class: "form-control errorcheck" %>
+      </div>
+</div>
+
+ <div class="row">
+      <div class="col-xs-6 form-group">
+    <%= f.label :password, "Wachtwoord" %>
+    <%= f.password_field :password, class: "form-control errorcheck" %>
+  </div>
+</div>
   
-   <p>
-  <%= f.label :lastname, "achternaam" %> </br>
-  <%= f.text_field :lastname %>
-  </p>
+<div class="row">
+      <div class="col-xs-6 form-group">
+    <%= f.label :password_confirmation, "Wachtwoord bevestigen" %>
+    <%= f.password_field :password_confirmation, class: "form-control errorcheck" %>
+</div>
+</div>
 
-    <p>
-  <%= f.label :city, "Woonplaats" %> </br>
-  <%= f.text_field :city %>
-  </p>
-
-
-  <p>
-  <%= f.label :address, "Adres" %> </br>
-  <%= f.text_field :address %>
-  </p>
-
-  <p>
-  <%= f.label :zip_code, "Postcode" %> </br>
-  <%= f.text_field :zip_code, {:maxlength => 6, :size => 6} %>
-  </p>
-
-   <p>
-  <%= f.label :commune, "Gemeente" %> </br>
-  <%= f.label :commune, "Gemeente" %> </br>
-<%= f.select :commune, options_for_select(["Achtkarspelen", "Ameland","het Bildt", "Dantumadiel", "Dongeradeel", "Ferwerderadiel", "Frankeradeel", "De Friese Meren","Harlingen", "Heerenveen", "Kollumerland en Nieuwkruisland", "Leeuwarden", "Leeuwarderadeel", "Littenseradiel", "Menemeradiel", "Ooststellingwerf", "Opsterland", "Schiermonnikoog", "Smallingerland", "Súdwest-Fryslân", "Terschelling", "Tytsjerksteradiel", "Vlieland", "Westellingwerf"]) %>  
-</p>
-
-  <p>
-    <%= f.label :date_of_birth, "Geboortedatum" %> </br>
-    <%= f.date_select(:date_of_birth, order: [:day, :month, :year], :start_year => 1900, :end_year => Time.now.year) %>
-  </p>
-
-  <p>
-    <%= f.label :phone_number, "Telefoonnummer" %> </br>
-    <%= f.text_field :phone_number, {:maxlength => 10, :size => 10} %>
-  </p>
-  
-  <p>
-    <%= f.label :email, "email" %><br />
-    <%= f.text_field :email %>
-  </p>
-  
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p>
-  
-  <p>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <p class="button"><%= f.submit %></p>
+<div class="row">
+ <div class="col-xs-4 form-group">
+   <%= f.submit 'Opslaan', class: 'button button-blue button-large'  %>
+</div>
+</div>
 <% end %>
 <% end %>

@@ -7,11 +7,16 @@ def new
 end
 
 def show
-	@event = Event.find(params[:id])
-	@participant = Participant.new(participant_params)
-	if @event.public == "noo" 
-		unless @participant.user_id == current_user.id || @event.user_id == current_user.id
-			redirect_to events_path
+	unless current_user
+		flash[:error] = "Geen toegang tot de pagina die u probeerde te bereiken"
+		redirect_to('/log_in')
+	else
+		@event = Event.find(params[:id])
+		@participant = Participant.new(participant_params)
+		if @event.public == "noo" 
+			unless @participant.user_id == current_user.id || @event.user_id == current_user.id
+				redirect_to events_path
+			end
 		end
 	end
 end
@@ -35,8 +40,24 @@ def startpage
 	unless(current_user)
 	redirect_to('/log_in')
 	else
-	@events = Event.all
+
+
+
+
+
+	@participants = Participant.all.reverse
 	@events = Event.find( :all, :order => "eventdate" , :limit => 11)
+ # 		@participants.each do |u| 
+ # 			@event = Event.all
+ # 		@event.each do |e| 
+ 		
+	#  		if  u.user_id == current_user.id && u.event_id == e.id
+	#  			@events = Event.find( :all, :order => "eventdate" , :limit => 11)
+	 			
+	#  			end	
+
+	#  		end
+ # 		end
 	end
 end
 

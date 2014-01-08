@@ -20,10 +20,13 @@
     <div class="logo">
       <%= image_tag "logo.png" ,class: "img-responsive logo" ,alt: "logo met elkaar"%>
     </div><!-- end of logo -->
+
       <div id="menu">
       <ul>
-        <%= link_to current_user do %>
-          <li><%= image_tag current_user.avatar.url, :class => "img-circle profielfoto profielfoto-menu" %><h3><%= current_user.firstname %> <%= current_user.lastname %></h3></li><br />
+                <%= link_to current_user do %>
+          <li>
+            <%= image_tag current_user.avatar.url, :class => "img-circle profielfoto profielfoto-menu" %><h3><%= current_user.firstname %> <%= current_user.lastname %></h3>
+          </li>
         <% end %>
         <%= link_to startpage_path do %>
           <li><i class="fa fa-home fa-2x"></i><h3>Startpagina</h3></li>
@@ -35,12 +38,19 @@
         <li>
          <i class="fa fa-map-marker fa-2x no-margin"></i> <h3>Hotspots</h3>
         </li>
+        <%= link_to events_path do %>
         <li>
          <i class="fa fa-users fa-2x"></i> <h3>Contacten</h3>
         </li>
+        <% end %>
         <li>
           <i class="fa fa-question-circle fa-2x"></i><h3>Hulp</h3>
         </li>
+        <%= link_to log_out_path do %> 
+        <li>
+          <i class="fa fa-sign-out fa-2x"></i><h3>Uitloggen</h3>
+        </li>
+        <% end %>
       </ul>
     </div><!--end of menu -->
   </div><!-- end of col-md-2 --> 

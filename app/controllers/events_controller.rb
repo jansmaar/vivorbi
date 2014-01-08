@@ -40,24 +40,7 @@ def startpage
 	unless(current_user)
 	redirect_to('/log_in')
 	else
-
-
-
-
-
-	@participants = Participant.all.reverse
 	@events = Event.find( :all, :order => "eventdate" , :limit => 11)
- # 		@participants.each do |u| 
- # 			@event = Event.all
- # 		@event.each do |e| 
- 		
-	#  		if  u.user_id == current_user.id && u.event_id == e.id
-	#  			@events = Event.find( :all, :order => "eventdate" , :limit => 11)
-	 			
-	#  			end	
-
-	#  		end
- # 		end
 	end
 end
 

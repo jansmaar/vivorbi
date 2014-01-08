@@ -12,7 +12,7 @@
       <div class="col-xs-7 form-group">
         <%= f.label :eventdate, "Datum" %>
         <i class="fa fa-calendar"></i>
-        <%= f.text_field :eventdate, class: "form-control errorcheck", placeholder: "Selecteer een datum", id: "datepicker"%>
+        <%= f.text_field :eventdate, class: "form-control errorchecker", placeholder: "Selecteer een datum", id: "datepicker"%>
       </div>
       <div class="col-xs-5 form-group">
         <%= f.label :eventtime, "Tijd" %>
@@ -37,7 +37,7 @@
     <div class="form-group">
       <%= f.label :location, "Locatie" %>
       <i class="fa fa-map-marker"></i>
-      <%= f.text_field :location, class: "form-control", id: "gmaps-input-address", placeholder: "Begin met het typen van een adres..." %>
+      <%= f.text_field :location, class: "form-control errorcheck", id: "gmaps-input-address", placeholder: "Begin met het typen van een adres..." %>
       <span class="help-block"><em>Eventueel extra informatie over deze functie</em></span>
       <div id='gmaps-error'></div>
     </div>
@@ -49,8 +49,10 @@
       <ul id="addperson"></ul>
     </div>
     <div class="form-group">
-     <%= f.label :public, "Openbaar" %><br>
-      <%= f.text_field :public, class: "form-control errorcheck",  placeholder: " Yess or Noo"  %>
+      <%= f.radio_button(:public, "yess") %>
+      <%= label_tag(:public_text, "Ja") %>
+      <%= f.radio_button(:public, "noo", :checked => "checked") %>
+      <%= label_tag(:public_text, "Nee") %>
     </div>
     <%= f.submit 'Activiteit aanmaken', class: 'button button-blue button-large'  %>
   <% end %>

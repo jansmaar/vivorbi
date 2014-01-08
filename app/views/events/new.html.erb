@@ -21,14 +21,14 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="type">Type activiteit</label>
+      <!--<label for="type">Type activiteit</label>
       <select class="form-control">
         <option>Daguitje</option>
         <option>...</option>
         <option>...</option>
         <option>...</option>
         <option>...</option>
-      </select>
+      </select>-->
     </div>
     <div class="form-group">
       <%= f.label :content, "Omschrijving" %><br>
@@ -48,6 +48,7 @@
       <!-- autofill met namen -->
       <ul id="addperson"></ul>
     </div>
+    <label for="">Openbaar</label>
     <div class="form-group">
       <%= f.radio_button(:public, "yess") %>
       <%= label_tag(:public_text, "Ja") %>

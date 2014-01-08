@@ -1,3 +1,6 @@
+<div class="page-header">
+  <h2>Activiteiten</h2>
+</div>
 <%= search_form_for @search do |f| %>
 	<%= f.label :location_cont, "zoek op plaats"%>
 	<%= f.text_field :location_cont %>
@@ -6,18 +9,24 @@
 
 <%= link_to 'Maak event aan', new_event_path %>
 
-<div id="calendarevent">
-	<h2 id="month"> <%= link_to "<", date: @date.prev_month %>
-		<%= @date.strftime("%B %Y") %>
-		<%= link_to">", date: @date.next_month %> </h2>
-	<%= calendar @date do |date| %>
-		<%= date.day %>
-		<% if @events_by_date[date] %>
-		<ul>
-		<% @events_by_date[date].each do |event| %>
-		<li><%= link_to event.title, event %></li>
-		<% end %>
-		</ul>
-		<% end %>
-		<% end %>
-</div>
+ <% @events.each do |start| %>
+          <% unless start.days_from_now == nil %>
+            <%= link_to start do %>
+              <div class="activiteit activiteit-prive">
+                <div class="tijd-tot">
+                  <i class="fa fa-calendar-o no-margin"></i> 
+                  <em> <%= start.days_from_now() %> </em> 
+                </div>
+                <h3 class="uitgelicht-h4"><%= start.title %></h3>
+                 <ul class="list-unstyled">
+                  <li><i class="fa fa-flag fa-lg"></i> Daguitje</li>
+                  <li><i class="fa fa-calendar-o fa-lg"></i> <%= start.eventdate ? l(start.eventdate, format: '%e %B %Y').downcase : "" %> </li>
+                  <li><i class="fa fa-map-marker fa-lg"></i> <%= start.location %></li>
+              
+                </ul>
+               <%= link_to '' %>
+              </div>
+            <% end %>
+          <% end %>
+ <% end %>
+ <%= will_paginate @events, :previous_label => 'Vorige', :next_label => 'Volgende' %>

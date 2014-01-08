@@ -12,15 +12,7 @@
   <div class="mededeling">
     Aangemaakt op: <i class="fa fa-calendar"></i> 2 januari 2013 om <i class="fa fa-clock-o"></i> <%= Time.now.strftime("%H:%M") %>
   </div>
-  <div class="zoeken-blok">
-  <strong>Zoek op activiteit:</strong>
-  <div class="input-group">
-     <input type="text" class="form-control" placeholder="Vul titel van activiteit in">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button"><i class="fa fa-search"></i> Zoeken</button>
-      </span>
-    </div><!-- /input-group -->
-  </div>
+   </div>
   <div class="clearfix"></div>
   <div class="activiteit-eigen">
     <h3>Activiteiten</h3>
@@ -46,8 +38,7 @@
                   <em> <%= start.days_from_now() %> </em> 
                 </div>
                 <h3 class="uitgelicht-h4"><%= start.title %></h3>
-                <h3 class="uitgelicht-h4"><%= start.user.firstname %><%= start.user.lastname %></h3>
-                <ul class="list-unstyled">
+                 <ul class="list-unstyled">
                   <li><i class="fa fa-flag fa-lg"></i> Daguitje</li>
                   <li><i class="fa fa-calendar-o fa-lg"></i> <%= start.eventdate ? l(start.eventdate, format: '%e %B %Y').downcase : "" %> </li>
                   <li><i class="fa fa-map-marker fa-lg"></i> <%= start.location %></li>

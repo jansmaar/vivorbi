@@ -31,7 +31,7 @@ def index
 	@events_by_date = @events.group_by(&:eventdate)
 	@date = params[:date] ? Date.parse(params[:date]) : Date.today
 	end
-	@events = Event.all
+	@events = Event.all.paginate(:page => params[:page], :per_page => 4)
 
 	
 end

@@ -203,9 +203,11 @@ margin-left: -40px !important;
 	</ul> 
 </div>
 	
- 		<%= form_tag 'events', :method => 'get' do %>
-			<%= text_field_tag :search, params[:search], :placeholder => "Zoeken..." %>
-		<% end %>
+ 	<%= search_form_for @search, url: dashboards_path, method: :get do |f| %>
+	<%= f.label :location_cont, "zoek op plaats"%>
+	<%= f.text_field :location_cont %>
+	<%= f.submit "Zoek" %>
+	<% end %>
 		
 		
 
@@ -215,6 +217,7 @@ margin-left: -40px !important;
  <tr> 
 	<th> event title </th>
 	<th> event datum </th>
+	<th> Loctatie	</th>
 	<th> eigenaar </th>
 	<th> aangemaakt op </th>
 	<th> aanpassen </th>
@@ -225,6 +228,7 @@ margin-left: -40px !important;
  <tr>
  <td> <%= link_to event.title, event %> </td>
  <td> <%= event.eventdate.strftime("%d %b, %Y") %> </td>
+ <td> <%= event.location[0, 30] %> </td>
  <td> <%= event.user_id %> </td>
  <td> <%= event.created_at.strftime("%d %b, %Y") %> </td>
  <td>  <%= link_to "Aanpassen", edit_event_path(event) %> </td>

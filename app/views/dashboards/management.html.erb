@@ -208,6 +208,12 @@ margin-left: -40px !important;
 
 <%= link_to 'Nieuwe gebruiker registreren', new_user_path %>
 
+<%= search_form_for @search do |f| %>
+	<%= f.label :firstname_cont, "zoek gebruiker"%>
+	<%= f.text_field :firstname_cont %>
+	<%= f.submit "Zoek" %>
+	<% end %>
+
  
 <table>
  <tr> 
@@ -238,9 +244,9 @@ margin-left: -40px !important;
 
 <table class="table1">
 	<tr>
-			<th class="tableWidth">Titel</th>
-			<th class="tableWidth">Bedrijf</th>
-			<th class="tableWidth">Locatie</th>
+			<th class="tableWidth">Achternaam</th>
+			<th class="tableWidth">Voornaam</th>
+			<th class="tableWidth">Woonplaats</th>
 			<th class="tableWidth">Wachtend op goedkeuring</th>
 		</tr>
 		

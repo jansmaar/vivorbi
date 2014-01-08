@@ -3,11 +3,21 @@ class DashboardsController < ApplicationController
  layout false
   
   def index
-  	@events = Event.paginate(:page => params[:page], :per_page => 5, :order => 'created_at DESC')	
+ 	@search = Event.search(params[:q])
+  	@dashboards = @search.result
+  
+  	@events = Event.paginate(:page => params[:page], :per_page => 5, :order => 'created_at DESC')
+  	
+
+	
   
   end
   
   def management
+  @search = User.search(params[:q])
+	@users = @search.result
+	
+
 	  @users = User.paginate(:page => params[:page], :per_page => 5, :order => 'created_at DESC')
 	  
 		@inactive_users = User.where('active = ?', false)

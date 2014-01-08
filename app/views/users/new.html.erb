@@ -3,6 +3,7 @@
   <h3>Aanmelden</h3>
 </div>
 
+<!-- WAAR MOET DEZE?!?!?! -->
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
@@ -14,77 +15,111 @@
       </ul>
     </div>
   <% end %>
-  <div class="row">
-      <div class="col-xs-4 form-group">
-          <%= f.label :firstname, "Voornaam" %>
-          <%= f.text_field :firstname, class: "form-control errorcheck" %>
-      </div>
-      <div class="col-xs-4 form-group">
-          <%= f.label :lastname, "Achternaam" %>
-          <%= f.text_field :lastname, class: "form-control errorcheck" %>
-      </div>
-</div>
-<div class="row">
-      <div class="col-xs-4 form-group">
-          <%= f.label :address, "Adres" %>
-          <%= f.text_field :address, class: "form-control errorcheck" %>
-      </div>
-      <div class="col-xs-4 form-group">
-          <%= f.label :housenumber, "Huisnummer" %>
-          <%= f.text_field :housenumber, class: "form-control errorcheck" %>
-      </div>
-</div>
-<div class="row">
-      <div class="col-xs-4 form-group">
-          <%= f.label :zip_code, "Postcode" %>
-          <%= f.text_field :zip_code, class: "form-control errorcheck" %>
-      </div>
-      <div class="col-xs-4 form-group">
-          <%= f.label :city, "Woonplaats" %>
-          <%= f.text_field :city, class: "form-control errorcheck" %>
-      </div>
-</div>
 
 <div class="row">
-  <div class="col-xs-4 form-group">
+  <div class="col-md-6 col-md-offset-3 login">
+    <div class="page-header">
+      <h3 class="text-center">Persoonlijke gegevens</h3>
+      <h4 class="text-center">Dit is stap 1</h4>
+    </div>
+    <!-- LABELS / INPUT -->
+      <div class="form-group">
+        <%= f.label :firstname, "Voornaam" %>
+        <%= f.text_field :firstname, class: "form-control input-lg errorcheck", :placeholder => "Voer uw voornaam in" %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :lastname, "Achternaam" %>
+        <%= f.text_field :lastname, class: "form-control input-lg errorcheck", :placeholder => "Voer uw achternaam in" %>
+      </div> 
+      
+      <div class="form-group">
         <%= f.label :date_of_birth, "Geboortedatum" %> </br>
         <%= f.date_select(:date_of_birth, order: [:day, :month, :year], :start_year => 1900, :end_year => Time.now.year) %>
       </div>
-      <div class="col-xs-4 form-group">
+
+      <div class="form-group">
+          <%= f.label :phone_number, "Telefoon" %>
+          <%= f.text_field :phone_number, class: "form-control input-lg errorcheck", :placeholder => "Voer uw telefoonummer in" %>
+      </div>
+
+      <!-- VOLGENDE STAP KNOP -->
+      <a href="#" class="button button-green button-large">Volgende</a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 login">
+    <div class="page-header">
+      <h3 class="text-center">Adres gegevens</h3>
+      <h4 class="text-center">Dit is stap 2</h4>
+    </div>
+    <p>Wij hebben uw <strong>adresgegevens</strong> nodig om u
+de best <em>mogelijke</em> sociale koppeling te bieden
+binnen uw regio of gemeente.</p>
+    <!-- LABELS / INPUT -->
+      <div class="form-group">
+          <%= f.label :address, "Adres" %>
+          <%= f.text_field :address, class: "form-control input-lg errorcheck", :placeholder => "Voer uw adres in" %>
+      </div>
+      
+      <div class="form-group">
+          <%= f.label :housenumber, "Huisnummer" %>
+          <%= f.text_field :housenumber, class: "form-control input-lg errorcheck", :placeholder => "Voer uw huisnummer in" %>
+      </div>
+
+      <div class="form-group">
+          <%= f.label :zip_code, "Postcode" %>
+          <%= f.text_field :zip_code, class: "form-control input-lg errorcheck", :placeholder => "Voer uw postcode in" %>
+      </div>
+
+      <div class="form-group">
+          <%= f.label :city, "Woonplaats" %>
+          <%= f.text_field :city, class: "form-control input-lg errorcheck", :placeholder =>"Voer uw woonplaats in" %>
+      </div>
+
+      <div class="form-group">
         <%= f.label :commune, "Gemeente" %><br/> 
         <%= f.select :commune, ["Achtkarspelen", "Ameland","het Bildt", "Dantumadiel", "Dongeradeel", "Ferwerderadiel", "Frankeradeel", "De Friese Meren","Harlingen", "Heerenveen", "Kollumerland en Nieuwkruisland", "Leeuwarden", "Leeuwarderadeel", "Littenseradiel", "Menemeradiel", "Ooststellingwerf", "Opsterland", "Schiermonnikoog", "Smallingerland", "Súdwest-Fryslân", "Terschelling", "Tytsjerksteradiel", "Vlieland", "Westellingwerf"] %>
       </div>
-</div>
 
-<div class="row">
-      <div class="col-xs-4 form-group">
-          <%= f.label :email, "Email" %>
-          <%= f.text_field :email, class: "form-control errorcheck" %>
-      </div>
-      <div class="col-xs-4 form-group">
-          <%= f.label :phone_number, "Telefoon" %>
-          <%= f.text_field :phone_number, class: "form-control errorcheck" %>
-      </div>
-</div>
-
- <div class="row">
-      <div class="col-xs-6 form-group">
-    <%= f.label :password, "Wachtwoord" %>
-    <%= f.password_field :password, class: "form-control errorcheck" %>
+      <!-- VOLGENDE STAP KNOP -->
+      <a href="#" class="button button-default button-large">Vorige</a>
+      <a href="#" class="button button-green button-large">Volgende</a>
+      
   </div>
 </div>
-  
-<div class="row">
-      <div class="col-xs-6 form-group">
-    <%= f.label :password_confirmation, "Wachtwoord bevestigen" %>
-    <%= f.password_field :password_confirmation, class: "form-control errorcheck" %>
-</div>
-</div>
 
 <div class="row">
- <div class="col-xs-4 form-group">
-   <%= f.submit 'Opslaan', class: 'button button-blue button-large'  %>
+  <div class="col-md-6 col-md-offset-3 login">
+    <div class="page-header">
+      <h3 class="text-center">Account gegevens</h3>
+      <h4 class="text-center">Dit is stap 3</h4>
+    </div>
+
+    <!-- LABELS / INPUT -->
+      <div class="form-group">
+          <%= f.label :email, "Email" %>
+          <%= f.text_field :email, class: "form-control input-lg errorcheck", :placeholder => "Voer uw e-mailadres in" %>
+      </div>
+      
+      <div class="form-group">
+          <%= f.label :password, "Wachtwoord" %>
+          <%= f.password_field :password, class: "form-control input-lg errorcheck", :placeholder => "Voer een wachtwoord in" %>
+      </div>
+
+      <div class="form-group">
+          <%= f.label :password_confirmation, "Wachtwoord bevestigen" %>
+          <%= f.password_field :password_confirmation, class: "form-control input-lg errorcheck", :placeholder => "Voer uw wachtwoord nogmaals in" %>
+      </div>
+
+      <!-- VOLGENDE STAP KNOP -->
+      <a href="#" class="button button-default button-large">Vorige</a>
+      <%= f.submit 'Aanmelden!', class: 'button button-blue button-large'  %>
+      
+  </div>
 </div>
-</div>
+
+
 <% end %>
 <% end %>

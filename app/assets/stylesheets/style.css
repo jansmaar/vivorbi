@@ -31,7 +31,13 @@ body {
 textarea {
   resize: none;
 }
-
+#login_step_one {
+	background-color: #eef2f5;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding-bottom: 20px
+}
 /* EINDE ALGEMENE STYLING*/
 
 /* INLOGPAGINA */
@@ -79,6 +85,10 @@ textarea {
 .logo {
 	padding: 5px 0;
 	margin: auto;
+}
+.logo-landing {
+	margin: auto;
+	padding-bottom: 35px;
 }
 .tekstheader {
 	width: 40%;

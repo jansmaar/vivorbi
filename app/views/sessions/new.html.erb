@@ -1,34 +1,36 @@
 <% content_for :landingpage do %>
 	<div class="row">
-		<div class="logo">
-				<%= image_tag "logo.png" ,class: "img-responsive logo" ,alt: "logo met elkaar"%>
-			</div><!-- end of logo -->
 		<h2 class="text-center">Welkom bij de MetElkaar Applicatie</h2>
-		<div class="col-md-5 login">
-		
 
-			<div class="page-header">
-				<h2 class="text-center">Ik ben hier voor het eerst</h2>
+				<div class="logo">
+				<%= image_tag "logo.png" ,class: "img-responsive logo-landing" ,alt: "logo met elkaar"%>
+			</div><!-- end of logo -->
+<div class="col-md-6 login">
+
+
+	
+		<h2 class="text-center">Ik ben hier voor het eerst</h2>
+			<p class="lead text-center">
+		De metElkaar applicatie is een innatiatief van Vivorbi. Het doel hiervan is om dorpen en bewoners met elkaar te verbinden. Zo kunt u bijvoorbeeld een afspraak maken met de buurman om een kopje koffie te drinken. Ook zou u bijvoorbeeld een activiteit kunnen aanmaken om... 
+			</p>
+				<p class="lead text-center">
+		Wilt u meer informatie over vivorbi en/of metElkaar dan kunt u contact opnemen, of u kunt meteen een account aanmaken. 
+			</p>
 					<p class="lead text-center">
-				De metElkaar applicatie is een innatiatief van Vivorbi. Het doel hiervan is om dorpen en bewoners met elkaar te verbinden. Zo kunt u bijvoorbeeld een afspraak maken met de buurman om een kopje koffie te drinken. Ook zou u bijvoorbeeld een activiteit kunnen aanmaken om... 
-					</p>
-						<p class="lead text-center">
-				Wilt u meer informatie over vivorbi en/of metElkaar dan kunt u contact opnemen, of u kunt meteen een account aanmaken. 
-					</p>
-							<p class="lead text-center">
-				Letop! Na het aanmaken van het account kan er nog niet worden ingelogd. Vivorbi moet uw account nog activeren en neemt alvorens contact met u op. 
-					</p>
-	<%= link_to 'Account aanmaken', sign_up_path %>
-<%= link_to 'Contact openemen', sign_up_path %>
+		Letop! Na het aanmaken van het account kan er nog niet worden ingelogd. Vivorbi moet uw account nog activeren en neemt alvorens contact met u op. 
+			</p>
+<%= link_to 'Account aanmaken', sign_up_path, class: "button button-green pull-left" %>
+<%= link_to 'Contact openemen', sign_up_path, class: "button button-default pull-right" %>
 
-			</div>
 
-			<!-- INVOERFORMULIER -->
-		
 
-		
-		</div>
-		<div class="col-md-5  col-md-offset-2 login">
+	<!-- INVOERFORMULIER -->
+
+
+
+</div>
+
+		<div class="col-md-5  col-md-offset-1 login">
 			
 			<div class="page-header">
 				<h2 class="text-center">Ik ben hier vaker geweest</h2>

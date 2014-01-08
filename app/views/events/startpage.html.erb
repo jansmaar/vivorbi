@@ -36,28 +36,28 @@
   </div>
   
 
-  <% @participants.each do |start| %>
-       <% if (start.user_id == current_user.id && start.event_id == start.event.id) || (start.event.user_id == current_user.id) %>
-          <% unless start.event.days_from_now == nil %>
-            <%= link_to start.event do %>
+  <% @events.each do |start| %>
+          <% unless start.days_from_now == nil %>
+           <% if start.public == "noo" %>
+            <%= link_to start do %>
               <div class="activiteit activiteit-prive">
                 <div class="tijd-tot">
                   <i class="fa fa-calendar-o no-margin"></i> 
-                  <em> <%= start.event.days_from_now() %> </em> 
+                  <em> <%= start.days_from_now() %> </em> 
                 </div>
-                <h3 class="uitgelicht-h4"><%= start.event.title %></h3>
-                <h3 class="uitgelicht-h4"><%= start.event.user.firstname %><%= start.event.user.lastname %></h3>
+                <h3 class="uitgelicht-h4"><%= start.title %></h3>
+                <h3 class="uitgelicht-h4"><%= start.user.firstname %><%= start.user.lastname %></h3>
                 <ul class="list-unstyled">
                   <li><i class="fa fa-flag fa-lg"></i> Daguitje</li>
-                  <li><i class="fa fa-calendar-o fa-lg"></i> <%= start.event.eventdate ? l(start.event.eventdate, format: '%e %B %Y').downcase : "" %> </li>
-                  <li><i class="fa fa-map-marker fa-lg"></i> <%= start.event.location %></li>
+                  <li><i class="fa fa-calendar-o fa-lg"></i> <%= start.eventdate ? l(start.eventdate, format: '%e %B %Y').downcase : "" %> </li>
+                  <li><i class="fa fa-map-marker fa-lg"></i> <%= start.location %></li>
               
                 </ul>
                 <i class="fa fa-trash-o"></i> <%= link_to 'Activiteit verwijderen', start, :method => :delete %>
               </div>
             <% end %>
           <% end %>
-    <% end %>
+ <% end %>
  <% end %>
  <div class="activiteit-eigen">
     <h3>Openbare activiteiten</h3>
@@ -71,25 +71,21 @@
     dagen aan deelneemt.
     </p>
   </div>
-    <% @participants.each do |start| %>
-      <% if start.event.public == "yess" %>
-        <% unless  (start.user_id == current_user.id) %>
-  
-     
-    
-          <% unless start.event.days_from_now == nil %>
-            <%= link_to start.event do %>
+    <% @events.each do |start| %>
+      <% if start.public == "yess" %>
+          <% unless start.days_from_now == nil %>
+            <%= link_to start do %>
               <div class="activiteit activiteit-prive">
                 <div class="tijd-tot">
                   <i class="fa fa-calendar-o no-margin"></i> 
-                  <em> <%= start.event.days_from_now() %> </em> 
+                  <em> <%= start.days_from_now() %> </em> 
                 </div>
-                <h3 class="uitgelicht-h4"><%= start.event.title %></h3>
+                <h3 class="uitgelicht-h4"><%= start.title %></h3>
                
                 <ul class="list-unstyled">
                   <li><i class="fa fa-flag fa-lg"></i> Daguitje</li>
-                  <li><i class="fa fa-calendar-o fa-lg"></i> <%= start.event.eventdate ? l(start.event.eventdate, format: '%e %B %Y').downcase : "" %> </li>
-                  <li><i class="fa fa-map-marker fa-lg"></i> <%= start.event.location %></li>
+                  <li><i class="fa fa-calendar-o fa-lg"></i> <%= start.eventdate ? l(start.eventdate, format: '%e %B %Y').downcase : "" %> </li>
+                  <li><i class="fa fa-map-marker fa-lg"></i> <%= start.location %></li>
               
                 </ul>
                 <i class="fa fa-trash-o"></i> <%= link_to 'Activiteit verwijderen', start, :method => :delete %>
@@ -98,7 +94,7 @@
           <% end %>
            <% end %>
     <% end %>
-  <% end %>
+
 
 
 

@@ -114,6 +114,30 @@ $.ajax({
         }
     });
 //END MENU
+
+//registrating as a new user 
+
+$( ".secondscreen" ).hide();
+$( ".thirdscreen" ).hide();
+$( ".firstbutton" ).click(function() {
+    $( ".firstscreen" ).hide();
+    $( ".secondscreen" ).show();
+});
+$( ".secondbuttonback" ).click(function() {
+    $( ".secondscreen" ).hide();
+    $( ".firstscreen" ).show();
+});
+$( ".secondbutton" ).click(function() {
+    $( ".secondscreen" ).hide();
+    $( ".thirdscreen" ).show();
+});
+
+$( ".thirdbuttonback" ).click(function() {
+    $( ".thirdscreen" ).hide();
+    $( ".secondscreen" ).show();
+});
+
+
 });
 
 

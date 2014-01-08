@@ -16,7 +16,7 @@
     </div>
   <% end %>
 
-<div class="row">
+<div class="row firstscreen">
   <div class="col-md-6 col-md-offset-3 login">
     <div class="page-header">
       <h3 class="text-center">Persoonlijke gegevens</h3>
@@ -44,11 +44,11 @@
       </div>
 
       <!-- VOLGENDE STAP KNOP -->
-      <a href="#" class="button button-green button-large">Volgende</a>
+      <a href="#" class="button button-green button-large firstbutton">Volgende</a>
   </div>
 </div>
 
-<div class="row">
+<div class="row secondscreen">
   <div class="col-md-6 col-md-offset-3 login">
     <div class="page-header">
       <h3 class="text-center">Adres gegevens</h3>
@@ -84,13 +84,13 @@ binnen uw regio of gemeente.</p>
       </div>
 
       <!-- VOLGENDE STAP KNOP -->
-      <a href="#" class="button button-default button-large">Vorige</a>
-      <a href="#" class="button button-green button-large">Volgende</a>
+      <a href="#" class="button button-default button-large secondbuttonback">Vorige</a>
+      <a href="#" class="button button-green button-large secondbutton">Volgende</a>
       
   </div>
 </div>
 
-<div class="row">
+<div class="row thirdscreen">
   <div class="col-md-6 col-md-offset-3 login">
     <div class="page-header">
       <h3 class="text-center">Account gegevens</h3>
@@ -114,7 +114,7 @@ binnen uw regio of gemeente.</p>
       </div>
 
       <!-- VOLGENDE STAP KNOP -->
-      <a href="#" class="button button-default button-large">Vorige</a>
+      <a href="#" class="button button-default button-large thirdbuttonback">Vorige</a>
       <%= f.submit 'Aanmelden!', class: 'button button-blue button-large'  %>
       
   </div>

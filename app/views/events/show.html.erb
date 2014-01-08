@@ -46,7 +46,7 @@
 <% @event.users.each do |user|%>
 <ul id="addperson">
 <li class="invited">
-<%= image_tag user.avatar.url, :class => "img-circle profielfoto profielfoto-invite" %> <%= user.email %>
+<%= image_tag user.avatar.url, :class => "img-circle profielfoto profielfoto-invite" %> <%= user.firstname %> <%= user.lastname %>
 </li>
 </ul>
 

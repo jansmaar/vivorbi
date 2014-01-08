@@ -1,8 +1,7 @@
 <%= image_tag @user.avatar.url, :class => "pull-left img-circle profielfoto profielfoto-user" %>
 <h2><%= @user.firstname %> <%= @user.lastname %> (<%= @user.age() %> jaar)</h2>
 
-<%= link_to 'Profiel aanpassen', edit_user_path, :class => "pull-right btn btn-default" %> 
-<%= link_to 'Wachtwoord wijzigen', edit_user_path, :class => "pull-right btn btn-default" %>
+<%= link_to 'Profiel aanpassen', edit_user_path, :class => "pull-right button button-default" %> 
 
 <p>
 	Gebruikersnaam: <%= @user.firstname %> <%= @user.lastname %> <br>

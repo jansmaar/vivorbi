@@ -23,8 +23,8 @@
 </div> 
 <div class="activiteit-prive">  
   <p>Er zijn <%= link_to "#{@events.length} activiteiten", events_path %> activiteiten waar u aan deelneemt.</p>
-  <p>Er zijn <%= link_to "#{@eventsinvited.length} activiteiten", invites_path %> waar u aan deel kan nemen.</p>
-  <p>U heeft <%= link_to "#{@eventspublic.length} activiteiten", public_path %>uitnodigingen waar u nog niet op hebt gereageerd.</p>
+  <p>U heeft <%= link_to "#{@eventsinvited.length} uitnodigingen", public_path %> waar u nog niet op hebt gereageerd.</p>
+  <p>Er zijn <%= link_to "#{@eventspublic.length} openbare activiteiten", invites_path %> waar u aan deel kan nemen.</p>
 </div>
 
 

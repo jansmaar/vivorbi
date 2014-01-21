@@ -1,95 +1,98 @@
 <div class="page-header">
   <h2>Startpagina</h2>
 </div>
+
 <div class="nul-padding">
   <p class="lead">Welkom <%= current_user.firstname %> <%= current_user.lastname %>.</p>
   <p>
-    Het is vandaag <%= l(Time.now, :format => '%e %B %Y').downcase %> en de tijd is <%= Time.now.strftime("%H:%M") %>.<br>Op deze pagina vindt u uw persoonlijke activiteiten waaraan u gaat deelnemen.
+    Het is vandaag <%= l(Time.now, :format => '%e %B %Y').downcase %> en de tijd is <%= Time.now.strftime("%H:%M") %>. Op deze pagina vindt u uw persoonlijke activiteiten waaraan u gaat deelnemen.
+    U heeft aan totaal <%= @eventshistory.length %> activiteiten deelgenomen. 
   </p>
   <div class="mededeling-titel">
     <h3>Mededelingen</h3>
   </div>
-  <div class="mededeling">
+  <div class="mededeling activiteit-prive">
     Aangemaakt op: <i class="fa fa-calendar"></i> 2 januari 2013 om <i class="fa fa-clock-o"></i> <%= Time.now.strftime("%H:%M") %>
   </div>
-   </div>
-  <div class="clearfix"></div>
-  <div class="activiteit-eigen">
-    <h3>Activiteiten</h3>
-    <p>U heeft <span class="badge"><%= @events.length %></span> activiteiten waar u binnen 
-    <select>
-      <option value="5">5</option> 
-      <option value="10">10</option>
-      <option value="15">15</option>
-      <option value="20">20</option>
-    </select>
-    dagen aan deelneemt.
-    </p>
-  </div>
-  
-
-  <% @events.each do |start| %>
-          <% unless start.days_from_now == nil %>
-           <% if start.public == "noo" %>
-            <%= link_to start do %>
-              <div class="activiteit activiteit-prive">
-                <div class="tijd-tot">
-                  <i class="fa fa-calendar-o no-margin"></i> 
-                  <em> <%= start.days_from_now() %> </em> 
-                </div>
-                <h3 class="uitgelicht-h4"><%= start.title %></h3>
-                 <ul class="list-unstyled">
-                  <li><i class="fa fa-flag fa-lg"></i> Daguitje</li>
-                  <li><i class="fa fa-calendar-o fa-lg"></i> <%= start.eventdate ? l(start.eventdate, format: '%e %B %Y').downcase : "" %> </li>
-                  <li><i class="fa fa-map-marker fa-lg"></i> <%= start.location %></li>
-              
-                </ul>
-                <i class="fa fa-trash-o"></i> <%= link_to 'Activiteit verwijderen', start, :method => :delete %>
-              </div>
-            <% end %>
-          <% end %>
- <% end %>
- <% end %>
- <div class="activiteit-eigen">
-    <h3>Openbare activiteiten</h3>
-    <p>U heeft <span class="badge"><%= @events.length %></span> activiteiten waar u binnen 
-    <select>
-      <option value="5">5</option> 
-      <option value="10">10</option>
-      <option value="15">15</option>
-      <option value="20">20</option>
-    </select>
-    dagen aan deelneemt.
-    </p>
-  </div>
-    <% @events.each do |start| %>
-      <% if start.public == "yess" %>
-          <% unless start.days_from_now == nil %>
-            <%= link_to start do %>
-              <div class="activiteit activiteit-prive">
-                <div class="tijd-tot">
-                  <i class="fa fa-calendar-o no-margin"></i> 
-                  <em> <%= start.days_from_now() %> </em> 
-                </div>
-                <h3 class="uitgelicht-h4"><%= start.title %></h3>
-               
-                <ul class="list-unstyled">
-                  <li><i class="fa fa-flag fa-lg"></i> Daguitje</li>
-                  <li><i class="fa fa-calendar-o fa-lg"></i> <%= start.eventdate ? l(start.eventdate, format: '%e %B %Y').downcase : "" %> </li>
-                  <li><i class="fa fa-map-marker fa-lg"></i> <%= start.location %></li>
-              
-                </ul>
-                <i class="fa fa-trash-o"></i> <%= link_to 'Activiteit verwijderen', start, :method => :delete %>
-              </div>
-            <% end %>
-          <% end %>
-           <% end %>
-    <% end %>
-
-
-
-
-  <h4>Spontaan een leuke activiteit bedacht?</h4>
-  <%= link_to new_event_path do %> <button type="button" class="button button-green button-large"><i class="fa fa-plus-circle fa-lg"></i> Activiteit aanmaken</button> <% end %>
-
 </div>
+
+<div class="clearfix"></div>
+
+<div class="activiteit-eigen">
+  <h3>Activiteiten, Uitnodigingen en Openbare activititeiten</h3>
+</div> 
+<div class="activiteit-prive">  
+  <p>Er zijn <%= link_to "#{@events.length} activiteiten", events_path %> activiteiten waar u aan deelneemt.</p>
+  <p>Er zijn <%= link_to "#{@eventsinvited.length} activiteiten", invites_path %> waar u aan deel kan nemen.</p>
+  <p>U heeft <%= link_to "#{@eventspublic.length} activiteiten", public_path %>uitnodigingen waar u nog niet op hebt gereageerd.</p>
+</div>
+
+
+<div class="activiteit-eigen">
+  <h3>Activiteiten</h3>
+  <p>U heeft <span class="badge"><%= @events.length %></span> activiteiten waar u aan deelneemt.</p>
+</div> 
+
+<% for start in @eventsshow %>
+    <div class="activiteit activiteit-prive">
+      <%= link_to start do %>
+        <div class="tijd-tot">
+          <i class="fa fa-calendar-o no-margin"></i> 
+          <em> <%= start.days_from_now() %> </em> 
+        </div>
+        <h3 class="uitgelicht-h4"><%= start.title %></h3>
+        <ul class="list-unstyled">
+          <li><i class="fa fa-flag fa-lg"></i> Daguitje</li>
+          <li><i class="fa fa-calendar-o fa-lg"></i> <%= start.eventdate ? l(start.eventdate, format: '%e %B %Y').downcase : "" %> <i class="fa fa-clock-o"></i> <%= start.eventtime.strftime("%H:%M") %> </li>
+          <li><i class="fa fa-map-marker fa-lg"></i> <%= start.location %></li>
+        </ul>
+      <% end %>
+    </div>
+<% end %>
+
+<div class="activiteit-eigen">
+  <h3>Uitnodigingen</h3>
+  <p>U heeft totaal <span class="badge"><%= @eventsinvited.length %></span> uitnodigingen waar u aan kan deelnemen. </p>
+</div>
+<% @eventsinvitedshow.each do |start| %>
+    <div class="activiteit activiteit-prive">
+      <%= link_to start do %>
+        <div class="tijd-tot">
+          <i class="fa fa-calendar-o no-margin"></i> 
+          <em> <%= start.days_from_now() %> </em> 
+        </div>
+        <h3 class="uitgelicht-h4"><%= start.title %></h3>
+        <ul class="list-unstyled">
+          <li><i class="fa fa-flag fa-lg"></i> Daguitje</li>
+          <li><i class="fa fa-calendar-o fa-lg"></i> <%= start.eventdate ? l(start.eventdate, format: '%e %B %Y').downcase : "" %>  <i class="fa fa-clock-o"></i> <%= start.eventtime.strftime("%H:%M") %> </li>
+          <li><i class="fa fa-map-marker fa-lg"></i> <%= start.location %></li>   
+        </ul>
+      <% end %>
+    </div>
+<% end %>
+
+<div class="activiteit-eigen">
+  <h3>Openbare activiteiten</h3>
+  <p>U heeft totaal <span class="badge"><%= @eventspublic.length %></span> activiteiten waar u aan kan deelnemen (of deelneemt). </p>
+</div>
+<% @eventspublicshow.each do |start| %>
+    <div class="activiteit activiteit-prive">
+      <%= link_to start do %>
+        <div class="tijd-tot">
+          <i class="fa fa-calendar-o no-margin"></i> 
+          <em> <%= start.days_from_now() %> </em> 
+        </div>
+        <h3 class="uitgelicht-h4"><%= start.title %></h3>
+        <ul class="list-unstyled">
+          <li><i class="fa fa-flag fa-lg"></i> Daguitje</li>
+          <li><i class="fa fa-calendar-o fa-lg"></i> <%= start.eventdate ? l(start.eventdate, format: '%e %B %Y').downcase : "" %>  <i class="fa fa-clock-o"></i> <%= start.eventtime.strftime("%H:%M") %> </li>
+          <li><i class="fa fa-map-marker fa-lg"></i> <%= start.location %></li>   
+        </ul>
+      <% end %>
+    </div>
+<% end %>
+
+<h4>Spontaan een leuke activiteit bedacht?</h4>
+<%= link_to new_event_path do %> 
+  <button type="button" class="button button-green button-large"><i class="fa fa-plus-circle fa-lg"></i> Activiteit aanmaken</button> 
+<% end %>

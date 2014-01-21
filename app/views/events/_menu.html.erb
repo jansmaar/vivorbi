@@ -1,0 +1,10 @@
+
+<ul id="menu_activiteiten">
+  <li><%= link_to 'Overzicht', events_path, class: active(events_path) %></li>
+  <li><%= link_to 'Openbaar', public_path , class: active(public_path)%></li>
+  <li><%= link_to 'Uitnodigingen', invites_path , class: active(invites_path)%></li>
+  <li><%= link_to 'Eigen', owns_path, class: active(owns_path)%></li>
+  <li><%= link_to 'Maak event aan', new_event_path %></li>
+</ul>
+
+

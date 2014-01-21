@@ -214,13 +214,28 @@ li.grey {
 	text-align: center;
 }
 
+#menu li.active_page {
+	font-size: 1.3em;
+	margin: 0 0 0.25em;
+	list-style-type: none;
+	background-color: #000033;
+	line-height: 35px;
+	padding: 10px 10px 10px 0;
+	color: #f6f6f6;	
+	text-align: center;
+}
+
+#menu li.active_page:hover {
+	background-color: #345A73;
+}
+
 #menu li h3 {
 	padding: 0;
 	margin: 0;
 }
 
 #menu li:hover {
-	background-color: #7fcaac;3
+	background-color: #7fcaac;
 }
 
 /*EVENTUEEL LATER WEER GEBRUIKEN*/
@@ -261,6 +276,44 @@ li.grey {
 #menu li.active ul {
 	display: block;
 }
+
+
+/*menu for different areas of events*/
+#menu_activiteiten {
+	text-decoration: none;
+	margin: 0;
+	padding:0;
+}
+
+#menu_activiteiten li {
+	text-decoration: none;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+#menu_activiteiten li a{
+	text-decoration: none;
+	font-weight: bold;
+	padding: 5px;
+	background-color: #15b374;
+	color: #f6f6f6;	
+}
+
+#menu_activiteiten a:hover {
+	background-color: #7fcaac;
+	text-decoration: none;
+	color: #f6f6f6;	
+}
+
+#menu_activiteiten li a.active_page {
+	background-color: #000033;
+}
+
+#menu_activiteiten li a.active_page:hover {
+	background-color: #345A73;
+	color: #f6f6f6;	
+}
+
 
 /* STARTPAGINA */
 .zoeken-blok {
@@ -308,7 +361,7 @@ select {
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
-	border-left: 4px solid rgba(0, 188, 119, 0.4);
+	/*border-left: 4px solid rgba(0, 188, 119, 0.4);*/
 }
 .activiteit-eigen h3 {
 	margin-top: 6px;
@@ -329,18 +382,21 @@ select {
 .activiteit h3 {
 	margin-top: 10px;
 }
-.activiteit-prive {
+.activiteit-prive{
+	color: rgb(51, 51, 51);
 	border-color: rgba(0, 188, 119, 0.4);
-	padding: 3px 0 13px 5px;
-	margin: 10px 0;
 	background-color: #ffffff;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
 }
-.activiteit-prive:hover {
+
+/*.activiteit-prive a:hover { niet meer van toepassing
+	color: rgb(51, 51, 51);
 	background-color: #c3d2d4;
-}
+	text-decoration: none;
+}*/
+
 .activiteit-open {
 	border-color: #f8f5e7;
 	padding-left: 5px;
@@ -352,7 +408,15 @@ select {
 	color: rgb(51, 51, 51);
 	display: block;
 	text-decoration: none;
+	padding: 3px 0 13px 5px;
+	margin: 10px 0;
 }
+
+.activiteit a:hover {
+	background-color: #c3d2d4;
+	text-decoration: none;
+}
+
 /* aan activiteit deelnemen knop*/
 .deelnemen {
 	margin: 15px 0 0 0;

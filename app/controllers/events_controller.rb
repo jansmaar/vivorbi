@@ -30,17 +30,64 @@ def index
 	@events = @search.result
 	@events_by_date = @events.group_by(&:eventdate)
 	@date = params[:date] ? Date.parse(params[:date]) : Date.today
+	@eventsoverview = Event.where('eventdate >= ?', Date.today).all 
 	end
 	@events = Event.all.paginate(:page => params[:page], :per_page => 4)
 
 	
 end
 
-def startpage
-	unless(current_user)
+def owns
+	#see comment startpage
+	unless current_user
+	flash[:error] = "Geen toegang tot de pagina die u probeerde te bereiken"
 	redirect_to('/log_in')
 	else
-	@events = Event.find( :all, :order => "eventdate" , :limit => 11)
+	@events = Event.includes(:participants).where(('events.user_id = ? AND events.eventdate >= ?'), current_user.id, Date.today)
+	@eventsshow = @events.limit(2)
+	end
+end
+
+def public
+	#see comment startpage
+	unless current_user
+	flash[:error] = "Geen toegang tot de pagina die u probeerde te bereiken"
+	redirect_to('/log_in')
+	else
+	@events = Event.includes(:participants).where.not('events.user_id = ?', current_user.id).where('events.eventdate >= ? AND events.public = ?', Date.today, 'yess')
+	@eventsshow = @events.limit(2)
+	end
+end
+
+def invites
+	#see comment startpage
+	unless current_user
+	flash[:error] = "Geen toegang tot de pagina die u probeerde te bereiken"
+	redirect_to('/log_in')
+	else
+	@events = Event.includes(:participants).where.not('events.user_id = ?', current_user.id).where('events.eventdate >= ?', Date.today)
+	@eventsshow = @events.limit(2)
+	end
+end
+
+def startpage
+	unless current_user
+	flash[:error] = "Geen toegang tot de pagina die u probeerde te bereiken"
+	redirect_to('/log_in')
+	else
+	@eventshistory = Event.includes(:participants).where(('(participants.user_id = ? OR events.user_id = ?) AND events.eventdate < ?'), current_user.id, current_user.id, Date.today)
+
+	#all events that the user is participating.
+	@events = Event.includes(:participants).where(('(participants.user_id = ? OR events.user_id = ?) AND events.eventdate >= ?'), current_user.id, current_user.id, Date.today)
+	@eventsshow = @events.order('eventdate').limit(3)
+
+	#should eventually be all events public and private that an other user has the current user invited to participate
+	@eventsinvited = Event.includes(:participants).where.not('events.user_id = ?', current_user.id).where('events.eventdate >= ?', Date.today)
+	@eventsinvitedshow = @events.order('eventdate').limit(3)
+
+	#all public events that is not owned by the user (should also not be the public events that the current user has chosen to participate)
+	@eventspublic = Event.includes(:participants).where.not('events.user_id = ?', current_user.id).where('events.eventdate >= ? AND events.public = ?', Date.today, 'yess') #.where.not('participants.user_id = ?', current_user.id)
+	@eventspublicshow = @eventspublic.order('eventdate').limit(3)
 	end
 end
 

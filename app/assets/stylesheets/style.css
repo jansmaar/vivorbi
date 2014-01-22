@@ -503,6 +503,7 @@ select {
 	-webkit-box-shadow: 0px 2px 0px #00918a;
   	-moz-box-shadow: 0px 2px 0px #00918a;
   	box-shadow: 0px 2px 0px #00918a;
+
 }
 .button-green:hover {
 	background: #03ac6e;
@@ -533,6 +534,10 @@ select {
 }
 .button-large {
 	width: 100%;
+}
+
+.button-signup {
+	width: 20%;
 }
 
 .no-margin {

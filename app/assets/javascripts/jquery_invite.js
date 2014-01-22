@@ -120,21 +120,21 @@ $.ajax({
 $( ".secondscreen" ).hide();
 $( ".thirdscreen" ).hide();
 $( ".firstbutton" ).click(function() {
-    $( ".firstscreen" ).hide();
-    $( ".secondscreen" ).show();
+    $( ".firstscreen" ).fadeOut(0.1);
+    $( ".secondscreen" ).fadeIn(0.1);
 });
 $( ".secondbuttonback" ).click(function() {
-    $( ".secondscreen" ).hide();
-    $( ".firstscreen" ).show();
+    $( ".secondscreen" ).fadeOut(0.1);
+    $( ".firstscreen" ).fadeIn(0.1);
 });
 $( ".secondbutton" ).click(function() {
-    $( ".secondscreen" ).hide();
-    $( ".thirdscreen" ).show();
+    $( ".secondscreen" ).fadeOut(0.1);
+    $( ".thirdscreen" ).fadeIn(0.1);
 });
 
 $( ".thirdbuttonback" ).click(function() {
-    $( ".thirdscreen" ).hide();
-    $( ".secondscreen" ).show();
+    $( ".thirdscreen" ).fadeOut(0.1);
+    $( ".secondscreen" ).fadeIn(0.1);
 });
 
 

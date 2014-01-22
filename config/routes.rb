@@ -9,7 +9,7 @@ Vivorbi::Application.routes.draw do
   get "uitnodigingen" => "events#invites", :as => "invites"
   get "openbaar" => "events#public", :as => "public"
   get "management" => "dashboards#management", :as => "management"
-
+  get "commercieleactiviteiten" => "hotspots#index", :as => "hotspots"
 
   	resources :users do
   		resources :events

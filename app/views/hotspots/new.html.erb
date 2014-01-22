@@ -1,8 +1,26 @@
- <%= form_for :hotspot, url: hotspots_path do |f| %>
- <%= f.label :title, "Titel van de activiteit" %><br>
- <%= f.text_field :title %><br>
-  <%= f.label :content, "Inhoud van de activiteit" %><br>
-  <%= f.text_area :content %><br>
-  <%= f.file_field :ad %>
-    <%= f.submit 'Activiteit aanmaken', class: 'button button-blue button-large'  %>
+<div class="page-header">
+  <h3>Commerciële activiteiten</h3>
+</div>
+
+<%= form_for :hotspot, url: hotspots_path do |f| %>
+
+<div class="row">
+			<div class="col-xs-5 form-group">
+        			<%= f.label :title, "Titel van advertentie" %><br/>
+        			<%= f.text_field :title, class: "form-control input-small errorcheck", :placeholder => "Vul hier uw titel in" %>
+			</div>
+</div>
+<div class="row">
+			<div class="col-xs-5 form-group">
+        			<%= f.label :content, "Inhoud van de activiteit" %><br/>
+        			<%= f.text_area :content, class: "form-control input-small errorcheck", :placeholder => "Vul hier uw informatie in" %>
+			</div>
+</div>
+
+<%= f.file_field :ad %>
+  <br>
+  <br>
+
+    <%= f.submit 'Activiteit aanmaken', class: 'button button-blue button-small'  %>
   <% end %>
+

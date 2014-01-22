@@ -1,0 +1,27 @@
+<div class="page-header">
+  <h2>Hotspots</h2>
+</div>
+
+        <div class="col-md-9">
+
+                <div class="thumbnail">
+                    <%= image_tag @hotspot.ad, class:"img-responsive" %>
+                    <div class="caption-full">
+                        <h4>
+                        <%= @hotspot.title %>
+                        </h4>
+                        <p><%= @hotspot.content %></p>
+                    </div>
+                    <div class="ratings">
+                        <p class="pull-right">3 reviews</p>
+                        <p>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            4.0 stars
+                        </p>
+                    </div>
+                </div>
+<%= link_to "verwijder", hotspot_path(@hotspot), :method => :delete %>

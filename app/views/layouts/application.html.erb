@@ -35,9 +35,11 @@
            <!-- class 'no-margin' zorgt ervoor dat de margin&padding op 0 worden gezet, op de startpage zit in deze icon(s) een margin&padding  -->
             <li><i class="fa fa-flag fa-2x no-margin"></i><h3> Activiteiten </h3></li>
           <% end %> 
+          <%= link_to hotspots_path do %>
         <li>
          <i class="fa fa-map-marker fa-2x no-margin"></i> <h3>Hotspots</h3>
         </li>
+        <% end %>
         <%= link_to events_path do %>
         <li>
          <i class="fa fa-users fa-2x"></i> <h3>Contacten</h3>

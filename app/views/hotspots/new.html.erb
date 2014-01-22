@@ -1,0 +1,8 @@
+ <%= form_for :hotspot, url: hotspots_path do |f| %>
+ <%= f.label :title, "Titel van de activiteit" %><br>
+ <%= f.text_field :title %><br>
+  <%= f.label :content, "Inhoud van de activiteit" %><br>
+  <%= f.text_area :content %><br>
+  <%= f.file_field :ad %>
+    <%= f.submit 'Activiteit aanmaken', class: 'button button-blue button-large'  %>
+  <% end %>

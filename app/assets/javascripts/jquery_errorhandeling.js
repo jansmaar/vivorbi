@@ -36,7 +36,7 @@ $(document).ready(function(){
     }
 
 
-
+function test(){
     $(".errorcheck").blur(function() {
         var error = $(this).attr("kindoferror");
        kindoferror(error);
@@ -61,6 +61,8 @@ $(document).ready(function(){
             $('.errortekstinput').remove();  
         }   
     });
+  }
+  test();
 
     $( "form" ).submit(function() {
         if ( $(".error" ).val().length >= 1 ) {

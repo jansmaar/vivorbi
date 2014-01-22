@@ -32,7 +32,8 @@ def self.authenticate(email, password, active)
  end
 
 def age
-  ((Time.now - date_of_birth.to_time)/(60*60*24*365)).floor
+  now = Time.now.utc.to_date
+  now.year - date_of_birth.year - (date_of_birth.to_date.change(:year => now.year) > now ? 1 : 0)
 end
 
 

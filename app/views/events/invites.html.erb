@@ -1,21 +1,15 @@
- <div class="page-header">
+<div class="page-header">
   <h2>Activiteiten</h2>
 </div>
 <%= render 'menu' %>
 <div class="activiteit-eigen">
-  <h3>Activiteiten overzicht</h3>
-  <p>Alle activiteiten waar u aan deelneemt zijn hier te zien.</p>
-  <%= search_form_for @search do |f| %>
-  <%= f.label :location_cont, "zoek op plaats"%>
-  <%= f.text_field :location_cont %>
-  <%= f.submit "Zoek" %>
-  <% end %>
+  <h3>Openstaande uitnodigingen</h3>
+  <p>Dit zijn activiteiten waar voor u bent uitgenodigd.</p>
 </div> 
-
 <div class="activiteit-prive">
-  <% if @events.length == 0 %><%= "U heeft momenteel geen activiteiten gepland" %> <% end %>
+  <% if @eventsshow.length == 0 %><%= "U heeft momenteel geen uitnodigingen!" %> <% end %>
 </div>
-<% for start in @eventsoverview %>
+<% for start in @eventsshow %>
     <div class="activiteit activiteit-prive">
       <%= link_to start do %>
         <div class="tijd-tot">
@@ -32,4 +26,3 @@
     </div>
 <% end %>
 
-<%= will_paginate @events, :previous_label => 'Vorige', :next_label => 'Volgende' %>

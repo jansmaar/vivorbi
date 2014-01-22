@@ -23,14 +23,15 @@
 
       <div id="menu">
       <ul>
-                <%= link_to current_user do %>
-          <li>
+        <%= link_to current_user do %>
+          <li class="<%= active(current_user) %>">
             <%= image_tag current_user.avatar.url, :class => "img-circle profielfoto profielfoto-menu" %><h3><%= current_user.firstname %> <%= current_user.lastname %></h3>
           </li>
         <% end %>
         <%= link_to startpage_path do %>
-          <li><i class="fa fa-home fa-2x"></i><h3>Startpagina</h3></li>
+        <li class="<%= active(startpage_path) %>"><i class="fa fa-home fa-2x"></i><h3>Startpagina</h3></li>
         <% end %>
+
           <%= link_to events_path do %>
            <!-- class 'no-margin' zorgt ervoor dat de margin&padding op 0 worden gezet, op de startpage zit in deze icon(s) een margin&padding  -->
             <li><i class="fa fa-flag fa-2x no-margin"></i><h3> Activiteiten </h3></li>
@@ -40,14 +41,26 @@
          <i class="fa fa-map-marker fa-2x no-margin"></i> <h3>Hotspots</h3>
         </li>
         <% end %>
+
         <%= link_to events_path do %>
-        <li>
-         <i class="fa fa-users fa-2x"></i> <h3>Contacten</h3>
-        </li>
+         <!-- class 'no-margin' zorgt ervoor dat de margin&padding op 0 worden gezet, op de startpage zit in deze icon(s) een margin&padding  -->
+          <li class="<%= active(events_path) %> <%= active(owns_path) %> <%= active(public_path) %> <%= active(invites_path) %>"><i class="fa fa-flag fa-2x no-margin"></i><h3> Activiteiten </h3></li>
+        <% end %> 
+        <%= link_to startpage_path do %>
+          <li>
+            <i class="fa fa-map-marker fa-2x no-margin"></i> <h3>Commerciële activiteiten</h3>
+          </li>
         <% end %>
-        <li>
-          <i class="fa fa-question-circle fa-2x"></i><h3>Hulp</h3>
-        </li>
+        <%= link_to startpage_path do %>
+          <li>
+            <i class="fa fa-users fa-2x"></i> <h3>Contacten</h3>
+          </li>
+        <% end %>
+        <%= link_to startpage_path do %>
+          <li>
+            <i class="fa fa-question-circle fa-2x"></i><h3>Hulp</h3>
+          </li>
+        <% end %>
         <%= link_to log_out_path do %> 
         <li>
           <i class="fa fa-sign-out fa-2x"></i><h3>Uitloggen</h3>

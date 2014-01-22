@@ -5,6 +5,9 @@ Vivorbi::Application.routes.draw do
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "sign_up" => "users#new", :as => "sign_up"
   get "startpage" => "events#startpage", :as => "startpage"
+  get "eigen" => "events#owns", :as => "owns"
+  get "uitnodigingen" => "events#invites", :as => "invites"
+  get "openbaar" => "events#public", :as => "public"
   get "management" => "dashboards#management", :as => "management"
 
 

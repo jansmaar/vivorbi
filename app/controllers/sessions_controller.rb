@@ -13,7 +13,7 @@ def create
       redirect_to new_session_path, flash[:notice] => "Wachten op goedkeuring"
      else
       session[:user_id] = user.id
-      redirect_to events_path, :notice => "U bent succesvol ingelogd!"
+      redirect_to startpage_path, :notice => "U bent succesvol ingelogd!"
     # else
 #       flash.now.alert = "U heeft uw gebruikersnaam of e-mailadres verkeerd ingevoerd!"
 #       render "new"

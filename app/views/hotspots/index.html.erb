@@ -1,0 +1,27 @@
+<div class="page-header">
+  <h2>Hotspots</h2>
+</div>
+<%= link_to 'Maak event aan', new_hotspot_path %>
+<p>
+
+
+
+
+ 
+
+<% @hotspots.each do |t| %>
+<div class="row_ad">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+     <%= image_tag t.ad %>
+      <div class="caption">
+        <h5>Activiteit informatie</h5>
+        <p> <%= t.title %>
+  <%= truncate t.content, length: 150 %></p>
+        <%= link_to "bekijken" , hotspot_path(t) , class: "btn btn-primary" %> 
+        <a href="Bekijk" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %></p>

@@ -1,5 +1,6 @@
 class DashboardsController < ApplicationController
  
+ before_filter :authenticate
  layout false
   
   def index
@@ -7,10 +8,6 @@ class DashboardsController < ApplicationController
   	@dashboards = @search.result
   
   	@events = Event.paginate(:page => params[:page], :per_page => 5, :order => 'created_at DESC')
-  	
-
-	
-  
   end
   
   def management
@@ -46,4 +43,10 @@ class DashboardsController < ApplicationController
 		redirect_to(:back)
 	end
 
+	protected
+	def authenticate
+		authenticate_or_request_with_http_basic do |username, password|
+    username == "admintest" && password == "test123"
+	end
+end
 end

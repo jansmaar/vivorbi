@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140107203918) do
+ActiveRecord::Schema.define(version: 20140121111608) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 20140107203918) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "public"
+  end
+
+  create_table "hotspots", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "ad_file_name"
+    t.string   "ad_content_type"
+    t.integer  "ad_file_size"
+    t.datetime "ad_updated_at"
   end
 
   create_table "participants", force: true do |t|

@@ -7,7 +7,7 @@
   <p>Alle activiteiten waar u aan deelneemt zijn hier te zien.</p>
   <%= search_form_for @search do |f| %>
   <%= f.label :location_cont, "zoek op plaats"%>
-  <%= f.text_field :location_cont %>
+  <%= f.text_field :location_cont, :class => "form-control" %>
   <%= f.submit "Zoek" %>
   <% end %>
 </div> 
